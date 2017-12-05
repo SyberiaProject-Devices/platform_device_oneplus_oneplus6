@@ -133,6 +133,10 @@ on property:vendor.post_boot.parsed=1
     # Disable sched stats
     write /proc/sys/kernel/sched_schedstats 0
 
+    # Enable idle state listener
+    write /sys/class/drm/card0/device/idle_encoder_mask 1
+    write /sys/class/drm/card0/device/idle_timeout_ms 100
+
     # Setup final blkio
     # value for group_idle is us
     write /dev/blkio/blkio.weight 1000
