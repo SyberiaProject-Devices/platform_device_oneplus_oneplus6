@@ -106,6 +106,7 @@ TARGET_USES_MEDIA_EXTENSIONS := false
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
+HEALTHD_ENABLE_OP_FASTCHG_CHECK := true
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
