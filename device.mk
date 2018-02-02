@@ -77,6 +77,10 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.jamesdsp.sh
 
+# Dex
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan \
