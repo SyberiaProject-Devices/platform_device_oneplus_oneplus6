@@ -304,9 +304,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
     $(LOCAL_PATH)/configs/privapp-permissions-ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-ims.xml \
-    $(LOCAL_PATH)/configs/backuptool_blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
     $(LOCAL_PATH)/display/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml \
     $(LOCAL_PATH)/display/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml
+
+#    $(LOCAL_PATH)/configs/backuptool_blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
 
 # Native libraries whitelist
 PRODUCT_COPY_FILES += \
@@ -454,6 +455,10 @@ PRODUCT_PACKAGES += \
 # Tracing
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service.pixel
+
+# tri-state-key
+PRODUCT_PACKAGES += \
+    tri-state-key_daemon
 
 # USB
 PRODUCT_PACKAGES += \

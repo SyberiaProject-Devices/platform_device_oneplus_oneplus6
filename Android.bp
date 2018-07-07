@@ -9,5 +9,6 @@ soong_namespace {
 
 subdirs = [
     "lights",
-    "livedisplay"
+    "livedisplay",
+    "tri-state-key"
 ]
