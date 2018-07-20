@@ -38,4 +38,5 @@ etc/permissions/qti_permissions.xml
 etc/permissions/privapp-permissions-qti.xml
 etc/sysconfig/qti_whitelist.xml
 framework/qcrilhook.jar
+framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
