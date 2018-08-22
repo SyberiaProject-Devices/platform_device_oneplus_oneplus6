@@ -68,6 +68,7 @@ PRODUCT_COPY_FILES += \
 
 # Boot control
 PRODUCT_PACKAGES_DEBUG += \
+    android.hardware.boot@1.0-impl.recovery \
     bootctl
 
 # Common init scripts
@@ -177,16 +178,11 @@ PRODUCT_BOOT_JARS += \
 
 # Update engine
 PRODUCT_PACKAGES += \
+    bootctrl.sdm845.recovery \
     brillo_update_payload \
     update_engine \
     update_engine_sideload \
     update_verifier
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.sdm845 \
-    libcutils \
-    libgptutils.oneplus_sdm845.recovery \
-    libz \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
