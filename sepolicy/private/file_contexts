@@ -16,6 +16,11 @@
 # Files in sysfs
 /sys/devices/platform/soc/soc:goodix_fp/proximity_state    u:object_r:sysfs_fpc_proximity:s0
 
+# Healthd
+/system/bin/hw/android.hardware.health@2.0-service.oneplus6 u:object_r:hal_health_oneplus_exec:s0
+/sys/class/power_supply/bms/device/power_supply/bms/cycle_counts u:object_r:sysfs_batteryinfo:s0
+/persist/battery/qcom_cycle_counts_bins u:object_r:sysfs_batteryinfo:s0
+
 # Lights
 /system/bin/hw/android\.hardware\.light@2\.0-service\.oneplus_sdm845    u:object_r:hal_light_sdm845_exec:s0
 

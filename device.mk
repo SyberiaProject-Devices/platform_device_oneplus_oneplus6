@@ -95,6 +95,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     move_wifi_data.sh
 
+# Healthd
+PRODUCT_PACKAGES += android.hardware.health@2.0-service.oneplus6
+DEVICE_FRAMEWORK_MANIFEST_FILE += \
+    system/libhidl/vintfdata/manifest_healthd_exclude.xml
+
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
