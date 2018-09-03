@@ -7,6 +7,7 @@ on init
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules-aging/qca_cld3_wlan.ko bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
     mount none /system/etc/msm_irqbalance.conf /vendor/etc/msm_irqbalance.conf bind
+    mount none /dev/null /vendor/etc/init/android.hardware.health@2.0-service.rc bind
 
 # Mount and use blkio cgroup
     mkdir /dev/blkio
@@ -52,6 +53,8 @@ on boot
     # Goodix proximity node
     chmod 0660 /sys/devices/platform/soc/soc:goodix_fp/proximity_state
     chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
+
+    #mkdir /persist/battery 0770 system system
 
     # OTG switch
     chown system system /sys/class/power_supply/usb/otg_switch
