@@ -1,0 +1,12 @@
+# health info abstraction
+type hal_health_oneplus, domain;
+hal_server_domain(hal_health_oneplus, hal_health)
+
+type hal_health_oneplus_exec, exec_type, file_type;
+init_daemon_domain(hal_health_oneplus)
+
+typeattribute hal_health_oneplus coredomain;
+
+allow hal_health_oneplus sysfs_batteryinfo:file { getattr open read };
+
+allow hal_health_oneplus mnt_vendor_file:lnk_file read;
