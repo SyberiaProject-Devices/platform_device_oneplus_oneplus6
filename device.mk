@@ -25,6 +25,9 @@ $(call inherit-product, vendor/oneplus/oneplus6/oneplus6-vendor.mk)
 PRODUCT_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
 
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
