@@ -690,4 +690,11 @@
 
     <!-- Whether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
+
+    <!-- Enable dual LTE capability support-->
+    <bool name="config_dual_LTE_capability">true</bool>
+
+    <!-- Default color for notification LED is blue. --> 
+    <color name="config_defaultNotificationColor">#ff0000ff</color> 
+
 </resources>
