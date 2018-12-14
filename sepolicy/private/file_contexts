@@ -33,5 +33,8 @@
 /sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/adaption_mode  u:object_r:sysfs_dm:s0
 /sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/oneplus_mode   u:object_r:sysfs_dm:s0
 
+# JamesDSP shell script
+/system/bin/init.jamesdsp.sh   u:object_r:jamesdsp_exec:s0
+
 # Custom Equilizer (JamesDSP)
 /system/lib/soundfx/libjamesdsp\.so    u:object_r:vendor_file:s0

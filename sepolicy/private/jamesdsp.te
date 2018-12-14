@@ -1,0 +1,17 @@
+type jamesdsp, domain;
+type jamesdsp_exec, exec_type, file_type;
+
+init_daemon_domain(jamesdsp)
+
+# Make the domain permissive for testing
+# TODO: Remove that later
+#permissive jamesdsp;
+
+# Allow execute init.jamesdsp.sh
+#allow jamesdsp jamesdsp_exec:file { rx_file_perms entrypoint };
+
+# Allow to remount vendor as rw
+#allow jamesdsp vendor_file:dir mounton;
+
+# Allow to touch libjamesdsp.so in /vendor
+#allow jamesdsp vendor_file:file { create write };
