@@ -126,6 +126,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/addon.d/51-oneplus-camera.sh:system/addon.d/51-oneplus-camera.sh  \
     $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
+# Device Parts
+PRODUCT_PACKAGES += \
+    DeviceParts
+
 # Update engine
 PRODUCT_PACKAGES += \
     brillo_update_payload \

@@ -33,10 +33,22 @@ on boot
     chown system system /proc/touchpanel/up_arrow_enable
     chown system system /proc/touchpanel/up_swipe_enable
 
+    # Goodix proximity node
+    chmod 0660 /sys/devices/platform/soc/soc:goodix_fp/proximity_state
+    chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
+
+    # OTG switch
+    chown system system /sys/class/power_supply/usb/otg_switch
+    chmod 0660 /sys/class/power_supply/usb/otg_switch
+
     write /data/misc/camera/client_package_name "com.oneplus.camera"
     chmod 0444 /data/misc/camera/client_package_name
 
     setprop vendor.camera.aux.packagelist com.oneplus.camera
+
+on post-fs
+    # Vibrator
+    chown system system /sys/class/leds/vibrator/vmax_mv_user
 
 on charger
     write /sys/class/backlight/panel0-backlight/brightness 150
