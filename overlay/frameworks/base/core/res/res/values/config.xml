@@ -726,4 +726,7 @@
     <!-- Enable system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
 
+    <!-- Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">true</bool>
+    <integer name="config_shift_interval">60</integer>
 </resources>
