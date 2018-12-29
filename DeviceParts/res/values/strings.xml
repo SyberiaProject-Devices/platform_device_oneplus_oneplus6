@@ -106,4 +106,8 @@
     <string name="tile_panel_mode">Panel modes</string>
     <string name="tile_hbm_mode">High brightness modes</string>
     <string name="wake_entry">Wakeup</string>
+
+    <string name="toast_ringer">Mode: Ringer</string>
+    <string name="toast_vibrate">Mode: Vibrate only</string>
+    <string name="toast_dnd">Mode: Do Not Disturb</string>
 </resources>

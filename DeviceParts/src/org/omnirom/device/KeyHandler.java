@@ -20,6 +20,7 @@ package org.omnirom.device;
 import static android.provider.Settings.Global.ZEN_MODE_OFF;
 import static android.provider.Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
 
+import org.omnirom.device.R;
 import android.app.ActivityManagerNative;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -27,6 +28,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -39,6 +41,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.os.FileObserver;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
@@ -58,7 +61,11 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.HapticFeedbackConstants;
 import android.view.WindowManagerGlobal;
-
+import android.view.Gravity;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.widget.Toast;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.syberia.SyberiaUtils;
@@ -103,6 +110,8 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
     public static final String CLIENT_PACKAGE_PATH = "/data/vendor/omni/client_package_name";
+
+    public static final String PACKAGE_SYSTEMUI = "com.android.systemui";
 
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_II_SCANCODE,
@@ -161,6 +170,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private ClientPackageNameObserver mClientObserver;
     private IOnePlusCameraProvider mProvider;
     private boolean isOPCameraAvail;
+    private Toast toast;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -487,12 +497,15 @@ public class KeyHandler implements DeviceKeyHandler {
         if ( action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+    	    showToast(R.string.toast_ringer, Toast.LENGTH_SHORT, 350);
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
+            showToast(R.string.toast_vibrate, Toast.LENGTH_SHORT, 260);
         } else if (action == 2) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+            showToast(R.string.toast_dnd, Toast.LENGTH_SHORT, 170);
         }
     }
 
@@ -668,5 +681,37 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
             }
         }
+    }
+
+    void showToast(int messageId, int duration, int yOffset) {
+	Context resCtx = getPackageContext(mContext, "org.omnirom.device");
+        final String message = resCtx.getResources().getString(messageId);
+	Context ctx = getPackageContext(mContext, PACKAGE_SYSTEMUI);
+	Handler handler = new Handler(Looper.getMainLooper());
+	handler.post(new Runnable() {
+	    @Override
+	    public void run() {
+		if (toast != null) toast.cancel();
+		toast = Toast.makeText(ctx, message, duration);
+		toast.setGravity(Gravity.TOP|Gravity.RIGHT, 0, yOffset);
+		toast.show();
+		}
+	    });
+    }
+
+    public static Context getPackageContext(Context context, String packageName) {
+        Context pkgContext = null;
+        if (context.getPackageName().equals(packageName)) {
+            pkgContext = context;
+        } else {
+            try {
+                pkgContext = context.createPackageContext(packageName,
+                        Context.CONTEXT_IGNORE_SECURITY
+                                | Context.CONTEXT_INCLUDE_CODE);
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return pkgContext;
     }
 }
