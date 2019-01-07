@@ -101,5 +101,7 @@ public class Startup extends BroadcastReceiver {
         restore(DoubleTapSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
+        VibratorCallStrengthPreference.restore(context);
+        VibratorNotifStrengthPreference.restore(context);
     }
 }

@@ -45,6 +45,14 @@
             android:key="vib_strength"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
+        <org.omnirom.device.VibratorCallStrengthPreference
+            android:key="vib_call_strength"
+            android:title="@string/vib_call_strength_title_head"
+            android:summary="@string/vib_call_strength_summary_head" />
+        <org.omnirom.device.VibratorNotifStrengthPreference
+            android:key="vib_notif_strength"
+            android:title="@string/vib_notif_strength_title_head"
+            android:summary="@string/vib_notif_strength_summary_head" />
     </PreferenceCategory>
 
     <PreferenceCategory
