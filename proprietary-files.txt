@@ -98,6 +98,7 @@ lib/libdpmtcm.so
 
 # IMS
 -app/ims/ims.apk
+-app/imssettings/imssettings.apk
 lib64/libdiag_system.so
 lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so
