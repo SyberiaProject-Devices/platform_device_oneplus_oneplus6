@@ -85,4 +85,15 @@
   <string name="tile_panel_mode">Режимы панели</string>
   <string name="tile_hbm_mode">Режимы повышенной яркости</string>
   <string name="wake_entry">Пробуждение</string>
+  <string name="otg_switch_summary">Включение/отключени поддержки USB-OTG</string>
+  <string name="otg_switch_title">Поддержка USB-OTG</string>
+  <string name="category_fp_long_press_gesture">Длительное удержание датчика отпечатков</string>
+  <string name="navigate_recent">Недавние</string>
+  <string name="navigate_back">Назад</string>
+  <string name="navigate_home">Домой</string>
+  <string name="browse_scroll_up">Скролл вверх</string>
+  <string name="browse_scroll_down">Скролл вниз</string>
+  <string name="volume_up">Увеличить громкость</string>
+  <string name="volume_down">Уменьшить громкость</string>
+  <string name="slider_mode_zen">Не беспокоить</string>
 </resources>
