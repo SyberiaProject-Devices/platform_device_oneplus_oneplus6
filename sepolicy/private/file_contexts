@@ -17,3 +17,6 @@
 
 # Power HAL
 /system/lib64/hw/power\.qcom\.so    u:object_r:vendor_file:s0
+
+# Syberia init shell script
+/system/bin/init.syberia.sh   u:object_r:syberia_exec:s0

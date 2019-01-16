@@ -4,6 +4,12 @@ on init
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules-aging/qca_cld3_wlan.ko bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
 
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 0
+
 on boot
     # Touchpanel
     chmod 0660 /proc/touchpanel/double_swipe_enable
@@ -53,6 +59,9 @@ on post-fs
 on charger
     write /sys/class/backlight/panel0-backlight/brightness 150
 
+on property:sys.boot_completed=1
+    start syberia
+
 service dashd /sbin/dashd
     class core
     critical
@@ -60,4 +69,9 @@ service dashd /sbin/dashd
     group root system
 
 service factory-hal-1-0 /system/bin/true
+    disabled
+
+service syberia /system/bin/init.syberia.sh
+    user root
+    oneshot
     disabled
