@@ -96,6 +96,8 @@ on post-fs
     write /sys/devices/virtual/graphics/fb0/idle_time 100
  
    # Vibrator
+    chown system system /sys/class/leds/vibrator/vmax_override
+    write /sys/class/leds/vibrator/vmax_override 1
     chown system system /sys/class/leds/vibrator/vmax_mv_user
 
 on charger
