@@ -70,8 +70,6 @@ on boot
     write /data/misc/camera/client_package_name "com.oneplus.camera"
     chmod 0444 /data/misc/camera/client_package_name
 
-    setprop vendor.camera.aux.packagelist com.oneplus.camera
-
 on late-fs
     # Enable boot time fs tuning (ro like system is on sda, rw like userdata is on sde)
     write /sys/block/sda/queue/iostats 0
