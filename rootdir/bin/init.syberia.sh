@@ -33,12 +33,12 @@ sleep 10;
     echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/iowait_boost_enable
 
 # Set CPU Freq to lowest possible
-    echo 3000000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+    echo 300000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
     echo 825000 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
 
 # Input boost and stune configuration
     echo "0:1056000 1:0 2:0 3:0 4:0 5:0 6:0 7:0" > /sys/module/cpu_boost/parameters/input_boost_freq
-    echo 600 > /sys/module/cpu_boost/parameters/input_boost_ms
+    echo 500 > /sys/module/cpu_boost/parameters/input_boost_ms
     echo 15 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
 
 # Enable PEWQ
