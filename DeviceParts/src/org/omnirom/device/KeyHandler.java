@@ -294,11 +294,11 @@ public class KeyHandler implements DeviceKeyHandler {
                     boolean vibrate = state.contains("USB_HOST=0");
                     android.util.Log.v("DeviceParts", "Got ringing = " + ringing + ", silent = " + silent + ", vibrate = " + vibrate);
                     if(ringing && !silent && !vibrate)
-                        doHandleSliderAction(2);
+                        doHandleSliderAction(2, 350);
                     if(silent && !ringing && !vibrate)
-                        doHandleSliderAction(0);
+                        doHandleSliderAction(0, 170);
                     if(vibrate && !silent && !ringing)
-                        doHandleSliderAction(1);
+                        doHandleSliderAction(1, 260);
                 } catch(Exception e) {
                     android.util.Log.d("DeviceParts", "Failed parsing uevent", e);
                 }
@@ -492,20 +492,20 @@ public class KeyHandler implements DeviceKeyHandler {
         return 0;
     }
 
-    private void doHandleSliderAction(int position) {
+    private void doHandleSliderAction(int position, int yOffset) {
         int action = getSliderAction(position);
         if ( action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
-    	    showToast(R.string.toast_ringer, Toast.LENGTH_SHORT, 350);
+    	    showToast(R.string.toast_ringer, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
-            showToast(R.string.toast_vibrate, Toast.LENGTH_SHORT, 260);
+            showToast(R.string.toast_vibrate, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 2) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
-            showToast(R.string.toast_dnd, Toast.LENGTH_SHORT, 170);
+            showToast(R.string.toast_dnd, Toast.LENGTH_SHORT, yOffset);
         }
     }
 
