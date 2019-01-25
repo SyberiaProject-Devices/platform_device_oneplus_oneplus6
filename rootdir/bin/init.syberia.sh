@@ -38,8 +38,8 @@ sleep 10;
 
 # Input boost and stune configuration
     echo "0:1056000 1:0 2:0 3:0 4:0 5:0 6:0 7:0" > /sys/module/cpu_boost/parameters/input_boost_freq
-    echo 500 > /sys/module/cpu_boost/parameters/input_boost_ms
-    echo 15 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
+    echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+    echo 10 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
 
 # Enable PEWQ
     echo Y > /sys/module/workqueue/parameters/power_efficient Y
