@@ -6,3 +6,6 @@ allow init vendor_configs_file:file mounton;
 
 # Allow init to chown/chmod on pseudo files in /sys
 allow init sysfs_type:file { open read setattr };
+
+# Allow init create cgroups
+allow init cgroup:file create;
