@@ -1,0 +1,103 @@
+on init
+    # Enable UFS powersaving
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
+    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
+    write /sys/module/lpm_levels/parameters/sleep_disabled N
+
+    # Disable Boost_No_Override
+    write /dev/stune/foreground/schedtune.sched_boost_no_override 0
+    write /dev/stune/top-app/schedtune.sched_boost_no_override 0
+
+    # Set default schedTune value for foreground/top-app
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 1
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 0
+
+on boot
+    #Set on boot cpusets
+    write /dev/cpuset/top-app/cpus 0-3,4-7
+    write /dev/cpuset/foreground/cpus 0-3,4-7
+    write /dev/cpuset/background/cpus 0-7
+    write /dev/cpuset/system-background/cpus 0-7
+
+on late-fs
+    # Enable boot time fs tuning (ro like system is on sda, rw like userdata is on sde)
+    write /sys/block/sda/queue/iostats 0
+    write /sys/block/sda/queue/iosched/slice_idle 0
+    write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sda/queue/nr_requests 256
+    write /sys/block/sdf/queue/iostats 0
+    write /sys/block/sdf/queue/iosched/slice_idle 0
+    write /sys/block/sdf/queue/read_ahead_kb 2048
+    write /sys/block/sdf/queue/nr_requests 256
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+
+on post-fs
+    # Disable sched autogroup
+    write /proc/sys/kernel/sched_autogroup_enabled 0
+
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
+on property:sys.boot_completed=1
+    # Set the default IRQ affinity to the silver cluster.
+    write /proc/irq/default_smp_affinity "f"
+
+    # Disable boot time fs tuning
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/nr_requests 128
+    write /sys/block/sdf/queue/read_ahead_kb 128
+    write /sys/block/sdf/queue/nr_requests 128
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+
+    # Disable thermal core control until CPU is configured 
+    write /sys/module/msm_thermal/core_control/enabled 0
+
+    # Setup Schedutil Governor
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl 0
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/iowait_boost_enable 1
+
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl 0
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/iowait_boost_enable 1
+
+    # Set CPU Freq to lowest possible
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 825000
+
+    # Input boost and stune configuration
+     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1056000 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
+     write /sys/module/cpu_boost/parameters/input_boost_ms 120
+
+    # Enable PEWQ
+    write /sys/module/workqueue/parameters/power_efficient Y
+
+    # Disable Touchboost
+    write /sys/module/msm_performance/parameters/touchboost 0
+
+    # Disable CAF task placement for Big Cores 
+    write /proc/sys/kernel/sched_walt_rotate_big_tasks 0
+
+    # Setup EAS cpusets values for better load balancing
+    write /dev/cpuset/top-app/cpus "0-7"
+
+    # Since we are not using core rotator, lets load balance
+    write /dev/cpuset/foreground/cpus "0-3,6-7"
+    write /dev/cpuset/background/cpus "0-1"
+    write /dev/cpuset/system-background/cpus "0-3"
+
+    # For better screen off idle
+    write /dev/cpuset/restricted/cpus "0-3"

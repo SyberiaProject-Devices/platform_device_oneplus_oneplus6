@@ -1,8 +1,0 @@
-type syberia, domain;
-type syberia_exec, exec_type, file_type;
-
-init_daemon_domain(syberia)
-
-# Make the domain permissive for testing
-# TODO: Remove that later
-permissive syberia;
