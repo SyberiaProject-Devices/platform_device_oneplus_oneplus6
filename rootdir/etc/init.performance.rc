@@ -10,7 +10,7 @@ on init
 
     # Set default schedTune value for foreground/top-app
     write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.boost 1
+    write /dev/stune/top-app/schedtune.boost 0
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
     write /dev/stune/schedtune.colocate 0
@@ -79,16 +79,13 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 825000
 
     # Input boost and stune configuration
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 250
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1056000 1:0 2:0 3:1056000 4:0 5:0 6:0 7:0"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 500
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 50
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms 1500
 
-    # Set schedtune
-    write /dev/stune/schedtune.boost 6
-    write /dev/stune/foreground/schedtune.boost 7
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.prefer_idle 1
-    write /dev/stune/rt/schedtune.boost 30
-    write /dev/stune/rt/schedtune.prefer_idle 1
+    # Dynamic Stune Boost during sched_boost
+    write /dev/stune/top-app/schedtune.sched_boost 50
 
     # Enable PEWQ
     write /sys/module/workqueue/parameters/power_efficient Y
@@ -109,3 +106,14 @@ on property:vendor.post_boot.parsed=1
 
     # For better screen off idle
     write /dev/cpuset/restricted/cpus "0-3"
+
+    # Tune Core_CTL for proper task placement
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres "0 0 0 0"
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres "0 0 0 0"
+    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 1
+    write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 4294967295
+
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres "0 0 0 0"
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres "0 0 0 0"
+    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
+    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4294967295
