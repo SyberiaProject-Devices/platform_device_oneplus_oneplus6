@@ -125,3 +125,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     debug.sf.enable_hwc_vds=1
+
+# Syberia
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bottom_gesture.swipe_start.threshold=85
