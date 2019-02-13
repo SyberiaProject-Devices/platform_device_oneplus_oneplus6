@@ -53,7 +53,6 @@
 
 const int kMaxInteractiveDuration = 5000; /* ms */
 const int kMinInteractiveDuration = 100; /* ms */
-const int kMinFlingDuration = 1500; /* ms */
 
 typedef enum {
     NORMAL_MODE = 0,
@@ -231,10 +230,8 @@ static int process_interaction_hint(void* data) {
     s_previous_boost_timespec = cur_boost_timespec;
     s_previous_duration = duration;
 
-    if (duration >= kMinFlingDuration) {
-        perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, -1, SCROLL_PREFILING);
-    }
     perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, duration, SCROLL_VERTICAL);
+
     return HINT_HANDLED;
 }
 
