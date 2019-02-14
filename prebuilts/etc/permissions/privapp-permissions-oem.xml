@@ -7,4 +7,14 @@
         <permission name="android.permission.READ_LOGS"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>
+
+    <privapp-permissions package="com.oneplus.gallery">
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.qualcomm.wfd.service">
+        <permission name="android.permission.READ_FRAME_BUFFER"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+    </privapp-permissions>
+
 </permissions>
