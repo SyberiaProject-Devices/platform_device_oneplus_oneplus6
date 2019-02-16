@@ -172,6 +172,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Recovery
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
