@@ -9,6 +9,9 @@
 # Audio
 /system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0
 
+# MSM IRQ balance config
+/system/etc/msm_irqbalance.conf                  u:object_r:vendor_configs_file:s0
+
 # Files in sysfs
 /sys/devices/platform/soc/soc:goodix_fp/proximity_state    u:object_r:sysfs_fpc_proximity:s0
 
