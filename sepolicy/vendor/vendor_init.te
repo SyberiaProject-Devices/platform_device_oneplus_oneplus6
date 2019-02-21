@@ -1,4 +1,5 @@
 permissive vendor_init;
+set_prop(vendor_init, vendor_video_prop)
 
 #type qti_init_shell_exec, exec_type, vendor_file_type,file_type;
 
