@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2014-2017 The OmniROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -105,26 +106,4 @@
   <string name="toast_ringer">Modo: Timbre</string>
   <string name="toast_vibrate">Modo: Vibración</string>
   <string name="toast_dnd">Modo: No molestar</string>
-</resources>
-  <string name="torch_entry">Linterna</string>
-  <string name="disabled_entry">Deshabilitado</string>
-  <string name="camera_entry">Cámara</string>
-  <string name="music_play_entry">Reproducir / pausar música</string>
-  <string name="music_prev_entry">Pista anterior</string>
-  <string name="music_next_entry">Siguiente pista</string>
-  <string name="not_ready_summary">Resolviendo...</string>
-  <string name="resolve_failed_summary">Resolviendo error en la aplicación</string>
-  <string name="category_down_swipe_gesture">Deslizar abajo</string>
-  <string name="category_up_swipe_gesture">Deslizar arriba</string>
-  <string name="category_left_swipe_gesture">Deslizar a la izquierda</string>
-  <string name="category_right_swipe_gesture">Deslizar a la derecha</string>
-  <string name="doze_category_title">Pantalla ambiente</string>
-  <string name="doze_category_summary">Activar la pantalla cuando recibas notificaciones</string>
-  <string name="wave_check_summary">Notificaciones de pulso en la mano</string>
-  <string name="wave_check_title">Onda de mano</string>
-  <string name="tilt_check_summary">Notificaciones de pulso cuando se levante el dispositivo</string>
-  <string name="tilt_check_title">Recoger</string>
-  <string name="pocket_check_summary">Notificaciones de pulso al sacar del bolsillo</string>
-  <string name="pocket_check_title">Bolsillo</string>
-  <string name="ambient_display_enable">Visualización ambiental debe estar habilitada en configuración de pantalla</string>
 </resources>
