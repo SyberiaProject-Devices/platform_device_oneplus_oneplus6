@@ -4,10 +4,6 @@ on init
     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
     write /sys/module/lpm_levels/parameters/sleep_disabled N
 
-    # Disable Boost_No_Override
-    write /dev/stune/foreground/schedtune.sched_boost_no_override 0
-    write /dev/stune/top-app/schedtune.sched_boost_no_override 0
-
     # Set default schedTune value for foreground/top-app
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 0
@@ -59,6 +55,10 @@ on property:vendor.post_boot.parsed=1
     # Disable thermal core control until CPU is configured 
     write /sys/module/msm_thermal/core_control/enabled 0
 
+    # Tune Core_CTL for proper task placement
+    write /sys/devices/system/cpu/cpu0/core_ctl/enable 0
+    write /sys/devices/system/cpu/cpu4/core_ctl/enable 0
+
     # Setup Schedutil Governor
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
@@ -81,18 +81,15 @@ on property:vendor.post_boot.parsed=1
     # Input boost and stune configuration
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1056000 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
     write /sys/module/cpu_boost/parameters/input_boost_ms 200
-    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 10
-    write /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms 1500
+    #write /sys/module/cpu_boost/parameters/dynamic_stune_boost 10
+    #write /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms 1500
 
     # Dynamic Stune Boost during sched_boost
-    write /dev/stune/rt/schedtune.sched_boost 20
-    write /dev/stune/foreground/schedtune.sched_boost 10
+    #write /dev/stune/rt/schedtune.sched_boost 20
+    write /dev/stune/foreground/schedtune.sched_boost 5
 
     # Enable PEWQ
     write /sys/module/workqueue/parameters/power_efficient Y
-
-    # Disable Touchboost
-    write /sys/module/msm_performance/parameters/touchboost 0
 
     # Disable CAF task placement for Big Cores 
     write /proc/sys/kernel/sched_walt_rotate_big_tasks 0
@@ -107,14 +104,3 @@ on property:vendor.post_boot.parsed=1
 
     # For better screen off idle
     write /dev/cpuset/restricted/cpus "0-3"
-
-    # Tune Core_CTL for proper task placement
-    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres "0 0 0 0"
-    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres "0 0 0 0"
-    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 1
-    write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 4294967295
-
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres "0 0 0 0"
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres "0 0 0 0"
-    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
-    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4294967295
