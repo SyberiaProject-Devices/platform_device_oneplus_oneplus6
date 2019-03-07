@@ -79,14 +79,14 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 825000
 
     # Input boost and stune configuration
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1056000 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 200
+    #write /sys/module/cpu_boost/parameters/input_boost_freq "0:1056000 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
+    #write /sys/module/cpu_boost/parameters/input_boost_ms 200
     #write /sys/module/cpu_boost/parameters/dynamic_stune_boost 10
     #write /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms 1500
 
     # Dynamic Stune Boost during sched_boost
     #write /dev/stune/rt/schedtune.sched_boost 20
-    write /dev/stune/foreground/schedtune.sched_boost 5
+    #write /dev/stune/foreground/schedtune.sched_boost 5
 
     # Enable PEWQ
     write /sys/module/workqueue/parameters/power_efficient Y
