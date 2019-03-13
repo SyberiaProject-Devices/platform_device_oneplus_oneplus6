@@ -160,4 +160,4 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # Inherit from the proprietary version
--include vendor/oneplus/oneplus6/BoardConfigVendor.mk
+-include vendor/oneplus/sdm845-common/BoardConfigVendor.mk
