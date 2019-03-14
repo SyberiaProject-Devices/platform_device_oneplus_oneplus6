@@ -94,14 +94,15 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libstagefright_softomx
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    BluetoothQti
-
 # Boot control
 PRODUCT_PACKAGES_DEBUG += \
     android.hardware.boot@1.0-impl.recovery \
     bootctl
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbthost_if \
+    BluetoothQti
 
 # Camera
 PRODUCT_PACKAGES += \
