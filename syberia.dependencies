@@ -1,0 +1,12 @@
+[
+ {
+   "repository" : "SyberiaProject-Devices/platform_kernel_oneplus_sdm845",
+   "target_path": "kernel/oneplus/sdm845",
+   "branch"     : "9.0"
+ },
+ {
+   "repository" : "SyberiaProject-Devices/proprietary_vendor_oneplus",
+   "target_path": "vendor/oneplus",
+   "branch"     : "9.0"
+ }
+]
