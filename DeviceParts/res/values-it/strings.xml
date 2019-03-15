@@ -15,12 +15,12 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Oneplus 5</string>
-  <string name="category_gestures_title">Gesture del dispositivo</string>
-  <string name="fp_gesture_title">Gesture sul sensore d\'impronte</string>
+  <string name="app_name">Oneplus 6</string>
+  <string name="category_gestures_title">Gesti del dispositivo</string>
+  <string name="fp_gesture_title">Gesti sul sensore d'impronte digitali</string>
   <string name="category_vibrator">Vibrazione</string>
   <string name="vib_strength_title_head">Intensità</string>
-  <string name="vib_strength_summary_head">Definisci l\'intensità della vibrazione</string>
+  <string name="vib_strength_summary_head">Definisci l'intensità della vibrazione</string>
   <string name="vib_test">Prova</string>
   <string name="advanced_settings">Avanzato</string>
   <string name="category_slider">Slider</string>
@@ -44,14 +44,14 @@
   <string name="dci_mode_title">Modalità di colore larga gammut</string>
   <string name="Night_mode_title">Modalità notte</string>
   <string name="choose_app">Scegli app</string>
-  <string name="category_double_swipe_gesture">Gesture doppio swipe</string>
-  <string name="offscreen_gesture_title">Gesture a schermo spento</string>
-  <string name="category_circle_gesture">Gesture disegna un cerchio</string>
-  <string name="category_down_arrow_gesture">Gesture disegna una V</string>
-  <string name="category_up_arrow_gesture">Gesture disegna una A</string>
-  <string name="category_left_arrow_gesture">&lt; gesture</string>
-  <string name="category_right_arrow_gesture">&gt; gesture</string>
-  <string name="category_gestures_summary">Configura le azioni delle gesture</string>
+  <string name="category_double_swipe_gesture">Gesto doppio swipe</string>
+  <string name="offscreen_gesture_title">Gesto a schermo spento</string>
+  <string name="category_circle_gesture">Gesto disegna un cerchio</string>
+  <string name="category_down_arrow_gesture">Gesto disegna una V</string>
+  <string name="category_up_arrow_gesture">Gesto disegna una A</string>
+  <string name="category_left_arrow_gesture">&lt; gesto</string>
+  <string name="category_right_arrow_gesture">&gt; gesto</string>
+  <string name="category_gestures_summary">Configura le azioni dei gesti</string>
   <string name="torch_entry">Torcia</string>
   <string name="disabled_entry">Disabilitato</string>
   <string name="camera_entry">Fotocamera</string>
