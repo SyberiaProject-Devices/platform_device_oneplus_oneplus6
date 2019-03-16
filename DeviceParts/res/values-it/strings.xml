@@ -17,10 +17,10 @@
 <resources>
   <string name="app_name">Oneplus 6</string>
   <string name="category_gestures_title">Gesti del dispositivo</string>
-  <string name="fp_gesture_title">Gesti sul sensore d'impronte digitali</string>
+  <string name="fp_gesture_title">Gesti sul sensore d\'impronte digitali</string>
   <string name="category_vibrator">Vibrazione</string>
   <string name="vib_strength_title_head">Intensità</string>
-  <string name="vib_strength_summary_head">Definisci l'intensità della vibrazione</string>
+  <string name="vib_strength_summary_head">Definisci l\'intensità della vibrazione</string>
   <string name="vib_test">Prova</string>
   <string name="advanced_settings">Avanzato</string>
   <string name="category_slider">Slider</string>
