@@ -22,6 +22,7 @@ import static android.provider.Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
 
 import org.omnirom.device.R;
 import android.app.ActivityManagerNative;
+import android.app.ActivityThread;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -171,6 +172,8 @@ public class KeyHandler implements DeviceKeyHandler {
     private IOnePlusCameraProvider mProvider;
     private boolean isOPCameraAvail;
     private Toast toast;
+    private final Context mSysUiContext;
+    private final Context mResContext;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -284,6 +287,8 @@ public class KeyHandler implements DeviceKeyHandler {
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
+        mSysUiContext = ActivityThread.currentActivityThread().getSystemUiContext();
+        mResContext = getPackageContext(mContext, "org.omnirom.device");
         (new UEventObserver() {
             @Override
             public void onUEvent(UEventObserver.UEvent event) {
@@ -684,19 +689,17 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     void showToast(int messageId, int duration, int yOffset) {
-	Context resCtx = getPackageContext(mContext, "org.omnirom.device");
-        final String message = resCtx.getResources().getString(messageId);
-	Context ctx = getPackageContext(mContext, PACKAGE_SYSTEMUI);
-	Handler handler = new Handler(Looper.getMainLooper());
-	handler.post(new Runnable() {
-	    @Override
-	    public void run() {
-		if (toast != null) toast.cancel();
-		toast = Toast.makeText(ctx, message, duration);
-		toast.setGravity(Gravity.TOP|Gravity.RIGHT, 0, yOffset);
-		toast.show();
-		}
-	    });
+        final String message = mResContext.getResources().getString(messageId);
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+        @Override
+        public void run() {
+            if (toast != null) toast.cancel();
+            toast = Toast.makeText(mSysUiContext, message, duration);
+            toast.setGravity(Gravity.TOP|Gravity.RIGHT, 0, yOffset);
+            toast.show();
+            }
+        });
     }
 
     public static Context getPackageContext(Context context, String packageName) {
