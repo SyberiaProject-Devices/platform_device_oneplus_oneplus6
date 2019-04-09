@@ -2,3 +2,7 @@ allow system_server sysfs_fpc_proximity:file rw_file_perms;
 
 # OTA updater
 allow system_server sdcardfs:file rw_file_perms;
+
+# OnePlus camera client_package_name
+allow system_server camera_data_file:dir search;
+allow system_server camera_data_file:file { read open getattr };

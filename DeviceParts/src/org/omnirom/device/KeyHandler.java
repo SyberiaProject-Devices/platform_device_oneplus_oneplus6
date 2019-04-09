@@ -110,7 +110,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int FP_GESTURE_LONG_PRESS = 305;
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
-    public static final String CLIENT_PACKAGE_PATH = "/data/vendor/omni/client_package_name";
+    public static final String CLIENT_PACKAGE_PATH = "/data/misc/camera/client_package_name";
 
     public static final String PACKAGE_SYSTEMUI = "com.android.systemui";
 

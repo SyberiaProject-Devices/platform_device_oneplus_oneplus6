@@ -59,8 +59,10 @@ on boot
     chown system system /sys/class/power_supply/usb/otg_switch
     chmod 0660 /sys/class/power_supply/usb/otg_switch
 
-    write /data/misc/camera/client_package_name "com.oneplus.camera"
-    chmod 0444 /data/misc/camera/client_package_name
+    mkdir /data/misc/camera 0770 cameraserver audio
+    write /data/misc/camera/client_package_name 0
+    chown cameraserver audio /data/misc/camera/client_package_name
+    chmod 0644 /data/misc/camera/client_package_name
 
 on post-fs
     chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
