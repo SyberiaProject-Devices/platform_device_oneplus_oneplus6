@@ -1,1 +1,2 @@
 allow cameraserver camera_data_file:file { getattr open write };
+allow cameraserver mediacodec:binder { call };
