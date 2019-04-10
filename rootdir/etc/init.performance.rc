@@ -22,6 +22,10 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
+    # Set SQLite flags for F2FS because some DBs might be opened early
+    setprop debug.sqlite.journalmode OFF
+    setprop debug.sqlite.syncmode OFF
+
 on late-fs
     # Enable boot time fs tuning (ro like system is on sda, rw like userdata is on sde)
     write /sys/block/sda/queue/iostats 0
