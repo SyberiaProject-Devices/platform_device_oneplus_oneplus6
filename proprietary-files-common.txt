@@ -9,7 +9,6 @@ lib64/libaptX_encoder.so
 lib64/libaptXHD_encoder.so
 
 #Camera (OnePlus)
--framework/vendor.oneplus.camera.CameraHIDL-V1.0-java.jar
 lib64/libblurbuster.so
 lib64/libchromaflash.so
 lib64/libConnor_oneplus.so
@@ -40,8 +39,6 @@ lib64/libubifocus.so
 lib64/libts_detected_face_jni.so
 lib64/libts_face_beautify_jni.so
 lib64/libts_face_beautify_hal.so
-lib64/vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper.so
-lib64/vendor.oneplus.camera.CameraHIDL@1.0.so
 
 # CNE
 etc/permissions/cneapiclient.xml
