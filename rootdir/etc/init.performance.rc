@@ -98,13 +98,45 @@ on property:vendor.post_boot.parsed=1
     # Disable CAF task placement for Big Cores 
     write /proc/sys/kernel/sched_walt_rotate_big_tasks 0
 
-    # Setup EAS cpusets values for better load balancing
-    write /dev/cpuset/top-app/cpus "0-7"
-
     # Since we are not using core rotator, lets load balance
-    write /dev/cpuset/foreground/cpus "0-3,6-7"
-    write /dev/cpuset/background/cpus "0-1"
-    write /dev/cpuset/system-background/cpus "0-3"
+    write /dev/cpuset/top-app/cpus "0-7"
+    write /dev/cpuset/foreground/boost/cpus "0-5"
+    write /dev/cpuset/foreground/cpus "0-5"
+    write /dev/cpuset/background/cpus "0"
+    write /dev/cpuset/system-background/cpus "0-5"
+    write /dev/cpuset/camera-daemon/cpus "0-5"
 
     # For better screen off idle
     write /dev/cpuset/restricted/cpus "0-3"
+
+    # STUNE
+    write /dev/stune/schedtune.boost 0
+    write /dev/stune/schedtune.prefer_idle 1
+    write /dev/stune/cgroup.clone_children 0
+    write /dev/stune/cgroup.sane_behavior 0
+    write /dev/stune/notify_on_release 0
+    write /dev/stune/top-app/schedtune.sched_boost 0
+    write /dev/stune/top-app/notify_on_release 0
+    write /dev/stune/top-app/cgroup.clone_children 0
+    write /dev/stune/foreground/schedtune.sched_boost 0
+    write /dev/stune/foreground/notify_on_release 0
+    write /dev/stune/foreground/cgroup.clone_children 0
+    write /dev/stune/background/schedtune.sched_boost 0
+    write /dev/stune/background/notify_on_release 0
+    write /dev/stune/background/cgroup.clone_children 0
+    write /proc/sys/kernel/sched_use_walt_task_util 1
+    write /proc/sys/kernel/sched_use_walt_cpu_util 1
+    write /proc/sys/kernel/sched_walt_cpu_high_irqload 10000000
+    write /proc/sys/kernel/sched_rt_runtime_us 950000
+    write /proc/sys/kernel/sched_latency_ns 100000
+
+    # CGROUPS tuning
+    write /dev/cpuset/cgroup.clone_children 0
+    write /dev/cpuset/cgroup.sane_behavior 0
+    write /dev/cpuset/notify_on_release 0
+    write /dev/cpuctl/cgroup.clone_children 0
+    write /dev/cpuctl/cgroup.sane_behavior 0
+    write /dev/cpuctl/notify_on_release 0
+    write /dev/cpuctl/cpu.rt_period_us 1000000
+    write /dev/cpuctl/cpu.rt_runtime_us 950000
+    write /dev/cpuctl/bg_non_interactive/cpu.rt_runtime_us 10000
