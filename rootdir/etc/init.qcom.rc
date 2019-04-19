@@ -1,5 +1,3 @@
-import /system/etc/init/init.power.rc
-
 on init
     start jamesdsp
     mount none /system/lib/soundfx/libjamesdsp.so /vendor/lib/soundfx/libjamesdsp.so bind
