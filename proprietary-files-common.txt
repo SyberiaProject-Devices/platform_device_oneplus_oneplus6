@@ -107,7 +107,7 @@ lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 
 # NXP NFC
--app/NxpNfcNci/NxpNfcNci.apk|698ff1fab2a6e9843310713763533ed11d39f47e
+-app/NxpNfcNci/NxpNfcNci.apk|df88f2906629ccd8795fa28f987a10da6bb860b2
 -app/NxpSecureElement/NxpSecureElement.apk
 framework/com.nxp.nfc.jar
 etc/permissions/com.nxp.nfc.xml
@@ -181,25 +181,23 @@ lib/libwfduibcsrc.so
 lib/libwfduibcsrcinterface.so
 -priv-app/WfdService/WfdService.apk
 
-#QTI Performance libs - from daisy - PKQ1.180917.001, QPerformance.jar - from sakura - sakura-user-9-PKQ1.180917.001-9.1.25-release-keys
+#QTI Performance libs, QPerformance.jar - from sakura - sakura-user-9-PKQ1.180917.001-9.1.25-release-keys
 -framework/QPerformance.jar|7097b093f8c946892176835a7b80977e8fea570c
 -framework/UxPerformance.jar|0e3babfa37e2368aee16de3d6f8cdea06e081dea
-bin/perfservice|03d6368017d4c41f7fea647c669b69d6567238af
-etc/init/perfservice.rc|67144c3f1800f976cb58463c4370882d2d820947
-etc/perf/whitelistedapps.xml|019e8b114d1befe6f8f476dbc5c8be0d84a91627
-lib/libqti-at.so|1101ee354735905f39337bc032c6b547dbce846c
-lib/libqti-perfd-client_system.so|74f4d9657cf492cf1de2e9b93983f4e7b5431c45
-lib/libqti-iopd-client_system.so|0693b404de3f108785ace90e376326409a9086ed
-lib/libqti-util_system.so|66fcc57fee4f978f9b52429539b980ac3550f8e3
-lib/libqti_performance.so|dc0995fa3217b6c44029b55b5151adaae515392a
-lib/vendor.qti.hardware.iop@1.0.so|01bded5f912ff47f6bddcdf362af3b8b06090de1
-lib/vendor.qti.hardware.iop@2.0.so|f7c21407cec3cebdbcd49e6dd0932893e25e2eb4
-lib/vendor.qti.hardware.perf@1.0.so|39a81e7cc35f542e5e2eeed6f38152b44063928f
-lib64/libqti-at.so|d4bd59dc50cb466ce3c2efb96cb2f2bb232a1baa
-lib64/libqti-perfd-client_system.so|de5b61f07d7981bb208167b357f46a9ad083c9e7
-lib64/libqti-iopd-client_system.so|ecd88972a4a6134ba00fbb8979fda0cac5f4f73a
-lib64/libqti-util_system.so|0e62bd1422f40154c22e858df268009bb66d4f2f
-lib64/libqti_performance.so|9c88af412e0276c578f06e1069b6c3aeae7e3f8d
-lib64/vendor.qti.hardware.iop@1.0.so|3fb2a359a1f9ef6544538aa9d70391f4e5da3972
-lib64/vendor.qti.hardware.iop@2.0.so|efc50e3f5649ee2e921a4f21c8227a43bb4ca0dd
-lib64/vendor.qti.hardware.perf@1.0.so|978a16bc6f27967f6345c5b51386d50768553ab5
+bin/perfservice
+etc/init/perfservice.rc
+etc/perf/whitelistedapps.xml
+lib/libqti-at.so
+lib/libqti-perfd-client_system.so
+lib/libqti-util_system.so
+lib/libqti_performance.so
+lib/vendor.qti.hardware.iop@1.0.so
+lib/vendor.qti.hardware.iop@2.0.so
+lib/vendor.qti.hardware.perf@1.0.so
+lib64/libqti-at.so
+lib64/libqti-perfd-client_system.so
+lib64/libqti-util_system.so
+lib64/libqti_performance.so
+lib64/vendor.qti.hardware.iop@1.0.so
+lib64/vendor.qti.hardware.iop@2.0.so
+lib64/vendor.qti.hardware.perf@1.0.so
