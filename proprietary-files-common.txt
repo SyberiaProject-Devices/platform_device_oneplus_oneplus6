@@ -181,6 +181,21 @@ lib/libwfduibcsrc.so
 lib/libwfduibcsrcinterface.so
 -priv-app/WfdService/WfdService.apk
 
+#QTI location provider
+framework/com.qti.location.sdk.jar
+framework/izat.xt.srv.jar
+priv-app/com.qualcomm.location/com.qualcomm.location.apk
+etc/permissions/izat.xt.srv.xml
+etc/permissions/privapp-permissions-com.qualcomm.location.xml
+etc/permissions/com.qualcomm.location.xml
+etc/permissions/com.qti.location.sdk.xml
+lib/liblocationservice_jni.so
+lib64/liblocationservice_jni.so
+lib64/vendor.qti.gnss@1.0.so
+lib64/vendor.qti.gnss@1.1.so
+lib64/vendor.qti.gnss@1.2.so
+lib64/vendor.qti.gnss@2.0.so
+
 #QTI Performance libs, QPerformance.jar - from sakura - sakura-user-9-PKQ1.180917.001-9.1.25-release-keys
 -framework/QPerformance.jar|7097b093f8c946892176835a7b80977e8fea570c
 -framework/UxPerformance.jar|0e3babfa37e2368aee16de3d6f8cdea06e081dea
