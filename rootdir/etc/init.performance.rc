@@ -58,8 +58,8 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sda/queue/iosched/group_idle 0
 
     # Tune Core_CTL for proper task placement
-    write /sys/devices/system/cpu/cpu0/core_ctl/enable 1
-    write /sys/devices/system/cpu/cpu4/core_ctl/enable 1
+    write /sys/devices/system/cpu/cpu0/core_ctl/enable 0
+    write /sys/devices/system/cpu/cpu4/core_ctl/enable 0
 
     # Setup Schedutil Governor
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
@@ -67,7 +67,7 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 20000
     write /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl 0
     write /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq 0
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load 85
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load 80
     write /sys/devices/system/cpu/cpufreq/policy0/schedutil/iowait_boost_enable 1
 
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
@@ -75,7 +75,7 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 20000
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl 0
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 0
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_load 90
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_load 85
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/iowait_boost_enable 1
 
     # CPU input boost
@@ -83,6 +83,9 @@ on property:vendor.post_boot.parsed=1
 
     # Enable PEWQ
     write /sys/module/workqueue/parameters/power_efficient Y
+
+    # Disable CAF task placement for Big Cores 
+    write /proc/sys/kernel/sched_walt_rotate_big_tasks 0
 
     # STUNE
     write /dev/stune/schedtune.boost 0
@@ -99,28 +102,35 @@ on property:vendor.post_boot.parsed=1
     write /dev/stune/background/schedtune.sched_boost 0
     write /dev/stune/background/notify_on_release 0
     write /dev/stune/background/cgroup.clone_children 0
+    write /proc/sys/kernel/sched_schedstats 0
+    write /proc/sys/kernel/sched_min_granularity_ns 1000000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+
+    # CGROUPS
     write /dev/cpuset/cgroup.clone_children 0
     write /dev/cpuset/cgroup.sane_behavior 0
     write /dev/cpuset/notify_on_release 0
     write /dev/cpuctl/cgroup.clone_children 0
     write /dev/cpuctl/cgroup.sane_behavior 0
     write /dev/cpuctl/notify_on_release 0
-    write /dev/stune/top-app/schedtune.prefer_idle 0
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/background/schedtune.prefer_idle 1
-    write /dev/stune/rt/schedtune.prefer_idle 1
+    write /dev/cpuctl/cpu.rt_period_us 1000000
+    write /dev/cpuctl/cpu.rt_runtime_us 950000
+    write /dev/blkio/cgroup.clone_children 0
+    write /dev/blkio/cgroup.sane_behavior 0
+    write /dev/blkio/notify_on_release 0
+    write /dev/blkio/bg/cgroup.clone_children 0
+    write /dev/blkio/bg/cgroup.sane_behavior 0
+    write /dev/blkio/bg/notify_on_release 0
 
-    # Setup scheduler parameters
-    write /proc/sys/kernel/sched_tunable_scaling 1
-    write /proc/sys/kernel/sched_min_granularity_ns 1000000
-    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
-
-    # Setup cpusets
+    # Since we are not using core rotator, lets load balance
     write /dev/cpuset/top-app/cpus "0-7"
+    write /dev/cpuset/foreground/boost/cpus "0-5"
     write /dev/cpuset/foreground/cpus "0-5"
-    write /dev/cpuset/background/cpus "0-2"
+    write /dev/cpuset/background/cpus "0"
     write /dev/cpuset/system-background/cpus "0-5"
     write /dev/cpuset/camera-daemon/cpus "0-5"
+
+    # For better screen off idle
     write /dev/cpuset/restricted/cpus "0-3"
 
     # FileSystem (FS) optimized tweaks & enhancements for a improved userspace experience
