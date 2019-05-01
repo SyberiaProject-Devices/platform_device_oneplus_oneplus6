@@ -107,7 +107,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
     private static final int HANDWAVE_MAX_DELTA_MS = 1000;
     private static final int POCKET_MIN_DELTA_MS = 5000;
-    private static final int FP_GESTURE_LONG_PRESS = 305;
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
     public static final String CLIENT_PACKAGE_PATH = "/data/misc/camera/client_package_name";
@@ -129,7 +128,6 @@ public class KeyHandler implements DeviceKeyHandler {
         KEY_SLIDER_TOP,
         KEY_SLIDER_CENTER,
         KEY_SLIDER_BOTTOM,
-        FP_GESTURE_LONG_PRESS,
     };
 
     private static final int[] sProxiCheckedGestures = new int[]{
