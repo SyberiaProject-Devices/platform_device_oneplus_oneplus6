@@ -143,3 +143,7 @@ on property:vendor.post_boot.parsed=1
 
     # Reduce kswapd cpu usage
     write /proc/sys/vm/swappiness 85
+
+    # Use RCU_normal instead of RCU_expedited for improved real-time latency, CPU utilization and energy efficiency
+    write /sys/kernel/rcu_expedited 0
+    write /sys/kernel/rcu_normal 1
