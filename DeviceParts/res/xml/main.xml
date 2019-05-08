@@ -98,7 +98,7 @@
             android:key="night"
             android:summary="@string/Night_mode_summary"
             android:title="@string/Night_mode_title" />-->
-        <Preference
+    <!--    <Preference
             android:key="panel_category"
             android:title="@string/panel_category_title"
             android:summary="@string/panel_category_summary"
@@ -106,6 +106,6 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="org.omnirom.device"
                     android:targetClass="org.omnirom.device.PanelSettingsActivity" />
-        </Preference>
+        </Preference> -->
     </PreferenceCategory>
 </PreferenceScreen>
