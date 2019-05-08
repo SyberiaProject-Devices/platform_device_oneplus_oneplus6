@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">Oneplus 5</string>
+    <string name="app_name">Oneplus 6</string>
     <string name="category_gestures_title">Device gestures</string>
     <string name="fp_gesture_title">Fingerprint scanner gestures</string>
     <string name="category_vibrator">Vibrator</string>
@@ -24,16 +24,6 @@
     <string name="advanced_settings">Advanced</string>
     <string name="category_slider">Slider</string>
     <string name="slider_mode_title">Slider mode</string>
-    <string name="buttons_title">Buttons</string>
-    <string name="swap_back_recents_summary"></string>
-    <string name="swap_back_recents_title">Swap back and recents button</string>
-    <string name="graphics_title">Graphics</string>
-    <string name="srgb_mode_summary"></string>
-    <string name="srgb_mode_title">sRGB mode</string>
-    <string name="hbm_mode_summary"></string>
-    <string name="hbm_mode_title">High brightness mode</string>
-    <string name="adaptive_mode_title">Adaptive mode</string>
-    <string name="oneplus_mode_title">OnePlus mode</string>
     <string name="proxi_summary_head">Check proximity sensor for handling gesture and fingerprint sensor</string>
     <string name="proxi_title_head">Proximity check</string>
     <string name="off_screen_gesture_feedback_summary_head">Enable haptic feedback for gestures</string>
@@ -99,12 +89,6 @@
     <string name="pocket_check_summary">Pulse notifications on removal from pocket</string>
     <string name="pocket_check_title">Pocket</string>
     <string name="ambient_display_enable">Ambient display must be enabled in display settings</string>
-
-    <string name="panel_category_title">Panel modes</string>
-    <string name="panel_category_summary">Modes for panel color correction</string>
-    <string name="off_mode_title">Off</string>
-    <string name="tile_panel_mode">Panel modes</string>
-    <string name="tile_hbm_mode">High brightness modes</string>
     <string name="wake_entry">Wakeup</string>
 
     <string name="toast_ringer">Mode: Ringer</string>

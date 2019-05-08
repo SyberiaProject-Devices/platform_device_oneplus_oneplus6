@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">OnePlus 5</string>
+  <string name="app_name">OnePlus 6</string>
   <string name="category_gestures_title">Gerätegesten</string>
   <string name="fp_gesture_title">Fingerabdruck-Scanner-Gesten</string>
   <string name="category_vibrator">Vibrator</string>
@@ -25,11 +25,6 @@
   <string name="advanced_settings">Erweitert</string>
   <string name="category_slider">Regler</string>
   <string name="slider_mode_title">Regler-Modus</string>
-  <string name="buttons_title">Tasten</string>
-  <string name="swap_back_recents_title">Zurück- und Verlauf-Taste tauschen</string>
-  <string name="graphics_title">Grafik</string>
-  <string name="srgb_mode_title">sRGB-Modus</string>
-  <string name="hbm_mode_title">Modus für max. Helligkeit</string>
   <string name="proxi_summary_head">Näherungssensor für die Nutzung von Gesten und des Fingerabdrucksensors überprüfen</string>
   <string name="proxi_title_head">Näherungssensor überprüfen</string>
   <string name="slider_mode_off">Aus</string>
@@ -41,8 +36,6 @@
   <string name="slider_mode_title_top">Position oben</string>
   <string name="slider_mode_title_center">Position in der Mitte</string>
   <string name="slider_mode_title_bottom">Position unten</string>
-  <string name="dci_mode_title">Breite Farbskala-Modus</string>
-  <string name="Night_mode_title">Nachtmodus</string>
   <string name="choose_app">App wählen</string>
   <string name="category_double_swipe_gesture">II-Geste</string>
   <string name="offscreen_gesture_title">Gesten bei ausgeschaltetem Bildschirm</string>
@@ -79,8 +72,6 @@
   <string name="pocket_check_summary">Benachrichtigungen pulsiren, wenn das Gerät aus der Tasche genommen wird</string>
   <string name="pocket_check_title">Tasche</string>
   <string name="ambient_display_enable">Inaktivitätsdisplay muss in den Display-Einstellungen aktiviert sein</string>
-  <string name="panel_category_title">Panel-Modi</string>
-  <string name="panel_category_summary">Modi für die Farbkorrektur des Panel</string>
   <string name="off_mode_title">Aus</string>
   <string name="tile_panel_mode">Panel-Modi</string>
   <string name="tile_hbm_mode">Modus für max. Helligkeit</string>

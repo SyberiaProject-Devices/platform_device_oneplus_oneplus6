@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">OnePlus 5</string>
+  <string name="app_name">OnePlus 6</string>
   <string name="category_gestures_title">Seadme žestid</string>
   <string name="fp_gesture_title">Sõrmejäljelugeja žestid</string>
   <string name="category_vibrator">Vibraator</string>
@@ -25,11 +25,6 @@
   <string name="advanced_settings">Täpsemad</string>
   <string name="category_slider">Liugur</string>
   <string name="slider_mode_title">Liuguri režiim</string>
-  <string name="buttons_title">Nupud</string>
-  <string name="swap_back_recents_title">Vaheta tagasi ja viimatiste nupud</string>
-  <string name="graphics_title">Graafika</string>
-  <string name="srgb_mode_title">sRGB-režiim</string>
-  <string name="hbm_mode_title">Kõrge heleduse režiim</string>
   <string name="proxi_summary_head">Kontrolli lähedussensorit, haldamaks žeste ja sõrmejäljelugejat</string>
   <string name="proxi_title_head">Läheduskontroll</string>
   <string name="slider_mode_off">Väljas</string>
@@ -41,8 +36,6 @@
   <string name="slider_mode_title_top">Ülapositsioon</string>
   <string name="slider_mode_title_center">Keskpositsioon</string>
   <string name="slider_mode_title_bottom">Allpositsioon</string>
-  <string name="dci_mode_title">Laia värviskaala režiim</string>
-  <string name="Night_mode_title">Öörežiim</string>
   <string name="choose_app">Vali rakendus</string>
   <string name="category_double_swipe_gesture">II žest</string>
   <string name="offscreen_gesture_title">Väljas ekraani žestid</string>
@@ -79,10 +72,6 @@
   <string name="pocket_check_summary">Pulseeri teateid, kui seade võetakse taskust välja</string>
   <string name="pocket_check_title">Tasku</string>
   <string name="ambient_display_enable">Ambientne ekraan peab olema lubatud kuvaseadetes</string>
-  <string name="panel_category_title">Paneelirežiimid</string>
-  <string name="panel_category_summary">Režiimid paneeli värviparanduseks</string>
   <string name="off_mode_title">Väljas</string>
-  <string name="tile_panel_mode">Paneelirežiimid</string>
-  <string name="tile_hbm_mode">Kõrge heleduse režiimid</string>
   <string name="wake_entry">Ärkamine</string>
 </resources>
