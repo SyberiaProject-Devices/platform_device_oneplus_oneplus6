@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Oneplus 5</string>
+  <string name="app_name">Oneplus 6</string>
   <string name="category_gestures_title">Gestos del dispositivo</string>
   <string name="fp_gesture_title">Gestos de escáner de huellas dactilares</string>
   <string name="category_vibrator">Vibración</string>
@@ -24,16 +24,6 @@
   <string name="advanced_settings">Avanzado</string>
   <string name="category_slider">Deslizador</string>
   <string name="slider_mode_title">Modo del deslizador</string>
-  <string name="buttons_title">Botones</string>
-  <string name="swap_back_recents_summary"></string>
-  <string name="swap_back_recents_title">Intercambiar botón de atrás y recientes</string>
-  <string name="graphics_title">Gráficos</string>
-  <string name="srgb_mode_summary"></string>
-  <string name="srgb_mode_title">sRGB mode</string>
-  <string name="hbm_mode_summary"></string>
-  <string name="hbm_mode_title">Modo de alto brillo</string>
-  <string name="adaptive_mode_title">Modo adaptativo</string>
-  <string name="oneplus_mode_title">Modo OnePlus</string>
   <string name="proxi_summary_head">Comprobar  el sensor de proximidad para el gestos y sensor de huellas</string>
   <string name="proxi_title_head">Control de proximidad</string>
   <string name="off_screen_gesture_feedback_summary_head">Habilitar retroalimentación háptica para gestos</string>
@@ -47,10 +37,6 @@
   <string name="slider_mode_title_top">Posición superior</string>
   <string name="slider_mode_title_center">Posición central</string>
   <string name="slider_mode_title_bottom">Posición inferior</string>
-  <string name="dci_mode_summary"></string>
-  <string name="dci_mode_title">Modo de amplia gama de colores</string>
-  <string name="Night_mode_summary"></string>
-  <string name="Night_mode_title">Modo nocturno</string>
   <string name="otg_switch_summary">Habilitar/Inhabilitar el soporte USB-OTG</string>
   <string name="otg_switch_title">Soporte USB-OTG</string>
   <string name="choose_app">Elegir aplicación</string>
@@ -97,11 +83,7 @@
   <string name="pocket_check_summary">Notificaciones pulse al sacar del bolsillo</string>
   <string name="pocket_check_title">Bolsillo</string>
   <string name="ambient_display_enable">La pantalla ambiente debe estar habilitada en los ajustes de pantalla</string>
-  <string name="panel_category_title">Modos del panel</string>
-  <string name="panel_category_summary">Modos de corrección de color del panel</string>
   <string name="off_mode_title">Deshabilitado</string>
-  <string name="tile_panel_mode">Modos del panel</string>
-  <string name="tile_hbm_mode">Modo de alto brillo</string>
   <string name="wake_entry">Despestar</string>
   <string name="toast_ringer">Modo: Timbre</string>
   <string name="toast_vibrate">Modo: Vibración</string>

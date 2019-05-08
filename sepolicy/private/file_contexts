@@ -29,14 +29,6 @@
 # Power HAL
 /system/lib64/hw/power\.qcom\.so    u:object_r:vendor_file:s0
 
-# Display Mode
-/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/SRGB           u:object_r:sysfs_dm:s0
-/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/hbm            u:object_r:sysfs_dm:s0
-/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/night_mode     u:object_r:sysfs_dm:s0
-/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/DCI_P3         u:object_r:sysfs_dm:s0
-/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/adaption_mode  u:object_r:sysfs_dm:s0
-/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/oneplus_mode   u:object_r:sysfs_dm:s0
-
 # JamesDSP shell script
 /system/bin/init.jamesdsp.sh   u:object_r:jamesdsp_exec:s0
 

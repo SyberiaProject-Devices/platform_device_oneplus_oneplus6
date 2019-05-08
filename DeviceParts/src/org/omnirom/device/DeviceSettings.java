@@ -45,16 +45,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String KEY_SLIDER_MODE_TOP = "slider_mode_top";
     private static final String KEY_SLIDER_MODE_CENTER = "slider_mode_center";
     private static final String KEY_SLIDER_MODE_BOTTOM = "slider_mode_bottom";
-    //private static final String KEY_BUTTON_CATEGORY = "buttons_category";
-    private static final String KEY_CATEGORY_GRAPHICS = "graphics";
-
-    public static final String KEY_SRGB_SWITCH = "srgb";
-    public static final String KEY_HBM_SWITCH = "hbm";
-    public static final String KEY_PROXI_SWITCH = "proxi";
-    public static final String KEY_DCI_SWITCH = "dci";
-    public static final String KEY_NIGHT_SWITCH = "night";
-    public static final String KEY_ADAPTIVE_SWITCH = "adaptive";
-    public static final String KEY_ONEPLUS_SWITCH = "oneplus";
 
     public static final String KEY_OTG_SWITCH = "otg_switch";
 
@@ -64,8 +54,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private ListPreference mSliderModeTop;
     private ListPreference mSliderModeCenter;
     private ListPreference mSliderModeBottom;
-    private static TwoStatePreference mHBMModeSwitch;
-    //private PreferenceCategory buttonCategory;
     private static TwoStatePreference mOtgSwitch;
 
 
@@ -98,11 +86,6 @@ public class DeviceSettings extends PreferenceFragment implements
         valueIndex = mSliderModeBottom.findIndexOfValue(String.valueOf(sliderModeBottom));
         mSliderModeBottom.setValueIndex(valueIndex);
         mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
-
-        mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
-        mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
-        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
 
         mOtgSwitch = (TwoStatePreference) findPreference(KEY_OTG_SWITCH);
         mOtgSwitch.setEnabled(UsbOtgSwitch.isSupported());
