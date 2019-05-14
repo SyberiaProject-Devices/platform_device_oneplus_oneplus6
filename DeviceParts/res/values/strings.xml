@@ -94,4 +94,7 @@
     <string name="toast_ringer">Mode: Ringer</string>
     <string name="toast_vibrate">Mode: Vibrate only</string>
     <string name="toast_dnd">Mode: Do Not Disturb</string>
+
+    <string name="flickerfree_summary">Enable/Disable FlickerFree option</string>
+    <string name="flickerfree_title">FlickerFree</string>
 </resources>

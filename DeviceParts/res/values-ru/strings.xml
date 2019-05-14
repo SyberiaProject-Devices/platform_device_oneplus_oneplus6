@@ -20,7 +20,7 @@
   <string name="fp_gesture_title">Жесты сканера отпечатков пальцев</string>
   <string name="category_vibrator">Вибрация</string>
   <string name="vib_strength_title_head">Сила</string>
-  <string name="vib_strength_summary_head">Настройте силу вибрации</string>
+  <string name="vib_strength_summary_head">Настройка силы вибрации</string>
   <string name="vib_test">Проверить</string>
   <string name="advanced_settings">Дополнительно</string>
   <string name="category_slider">Ползунок</string>
@@ -44,7 +44,7 @@
   <string name="category_up_arrow_gesture">Жест A</string>
   <string name="category_left_arrow_gesture">Жест &lt;</string>
   <string name="category_right_arrow_gesture">Жест &gt;</string>
-  <string name="category_gestures_summary">Настроить действия жестов</string>
+  <string name="category_gestures_summary">Настройка действия жестов</string>
   <string name="torch_entry">Фонарик</string>
   <string name="disabled_entry">Выключено</string>
   <string name="camera_entry">Камера</string>
@@ -74,7 +74,7 @@
   <string name="ambient_display_enable">Активный экран должен быть включен в настройках экрана</string>
   <string name="off_mode_title">Выкл.</string>
   <string name="wake_entry">Пробуждение</string>
-  <string name="otg_switch_summary">Включение/отключени поддержки USB-OTG</string>
+  <string name="otg_switch_summary">Включение/отключение поддержки USB-OTG</string>
   <string name="otg_switch_title">Поддержка USB-OTG</string>
   <string name="category_fp_long_press_gesture">Длительное удержание датчика отпечатков</string>
   <string name="navigate_recent">Недавние</string>
@@ -89,4 +89,8 @@
   <string name="toast_ringer">Режим: Звонок</string>
   <string name="toast_vibrate">Режим: Вибрация</string>
   <string name="toast_dnd">Режим: Не беспокоить</string>
+  
+  <!-- FlickerFree mode -->
+  <string name="flickerfree_summary">Включение режима уменьшения мерцания подсветки</string>
+  <string name="flickerfree_title">Уменьшение мерцания подсветки</string>
 </resources>

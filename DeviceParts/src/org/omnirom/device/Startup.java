@@ -97,6 +97,9 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_OTG_SWITCH, false);
         restore(UsbOtgSwitch.getFile(), enabled);
 
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FLICKERFREE_SWITCH, false);
+        restore(FlickerSwitch.getFile(), enabled);
+
         VibratorStrengthPreference.restore(context);
     }
 }
