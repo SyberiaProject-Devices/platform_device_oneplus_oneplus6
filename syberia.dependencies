@@ -8,5 +8,10 @@
    "repository" : "SyberiaProject-Devices/proprietary_vendor_oneplus",
    "target_path": "vendor/oneplus",
    "branch"     : "9.0"
+ },
+ {
+   "repository" : "syberia-project/platform_hardware_qcom_display",
+   "target_path": "hardware/qcom/display-caf/sdm845",
+   "branch"     : "9.0-caf-845"
  }
 ]
