@@ -34,3 +34,6 @@
 
 # Custom Equilizer (JamesDSP)
 /system/lib/soundfx/libjamesdsp\.so    u:object_r:vendor_file:s0
+
+# FlickerFree sysfs node
+/sys/module/msm_drm/parameters/flickerfree_enabled    u:object_r:sysfs_flickerfree:s0

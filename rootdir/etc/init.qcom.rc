@@ -53,6 +53,10 @@ on boot
     chmod 0660 /sys/devices/platform/soc/soc:goodix_fp/proximity_state
     chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
 
+    # FlickerFree node
+    chmod 0660 /sys/module/msm_drm/parameters/flickerfree_enabled
+    chown system system /sys/module/msm_drm/parameters/flickerfree_enabled
+
     # OTG switch
     chown system system /sys/class/power_supply/usb/otg_switch
     chmod 0660 /sys/class/power_supply/usb/otg_switch

@@ -48,6 +48,8 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String KEY_OTG_SWITCH = "otg_switch";
 
+    public static final String KEY_FLICKERFREE_SWITCH = "flickerfree_switch";
+
     public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
 
     private VibratorStrengthPreference mVibratorStrength;
@@ -55,6 +57,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private ListPreference mSliderModeCenter;
     private ListPreference mSliderModeBottom;
     private static TwoStatePreference mOtgSwitch;
+    private static TwoStatePreference mFlickerFree;
 
 
     @Override
@@ -91,6 +94,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mOtgSwitch.setEnabled(UsbOtgSwitch.isSupported());
         mOtgSwitch.setChecked(UsbOtgSwitch.isCurrentlyEnabled(this.getContext()));
         mOtgSwitch.setOnPreferenceChangeListener(new UsbOtgSwitch());
+
+        mFlickerFree = (TwoStatePreference) findPreference(KEY_FLICKERFREE_SWITCH);
+        mFlickerFree.setEnabled(FlickerSwitch.isSupported());
+        mFlickerFree.setChecked(FlickerSwitch.isCurrentlyEnabled(this.getContext()));
+        mFlickerFree.setOnPreferenceChangeListener(new FlickerSwitch());
 
     }
 
