@@ -13,5 +13,35 @@
    "repository" : "syberia-project/platform_hardware_qcom_display",
    "target_path": "hardware/qcom/display-caf/sdm845",
    "branch"     : "9.0-caf-845"
+ },
+ {
+   "repository" : "syberia-project/platform_vendor_nxp_interfaces_opensource_nfc",
+   "target_path": "vendor/nxp/opensource/interfaces/nfc",
+   "branch"     : "9.0-sdm845"
+ },
+ {
+   "repository" : "syberia-project/platform_vendor_nxp_opensource_external_libnfc-nci",
+   "target_path": "vendor/nxp/opensource/commonsys/external/libnfc-nci",
+   "branch"     : "9.0-sdm845"
+ },
+ {
+   "repository" : "syberia-project/platform_vendor_nxp_opensource_frameworks",
+   "target_path": "vendor/nxp/opensource/commonsys/frameworks",
+   "branch"     : "9.0-sdm845"
+ },
+ {
+   "repository" : "syberia-project/platform_vendor_nxp_opensource_packages_apps_Nfc",
+   "target_path": "vendor/nxp/opensource/commonsys/packages/apps/Nfc",
+   "branch"     : "9.0-sdm845"
+ },
+ {
+   "repository" : "syberia-project/platform_vendor_nxp_opensource_halimpl",
+   "target_path": "vendor/nxp/opensource/halimpl",
+   "branch"     : "9.0-sdm845"
+ },
+ {
+   "repository" : "syberia-project/platform_vendor_nxp_opensource_hidlimpl",
+   "target_path": "vendor/nxp/opensource/hidlimpl",
+   "branch"     : "9.0-sdm845"
  }
 ]
