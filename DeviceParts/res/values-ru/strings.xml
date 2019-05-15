@@ -86,7 +86,8 @@
   <string name="volume_down">Уменьшить громкость</string>
   <string name="slider_mode_zen">Не беспокоить</string>
 
-  <string name="toast_ringer">Режим: Звонок</string>
-  <string name="toast_vibrate">Режим: Вибрация</string>
-  <string name="toast_dnd">Режим: Не беспокоить</string>
+  <string name="toast_ringer">Звонок</string>
+  <string name="toast_vibrate">Вибрация</string>
+  <string name="toast_dnd">Не беспокоить</string>
+  <string name="toast_silent">Без звука</string>
 </resources>

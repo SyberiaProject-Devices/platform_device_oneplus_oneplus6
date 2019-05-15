@@ -91,7 +91,8 @@
     <string name="ambient_display_enable">Ambient display must be enabled in display settings</string>
     <string name="wake_entry">Wakeup</string>
 
-    <string name="toast_ringer">Mode: Ringer</string>
-    <string name="toast_vibrate">Mode: Vibrate only</string>
-    <string name="toast_dnd">Mode: Do Not Disturb</string>
+    <string name="toast_ringer">Ringer</string>
+    <string name="toast_vibrate">Vibrate only</string>
+    <string name="toast_dnd">Do Not Disturb</string>
+    <string name="toast_silent">Silent</string>
 </resources>

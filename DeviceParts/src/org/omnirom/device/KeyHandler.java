@@ -511,7 +511,12 @@ public class KeyHandler implements DeviceKeyHandler {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             showToast(R.string.toast_dnd, Toast.LENGTH_SHORT, yOffset);
+        } else if (action == 3) {
+            mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
+            mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
+            showToast(R.string.toast_silent, Toast.LENGTH_SHORT, yOffset);
         }
+
     }
 
     private Intent createIntent(String value) {
