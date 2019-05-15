@@ -23,7 +23,6 @@ lib64/libjni_filtergenerator.so
 lib64/libjni_hazebuster.so
 lib64/libjni_makeupV2.so
 lib64/libjni_optizoom.so
-lib64/libjni_pacprocessor.so
 lib64/libjni_seestraight.so
 lib64/libjni_sharpshooter.so
 lib64/libjni_stillmore.so
@@ -111,12 +110,9 @@ lib64/vendor.qti.imsrtpservice@1.0.so
 -app/NxpSecureElement/NxpSecureElement.apk
 framework/com.nxp.nfc.jar
 etc/permissions/com.nxp.nfc.xml
-lib64/android.hardware.secure_element@1.0.so
 lib64/ese_spi_nxp.so
 lib64/libnxpnfc_nci_jni.so
 lib64/libnxpnfc-nci.so
-lib64/vendor.nxp.nxpnfc@1.0.so
-lib64/vendor.nxp.nxpese@1.0.so
 etc/nfcee_access.xml
 
 # Telephony
@@ -143,23 +139,19 @@ lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib64/extractors/libmmparser.so
 lib64/libFileMux.so
 lib64/libOmxMux.so
-lib64/libdisplayconfig.so
 lib64/libmmparser_lite.so
 lib64/libmmosal.so
 lib64/libmmrtpdecoder.so
 lib64/libmmrtpencoder.so
-lib64/libqdMetaData.system.so
 lib64/libwfdclient.so
 lib64/libwfdnative.so
 lib/extractors/libmmparser.so
 lib/libFileMux.so
-lib/libdisplayconfig.so
 lib/libmmparser_lite.so
 lib/libmmosal.so
 lib/libmmrtpdecoder.so
 lib/libmmrtpencoder.so
 lib/libOmxMux.so
-lib/libqdMetaData.system.so
 lib/libwfdaac.so
 lib/libwfdavenhancements.so
 lib/libwfdcodecv4l2.so

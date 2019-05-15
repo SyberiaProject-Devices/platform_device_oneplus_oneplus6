@@ -84,7 +84,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Display
 PRODUCT_PACKAGES += \
     libvulkan \
+    libdisplayconfig \
+    libqdMetaData.system \
     vendor.display.config@1.7
+
 
 # Hostapd
 PRODUCT_COPY_FILES += \
@@ -136,6 +139,9 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1 \
+    android.hardware.secure_element@1.0 \
+    vendor.nxp.nxpese@1.0 \
+    vendor.nxp.nxpnfc@1.0 \
     com.android.nfc_extras \
     Tag
 
