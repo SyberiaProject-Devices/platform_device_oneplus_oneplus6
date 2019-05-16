@@ -85,6 +85,9 @@ lib/libdpmtcm.so
 # DASH
 -sbin/dashd;rootfs
 
+# Display postprocessing
+lib64/vendor.display.color@1.0.so
+
 # HotwordEnrollment
 -priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
 -priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
@@ -114,6 +117,9 @@ lib64/ese_spi_nxp.so
 lib64/libnxpnfc_nci_jni.so
 lib64/libnxpnfc-nci.so
 etc/nfcee_access.xml
+
+# SDM
+lib64/libsdm-disp-apis.so
 
 # Telephony
 -app/QtiTelephonyService/QtiTelephonyService.apk
