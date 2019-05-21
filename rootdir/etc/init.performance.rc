@@ -4,6 +4,7 @@ on init
     write /dev/stune/system-background/schedtune.colocate 0
     write /dev/stune/foreground/schedtune.colocate 0
     write /dev/stune/top-app/schedtune.colocate 0
+    write /dev/stune/audio-app/schedtune.colocate 0
 
     # Set default SchedTune value for foreground/top-app on init
     write /dev/stune/foreground/schedtune.prefer_idle 1
@@ -18,6 +19,7 @@ on boot
 on fs
     write /dev/stune/foreground/schedtune.sched_boost_no_override 0
     write /dev/stune/top-app/schedtune.sched_boost_no_override 0
+    write /dev/stune/audio-app/schedtune.sched_boost_no_override 0
 
 on property:vendor.post_boot.parsed=1
 
@@ -80,6 +82,7 @@ on property:vendor.post_boot.parsed=1
 
     # CPU input boost
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 902400
+    write /sys/module/cpu_input_boost/parameters/input_boost_duration 150
 
     # Enable PEWQ
     write /sys/module/workqueue/parameters/power_efficient Y
@@ -96,15 +99,18 @@ on property:vendor.post_boot.parsed=1
     write /dev/stune/top-app/schedtune.sched_boost 0
     write /dev/stune/top-app/notify_on_release 0
     write /dev/stune/top-app/cgroup.clone_children 0
-    write /dev/stune/foreground/schedtune.sched_boost 10
     write /dev/stune/foreground/notify_on_release 0
     write /dev/stune/foreground/cgroup.clone_children 0
     write /dev/stune/background/schedtune.sched_boost 0
     write /dev/stune/background/notify_on_release 0
     write /dev/stune/background/cgroup.clone_children 0
-    write /proc/sys/kernel/sched_schedstats 0
+    write /dev/stune/audio-app/schedtune.prefer_idle 1
+    write /dev/stune/audio-app/schedtune.sched_boost 0
     write /proc/sys/kernel/sched_min_granularity_ns 1000000
-    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+    write /proc/sys/kernel/sched_schedstats 0
+
+    # Increase how much CPU bandwidth (CPU time) realtime scheduling processes are given
+    write /proc/sys/kernel/sched_rt_runtime_us 980000
 
     # CGROUPS
     write /dev/cpuset/cgroup.clone_children 0
@@ -123,17 +129,13 @@ on property:vendor.post_boot.parsed=1
     write /dev/blkio/bg/notify_on_release 0
 
     # Since we are not using core rotator, lets load balance
-    write /dev/cpuset/top-app/cpus 0-7	
-    write /dev/cpuset/foreground/cpus 0-3,6-7	
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-3,6-7
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
 
     # For better screen off idle
     write /dev/cpuset/restricted/cpus "0-3"
-
-    # FileSystem (FS) optimized tweaks & enhancements for a improved userspace experience
-    write /proc/sys/fs/dir-notify-enable 0
-    write /proc/sys/fs/lease-break-time 20
 
     # Set GPU idle timeout
     write /sys/class/drm/card0/device/idle_timeout_ms 64
@@ -141,5 +143,7 @@ on property:vendor.post_boot.parsed=1
     # Marginally reduce suspend latency
     write /sys/module/printk/parameters/console_suspend 1
 
-    # Reduce kswapd cpu usage
-    write /proc/sys/vm/swappiness 85
+    # Reduce kswapd cpu usage and tune dirty ratio
+    write /proc/sys/vm/swappiness 65
+    write /proc/sys/vm/dirty_ratio 7
+    write /proc/sys/vm/dirty_background_ratio 3
