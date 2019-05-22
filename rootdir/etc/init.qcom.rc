@@ -8,17 +8,25 @@ on init
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
     mount none /system/etc/msm_irqbalance.conf /vendor/etc/msm_irqbalance.conf bind
 
-# Mount and use blkio cgroup
-    mkdir /dev/blkio
-    mount cgroup none /dev/blkio blkio
-    chown system system /dev/blkio
-    chown system system /dev/blkio/tasks
-    chmod 0664 /dev/blkio/tasks
-    mkdir /dev/blkio/bg 0755 system system
-    chown system system /dev/blkio/bg/tasks
-    chmod 0664 /dev/blkio/bg/tasks
-    write /dev/blkio/blkio.weight 1000
-    write /dev/blkio/bg/blkio.weight 100
+
+on early-init
+
+    # mount schedtune and blkio together in "on early-init",
+    # so that mount schedtune in init.rc will fail
+    mkdir /dev/stune
+    mount cgroup none /dev/stune nodev noexec nosuid schedtune,blkio
+
+    mkdir /dev/stune/foreground
+    mkdir /dev/stune/background
+    mkdir /dev/stune/top-app
+    mkdir /dev/stune/rt
+
+    # blkio init setting
+    write /dev/stune/blkio.group_idle 0
+    write /dev/stune/foreground/blkio.group_idle 0
+    write /dev/stune/background/blkio.group_idle 0
+    write /dev/stune/top-app/blkio.group_idle 0
+    write /dev/stune/rt/blkio.group_idle 0
 
 on boot
     # Touchpanel
