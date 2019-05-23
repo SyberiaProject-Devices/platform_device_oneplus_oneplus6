@@ -126,3 +126,7 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/vm/swappiness 65
     write /proc/sys/vm/dirty_ratio 7
     write /proc/sys/vm/dirty_background_ratio 3
+
+    # Restart IRQ balancer after boot complete
+    stop vendor.msm_irqbalance;
+    start vendor.msm_irqbalance;
