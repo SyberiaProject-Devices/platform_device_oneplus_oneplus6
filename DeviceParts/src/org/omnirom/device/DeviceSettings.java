@@ -48,6 +48,8 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String KEY_OTG_SWITCH = "otg_switch";
 
+    public static final String KEY_DT2W_SWITCH = "dt2w_switch";
+
     public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
 
     private VibratorStrengthPreference mVibratorStrength;
@@ -55,6 +57,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private ListPreference mSliderModeCenter;
     private ListPreference mSliderModeBottom;
     private static TwoStatePreference mOtgSwitch;
+    private static TwoStatePreference mDt2wSwitch;
 
 
     @Override
@@ -91,6 +94,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mOtgSwitch.setEnabled(UsbOtgSwitch.isSupported());
         mOtgSwitch.setChecked(UsbOtgSwitch.isCurrentlyEnabled(this.getContext()));
         mOtgSwitch.setOnPreferenceChangeListener(new UsbOtgSwitch());
+
+        mDt2wSwitch = (TwoStatePreference) findPreference(KEY_DT2W_SWITCH);
+        mDt2wSwitch.setEnabled(DoubleTapSwitch.isSupported());
+        mDt2wSwitch.setChecked(DoubleTapSwitch.isCurrentlyEnabled(this.getContext()));
+        mDt2wSwitch.setOnPreferenceChangeListener(new DoubleTapSwitch());
 
     }
 

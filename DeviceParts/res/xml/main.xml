@@ -68,4 +68,10 @@
             android:entryValues="@array/slider_key_action_values"
             android:persistent="false" />
     </PreferenceCategory>
+
+   <SwitchPreference
+        android:key="dt2w_switch"
+        android:summary="@string/dt2w_summary"
+        android:title="@string/dt2w_title" />
+
 </PreferenceScreen>
