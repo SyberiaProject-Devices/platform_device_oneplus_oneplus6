@@ -85,6 +85,8 @@
   <string name="volume_up">Увеличить громкость</string>
   <string name="volume_down">Уменьшить громкость</string>
   <string name="slider_mode_zen">Не беспокоить</string>
+  <string name="dt2w_title">Включение нажатием</string>
+  <string name="dt2w_summary">Дважды нажмите в любом месте экрана, чтобы включить устройство</string>
 
   <string name="toast_ringer">Звонок</string>
   <string name="toast_vibrate">Вибрация</string>
