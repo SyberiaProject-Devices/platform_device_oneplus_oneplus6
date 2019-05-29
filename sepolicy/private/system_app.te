@@ -1,3 +1,7 @@
 # Pocketmode
 allow system_app sysfs_fpc_proximity:file { w_file_perms getattr };
 allow system_app sysfs_leds:file rw_file_perms;
+
+#DT2W
+allow system_app proc_touchpanel:dir search;
+allow system_app proc_touchpanel:file w_file_perms;
