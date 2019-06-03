@@ -60,6 +60,33 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.iop.enable_prefetch_ofr=0 \
     persist.vendor.qti.games.gt.prof=1
 
+#Low latency playback
+# Bug 77867216
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.adm.buffering.ms=3 \
+    vendor.audio.adm.buffering.ms=3 \
+    audio_hal.period_multiplier=2 \
+    af.fast_track_multiplier=1
+
+# 1 is AAUDIO_POLICY_NEVER  means only use Legacy path.
+# 2 is AAUDIO_POLICY_AUTO   means try MMAP then fallback to Legacy path.
+# 3 is AAUDIO_POLICY_ALWAYS means only use MMAP path.
+PRODUCT_PROPERTY_OVERRIDES += \
+    aaudio.mmap_policy=2
+# 1 is AAUDIO_POLICY_NEVER  means only use SHARED mode
+# 2 is AAUDIO_POLICY_AUTO   means try EXCLUSIVE then fallback to SHARED mode.
+# 3 is AAUDIO_POLICY_ALWAYS means only use EXCLUSIVE mode.
+PRODUCT_PROPERTY_OVERRIDES += \
+    aaudio.mmap_exclusive_policy=2
+
+# Increase the apparent size of a hardware burst from 1 msec to 2 msec.
+# A "burst" is the number of frames processed at one time.
+# That is an increase from 48 to 96 frames at 48000 Hz.
+# The DSP will still be bursting at 48 frames but AAudio will think the burst is 96 frames.
+# A low number, like 48, might increase power consumption or stress the system.
+PRODUCT_PROPERTY_OVERRIDES += \
+    aaudio.hw_burst_min_usec=2000
+
 # OTG
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.oem.otg_support=true
