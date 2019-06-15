@@ -117,7 +117,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # SSR
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.ssr.restart_level=ALL_ENABLE
+    persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
