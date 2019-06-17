@@ -18,9 +18,6 @@ unix_socket_connect(hal_livedisplay_sdm845, pps, mm-pp-daemon)
 # Allow LiveDisplay to read display props
 get_prop(hal_livedisplay_sdm845, vendor_display_prop)
 
-# Talk to the binder device node
-allow hal_livedisplay_sdm845 binder_device:chr_file rw_file_perms;
-
 # Allow LiveDisplay to store files under /data/display and access them
 allow hal_livedisplay_sdm845 display_data_file:dir rw_dir_perms;
 allow hal_livedisplay_sdm845 display_data_file:file create_file_perms;
