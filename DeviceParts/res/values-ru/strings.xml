@@ -33,6 +33,7 @@
   <string name="slider_mode_priority">Только важные</string>
   <string name="slider_mode_alarm">Только будильники</string>
   <string name="slider_mode_dnd">Полная тишина</string>
+  <string name="slider_mode_flashlight">Фонарик</string>
   <string name="slider_mode_title_top">Верхнее положение</string>
   <string name="slider_mode_title_center">Среднее положение</string>
   <string name="slider_mode_title_bottom">Нижнее положение</string>
@@ -92,4 +93,5 @@
   <string name="toast_vibrate">Вибрация</string>
   <string name="toast_dnd">Не беспокоить</string>
   <string name="toast_silent">Без звука</string>
+  <string name="toast_flash">Фонарик</string>
 </resources>
