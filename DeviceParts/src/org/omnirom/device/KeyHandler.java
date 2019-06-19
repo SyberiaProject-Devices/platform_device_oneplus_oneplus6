@@ -174,6 +174,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private Toast toast;
     private final Context mSysUiContext;
     private final Context mResContext;
+    private boolean mToggleTorch = false;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -502,21 +503,49 @@ public class KeyHandler implements DeviceKeyHandler {
         if ( action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+            toggleTorch(false);
     	    showToast(R.string.toast_ringer, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
+            toggleTorch(false);
             showToast(R.string.toast_vibrate, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 2) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+            toggleTorch(false);
             showToast(R.string.toast_dnd, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 3) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
+            toggleTorch(false);
             showToast(R.string.toast_silent, Toast.LENGTH_SHORT, yOffset);
+        } else if (action == 4) {
+            mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
+            mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+            if (mProxyIsNear && mUseProxiCheck) {
+                return;
+            } else {
+                mToggleTorch = true;
+                toggleTorch(true);
+            }
         }
 
+    }
+
+    private void toggleTorch(boolean value) {
+        IStatusBarService service = getStatusBarService();
+        if (service != null) {
+            try {
+                if (mToggleTorch)
+                    service.toggleCameraFlashOn();
+                else 
+                    service.toggleCameraFlashOff();
+                mToggleTorch = value;
+            } catch (RemoteException e) {
+                    // do nothing.
+            }
+        }
     }
 
     private Intent createIntent(String value) {
