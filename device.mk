@@ -113,8 +113,7 @@ PRODUCT_COPY_FILES += \
 
 #Lawnchair
 PRODUCT_PACKAGES += \
-    Lawnchair \
-    LawnConf
+    Lawnchair
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
