@@ -46,7 +46,7 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/iowait_boost_enable 1
 
     # CPU input boost
-    write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 902400
+    # write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 902400
 
     # Enable PEWQ
     write /sys/module/workqueue/parameters/power_efficient Y
