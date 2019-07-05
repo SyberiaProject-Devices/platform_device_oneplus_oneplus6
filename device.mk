@@ -137,12 +137,9 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.1 \
-    android.hardware.secure_element@1.0 \
-    vendor.nxp.nxpese@1.0 \
-    vendor.nxp.nxpnfc@1.0 \
-    com.android.nfc_extras \
-    Tag
+    NfcNci \
+    Tag \
+    com.android.nfc_extras
 
 # OnePlus Camera HIDL
 PRODUCT_PACKAGES += \
