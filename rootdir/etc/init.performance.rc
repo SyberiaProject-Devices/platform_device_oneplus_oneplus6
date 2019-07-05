@@ -24,10 +24,6 @@ on fs
 
 on property:vendor.post_boot.parsed=1
 
-    # Post boot IO scheduler tuning
-    write /sys/block/sda/queue/read_ahead_kb 128
-    write /sys/block/dm-0/queue/read_ahead_kb 128
-
     # Tune Core_CTL for proper task placement
     write /sys/devices/system/cpu/cpu0/core_ctl/enable 0
     write /sys/devices/system/cpu/cpu4/core_ctl/enable 0
