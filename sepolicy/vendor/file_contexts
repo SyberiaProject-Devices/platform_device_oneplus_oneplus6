@@ -23,5 +23,16 @@
 /vendor/bin/hw/android\.hardware\.power-service\.op6-libperfmgr                                  u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power\.stats@1\.0-service\.op6                                 u:object_r:hal_power_stats_default_exec:s0
 
+# HALs
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service           u:object_r:hal_dms_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.camera\.CameraHIDL@1\.0-service    u:object_r:hal_cameraHIDL_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.display@1\.0-service     u:object_r:hal_display_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.drmkey@1\.0-service      u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.hdcpkey@1\.0-service     u:object_r:hal_hdcpkey_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.ifaa@2\.0-service        u:object_r:hal_ifaa_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service       u:object_r:hal_param_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.rpmb@1\.0-service        u:object_r:hal_rpmb_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.wifi@1\.0-service        u:object_r:hal_wifi_default_exec:s0
+
 # DASH
 /system/bin/dashd    u:object_r:dashd_exec:s0
