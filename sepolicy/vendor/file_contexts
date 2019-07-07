@@ -7,10 +7,16 @@
 /firmware(/.*)?          u:object_r:firmware_file:s0
 /persist(/.*)?           u:object_r:mnt_vendor_file:s0
 
+# Devices
 /dev/block/platform/soc/1d84000\.ufshc/by-name/config         u:object_r:frp_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/oem_dycnvbk    u:object_r:oem_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/oem_stanvbk    u:object_r:oem_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/param          u:object_r:param_block_device:s0
+
+# Devices
+/dev/dash         u:object_r:dash_device:s0
+/dev/goodix_fp    u:object_r:fingerprintd_device:s0
+/dev/p73          u:object_r:nfc_device:s0
 
 # Data files
 /data/display(/.*)?      u:object_r:display_data_file:s0

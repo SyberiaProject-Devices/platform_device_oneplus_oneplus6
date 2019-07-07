@@ -2,3 +2,5 @@ type dash_device, dev_type;
 type oem_block_device, dev_type;
 type param_block_device, dev_type;
 type param_device, dev_type;
+
+type fingerprintd_device, dev_type;
