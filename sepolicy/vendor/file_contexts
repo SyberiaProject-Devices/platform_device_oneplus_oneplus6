@@ -28,6 +28,10 @@
 /sys/devices/platform/soc/soc:goodix_fp/proximity_state    u:object_r:sysfs_fpc_proximity:s0
 /sys/devices/platform/soc/soc:fingerprint_detect/sensor_version    u:object_r:sysfs_fpc:s0
 
+# Persist files
+/mnt/vendor/persist/camera(/.*)?                     u:object_r:persist_camera_file:s0
+/mnt/vendor/persist/dual_camera_calibration(/.*)?    u:object_r:persist_camera_file:s0
+
 # Custom HALs
 /vendor/bin/hw/android\.hardware\.light@2\.0-service                                             u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/lineage\.livedisplay@2\.0-service\.oneplus_sdm845                                 u:object_r:hal_livedisplay_sdm845_exec:s0
