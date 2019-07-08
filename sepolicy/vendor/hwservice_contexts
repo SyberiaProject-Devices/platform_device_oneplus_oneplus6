@@ -7,3 +7,4 @@ vendor.oneplus.hardware.ifaa::IOneplusIfaa                  u:object_r:hal_ifaa_
 vendor.oneplus.hardware.param::IOneplusParam                u:object_r:hal_param_hwservice:s0
 vendor.oneplus.hardware.rpmb::IOneplusRpmb                  u:object_r:hal_rpmb_hwservice:s0
 vendor.oneplus.hardware.wifi::IOneplusWifi                  u:object_r:hal_wifi_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc                                  u:object_r:hal_nfc_hwservice:s0
