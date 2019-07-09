@@ -1,0 +1,3 @@
+# Allow hal_sensors_default to read and write to proc_touchpanel
+allow hal_sensors_default proc_touchpanel:dir search;
+allow hal_sensors_default proc_touchpanel:file rw_file_perms;
