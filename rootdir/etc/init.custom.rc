@@ -141,6 +141,10 @@ on property:vendor.post_boot.parsed=1
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
 
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
+
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
