@@ -31,6 +31,7 @@
 # Persist files
 /mnt/vendor/persist/camera(/.*)?                     u:object_r:persist_camera_file:s0
 /mnt/vendor/persist/dual_camera_calibration(/.*)?    u:object_r:persist_camera_file:s0
+/mnt/vendor/persist/engineermode(/.*)?               u:object_r:persist_engineer_file:s0
 
 # Custom HALs
 /vendor/bin/hw/android\.hardware\.light@2\.0-service                                             u:object_r:hal_light_default_exec:s0
