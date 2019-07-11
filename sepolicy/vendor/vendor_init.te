@@ -6,6 +6,9 @@ permissive vendor_init;
 set_prop(vendor_init, public_vendor_default_prop)
 typeattribute vendor_init data_between_core_and_vendor_violators;
 
+# Allow vendor_init to write to sysfs_ssr_toggl
+allow vendor_init sysfs_ssr_toggle:file w_file_perms;
+
 # Allow vendor_init to check encryption status of system_data_file
 allow vendor_init system_data_file:dir { ioctl open read setattr };
 

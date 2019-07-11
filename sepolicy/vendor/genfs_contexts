@@ -10,24 +10,20 @@ genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display@21/display_mode u:obje
 # SSR
 genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys0/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys0/restart_level u:object_r:sysfs_ssr_toggle:s0
-
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys1/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys1/restart_level u:object_r:sysfs_ssr_toggle:s0
-
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys2/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys2/restart_level u:object_r:sysfs_ssr_toggle:s0
-
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys3/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys3/restart_level u:object_r:sysfs_ssr_toggle:s0
-
 genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys4/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys4/restart_level u:object_r:sysfs_ssr_toggle:s0
-
 genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys5/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys5/restart_level u:object_r:sysfs_ssr_toggle:s0
-
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys7/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys8/restart_level u:object_r:sysfs_ssr_toggle:s0
 
 genfscon debugfs /wlan0                               u:object_r:debugfs_wlan:s0
 genfscon debugfs /sched_features                      u:object_r:debugfs_sched_features:s0
