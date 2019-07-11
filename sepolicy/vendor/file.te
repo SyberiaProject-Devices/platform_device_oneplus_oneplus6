@@ -23,3 +23,4 @@ type sysfs_fpc, sysfs_type, fs_type;
 
 # data
 type wifi_nv_data_file, file_type, data_file_type;
+type fpc_images_file, file_type, core_data_file_type, data_file_type;
