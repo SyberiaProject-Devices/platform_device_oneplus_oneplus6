@@ -23,3 +23,9 @@ persist.vendor.nfc.        u:object_r:vendor_nfc_prop:s0
 persist.vendor.oem.nfc.    u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.notify_tp    u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.            u:object_r:vendor_nfc_prop:s0
+
+# RIL
+ro.ril.supportLTE               u:object_r:radio_prop:s0
+vendor.oem.bt.addr              u:object_r:vendor_radio_prop:s0
+vendor.oem.device.imeicache1    u:object_r:vendor_radio_prop:s0
+vendor.oem.device.imeicache2    u:object_r:vendor_radio_prop:s0
