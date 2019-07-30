@@ -92,6 +92,10 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.1-impl \
     audio.a2dp.default \
     libaudio-resampler \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libvolumelistener \
     libstagefright_softomx
 
 # Boot control
