@@ -103,4 +103,7 @@
     <string name="toast_dnd">Do Not Disturb</string>
     <string name="toast_silent">Silent</string>
     <string name="toast_flash">Flashlight</string>
+
+    <string name="dcdimming_summary">Enable/Disable DC Dimming</string>
+    <string name="dcdimming_title">DC dimming</string>
 </resources>

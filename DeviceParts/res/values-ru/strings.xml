@@ -98,4 +98,8 @@
   <string name="toast_dnd">Не беспокоить</string>
   <string name="toast_silent">Без звука</string>
   <string name="toast_flash">Фонарик</string>
+
+  <string name="dcdimming_summary">Включить/выключить DC димминг</string>
+  <string name="dcdimming_title">DC димминг</string>
+
 </resources>
