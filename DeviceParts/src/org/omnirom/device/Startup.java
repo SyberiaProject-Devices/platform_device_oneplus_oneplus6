@@ -100,6 +100,9 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DT2W_SWITCH, false);
         restore(DoubleTapSwitch.getFile(), enabled);
 
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
+        restore(DCDimmingSwitch.getFile(), enabled);
+
         VibratorStrengthPreference.restore(context);
         VibratorCallStrengthPreference.restore(context);
         VibratorNotifStrengthPreference.restore(context);
