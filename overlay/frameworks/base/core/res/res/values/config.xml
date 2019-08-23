@@ -763,8 +763,4 @@
     <!-- Enable overlay for all location components. -->
     <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-
-    <!-- Value for overriding outdoor capable mode for LiveDisplay tile -->
-    <bool name="config_outdoorCapable">true</bool>
-
 </resources>
