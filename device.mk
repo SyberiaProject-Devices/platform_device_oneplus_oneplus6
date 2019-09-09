@@ -171,7 +171,6 @@ PRODUCT_BOOT_JARS += \
 # Update engine
 PRODUCT_PACKAGES += \
     bootctrl.sdm845.recovery \
-    brillo_update_payload \
     update_engine \
     update_engine_sideload \
     update_verifier
