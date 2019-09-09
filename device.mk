@@ -35,6 +35,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+
 # A/B
 AB_OTA_UPDATER := true
 
