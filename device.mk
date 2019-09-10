@@ -65,7 +65,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_effects.xml:system/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/etc/msm_irqbalance.conf
 
 # Boot control
@@ -77,8 +76,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.performance.rc \
-    init.recovery.qcom.rc \
-    init.jamesdsp.sh
+    init.recovery.qcom.rc
 
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
