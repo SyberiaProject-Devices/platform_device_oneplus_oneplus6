@@ -76,7 +76,8 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.performance.rc \
-    init.recovery.qcom.rc
+    init.recovery.qcom.rc \
+    ueventd.qcom.rc
 
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
