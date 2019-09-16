@@ -167,7 +167,7 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_oneplus6
+TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit_oneplus6
 TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus6
 
 # Inherit from the proprietary version
