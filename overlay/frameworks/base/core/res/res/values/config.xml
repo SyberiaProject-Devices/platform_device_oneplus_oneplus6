@@ -712,6 +712,11 @@
     <dimen name="status_bar_height_portrait">80px</dimen>
     <dimen name="status_bar_height_landscape">80px</dimen>
 
+    <!-- Radius of the software rounded corners at the top and bottom of the display in its
+        natural orientation. If zero, the value of rounded_corner_radius is used. -->
+    <dimen name="rounded_corner_radius_top">84.0px</dimen>
+    <dimen name="rounded_corner_radius_bottom">68.0px</dimen>
+
     <!-- True if the device supports Sustained Performance Mode-->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
