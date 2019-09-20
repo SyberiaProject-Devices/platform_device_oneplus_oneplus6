@@ -1,7 +1,0 @@
-type hal_light_sdm845, coredomain, domain;
-hal_server_domain(hal_light_sdm845, hal_light)
-
-type hal_light_sdm845_exec, system_file_type, exec_type, file_type;
-init_daemon_domain(hal_light_sdm845)
-
-allow hal_light_sdm845 sysfs_oem:file rw_file_perms;
