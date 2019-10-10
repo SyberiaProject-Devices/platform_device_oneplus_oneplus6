@@ -29,6 +29,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 TARGET_OTA_ASSERT_DEVICE := oneplus6,OnePlus6,enchilada
 
+# Component overrides
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
