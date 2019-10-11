@@ -110,11 +110,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.calls.on.ims=1 \
     ro.telephony.default_network=22,22
 
-# Touchscreen
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qti.inputopts.enable=true \
-    persist.vendor.qti.inputopts.movetouchslop=0.6
-
 # Netmgr
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.iwlan.enable=true \
