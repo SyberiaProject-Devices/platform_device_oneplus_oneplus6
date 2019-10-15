@@ -19,7 +19,7 @@
 set -e
 
 # Required!
-DEVICE=sdm845-common
+DEVICE_COMMON=sdm845-common
 VENDOR=oneplus
 
 INITIAL_COPYRIGHT_YEAR=2018
@@ -38,7 +38,7 @@ fi
 . "$HELPER"
 
 # Initialize the helper for common
-setup_vendor "$DEVICE" "$VENDOR" "$SYBERIA_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$SYBERIA_ROOT" true
 
 # Copyright headers and guards
 write_headers "oneplus6 oneplus6t"
