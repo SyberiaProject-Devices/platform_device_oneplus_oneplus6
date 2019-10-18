@@ -54,8 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
     debug.sf.early_phase_offset_ns=1500000 \
     persist.vendor.color.matrix=2 \
-    debug.cpurend.vsync=false \
-    ro.sf.enable_fb_scaling=1
+    debug.cpurend.vsync=false
 
 # QTI Performance
 PRODUCT_PROPERTY_OVERRIDES += \
