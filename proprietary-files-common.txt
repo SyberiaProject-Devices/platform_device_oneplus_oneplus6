@@ -181,23 +181,26 @@ lib64/vendor.qti.gnss@1.1.so
 lib64/vendor.qti.gnss@1.2.so
 lib64/vendor.qti.gnss@2.0.so
 
-#QTI Performance libs, QPerformance.jar - from sakura - sakura-user-9-PKQ1.180917.001-9.1.25-release-keys
--framework/QPerformance.jar|7097b093f8c946892176835a7b80977e8fea570c
--framework/UxPerformance.jar|0e3babfa37e2368aee16de3d6f8cdea06e081dea
+#QTI Performance - from OnePlus 7 Pro 9.5.11
+-app/workloadclassifier/workloadclassifier.apk
+-framework/QPerformance.jar
+-framework/UxPerformance.jar
 bin/perfservice
 etc/init/perfservice.rc
-etc/perf/whitelistedapps.xml
+etc/perf/wlc_model.tflite
 lib/libqti-at.so
 lib/libqti-perfd-client_system.so
-lib/libqti-util_system.so
 lib/libqti_performance.so
+lib/libqti-iopd-client_system.so
+lib/libqti-util_system.so
 lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
 lib/vendor.qti.hardware.perf@1.0.so
-lib64/libqti-at.so
 lib64/libqti-perfd-client_system.so
-lib64/libqti-util_system.so
 lib64/libqti_performance.so
+lib64/libqti-iopd-client_system.so
+lib64/libqti-util_system.so
 lib64/vendor.qti.hardware.iop@1.0.so
 lib64/vendor.qti.hardware.iop@2.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
+lib64/libqti_workloadclassifiermodel.so
