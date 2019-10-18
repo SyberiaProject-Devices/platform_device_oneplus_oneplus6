@@ -166,6 +166,11 @@ lib64/libwfduibcsrcinterface.so
 -priv-app/WfdService/WfdService.apk
 product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 
+#QTI AV Enhancements
+lib/libavenhancements.so
+lib/libqct_resampler.so
+lib64/libavenhancements.so
+
 #QTI location provider
 framework/com.qti.location.sdk.jar
 framework/izat.xt.srv.jar
