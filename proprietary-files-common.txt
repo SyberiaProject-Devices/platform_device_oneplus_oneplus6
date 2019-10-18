@@ -182,10 +182,12 @@ lib64/vendor.qti.gnss@1.2.so
 lib64/vendor.qti.gnss@2.0.so
 
 #QTI Performance - from OnePlus 7 Pro 9.5.11
+-app/workloadclassifier/workloadclassifier.apk
 -framework/QPerformance.jar
 -framework/UxPerformance.jar
 bin/perfservice
 etc/init/perfservice.rc
+etc/perf/wlc_model.tflite
 lib/libqti-at.so
 lib/libqti-perfd-client_system.so
 lib/libqti_performance.so
@@ -201,3 +203,4 @@ lib64/libqti-util_system
 lib64/vendor.qti.hardware.iop@1.0
 lib64/vendor.qti.hardware.iop@2.0
 lib64/vendor.qti.hardware.perf@1.0
+lib64/libqti_workloadclassifiermodel.so
