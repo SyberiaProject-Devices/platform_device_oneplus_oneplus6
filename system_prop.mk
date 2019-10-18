@@ -56,13 +56,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.color.matrix=2 \
     debug.cpurend.vsync=false
 
-# QTI Performance
+# IOP and Workload Classifier props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.at_library=libqti-at.so \
     vendor.iop.enable_uxe=1 \
-    vendor.perf.iop_v3.enable=1 \
-    vendor.iop.enable_prefetch_ofr=0 \
-    persist.vendor.qti.games.gt.prof=1
+    vendor.perf.iop_v3.enable=true \
+    vendor.perf.gestureflingboost.enable=true \
+    vendor.perf.workloadclassifier.enable=true
 
 # OTG
 PRODUCT_PROPERTY_OVERRIDES += \
