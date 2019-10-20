@@ -188,6 +188,12 @@ PRODUCT_PACKAGES += \
     libmetricslogger \
     libhwbinder
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # OnePlus Camera HIDL
 PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0 \
