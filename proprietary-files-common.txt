@@ -171,21 +171,6 @@ lib/libavenhancements.so
 lib/libqct_resampler.so
 lib64/libavenhancements.so
 
-#QTI location provider
-framework/com.qti.location.sdk.jar
-framework/izat.xt.srv.jar
-priv-app/com.qualcomm.location/com.qualcomm.location.apk
-etc/permissions/izat.xt.srv.xml
-etc/permissions/privapp-permissions-com.qualcomm.location.xml
-etc/permissions/com.qualcomm.location.xml
-etc/permissions/com.qti.location.sdk.xml
-lib/liblocationservice_jni.so
-lib64/liblocationservice_jni.so
-lib64/vendor.qti.gnss@1.0.so
-lib64/vendor.qti.gnss@1.1.so
-lib64/vendor.qti.gnss@1.2.so
-lib64/vendor.qti.gnss@2.0.so
-
 #QTI Performance - from OnePlus 7 Pro 9.5.11
 -app/workloadclassifier/workloadclassifier.apk
 -framework/QPerformance.jar
