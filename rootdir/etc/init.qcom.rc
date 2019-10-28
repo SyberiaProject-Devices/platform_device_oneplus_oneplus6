@@ -1,5 +1,4 @@
 on early-init
-
     # mount schedtune and blkio together in "on early-init",
     # so that mount schedtune in init.rc will fail
     mkdir /dev/stune
@@ -16,6 +15,13 @@ on early-init
     write /dev/stune/background/blkio.group_idle 0
     write /dev/stune/top-app/blkio.group_idle 0
     write /dev/stune/rt/blkio.group_idle 0
+
+on init
+    mkdir /dev/cpuset/little
+    copy /dev/cpuset/cpus /dev/cpuset/little/cpus
+    copy /dev/cpuset/mems /dev/cpuset/little/mems
+    chown system system /dev/cpuset/little/tasks
+    chmod 0664 /dev/cpuset/little/tasks
 
 on boot
     # Touchpanel
@@ -60,6 +66,8 @@ on boot
     write /data/misc/camera/client_package_name 0
     chown cameraserver audio /data/misc/camera/client_package_name
     chmod 0644 /data/misc/camera/client_package_name
+
+    write /dev/cpuset/little/cpus 0-3
 
 on post-fs
     chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
