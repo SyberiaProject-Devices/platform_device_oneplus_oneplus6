@@ -420,49 +420,6 @@ function enable_swap() {
     fi
 }
 
-function configure_memplus_parameters() {
-    bootmode=`getprop ro.vendor.factory.mode`
-    if [ "$bootmode" == "ftm" ] || [ "$bootmode" == "wlan" ] || [ "$bootmode" == "rf" ];then
-        return
-    fi
-    if [ ! $memplus_post_config ];then
-        return
-    fi
-    memplus=`getprop persist.vendor.sys.memplus.enable`
-    case "$memplus"     in
-        "false")
-            # use original settings
-            # remove swapfile to reclaim storage space
-            rm /data/vendor/swap/swapfile
-            swapoff /dev/block/zram0
-            ;;
-        *)
-            rm /data/vendor/swap/swapfile
-            # enable swapspace
-            if [ -f /data/vendor/swap/swapfile ]; then
-                mkswap /data/vendor/swap/swapfile
-                swapon /data/vendor/swap/swapfile
-
-                # raise the bar from 200,600,800 -> 600,750,850
-                # echo "18432,23040,27648,150256,187296,217600" > /sys/module/lowmemorykiller/parameters/minfree
-                if [ $? -eq 0 ]; then
-                    echo 1 > /sys/module/memplus_core/parameters/memory_plus_enabled
-                fi
-            fi
-            # reset zram swapspace
-            swapoff /dev/block/zram0
-            echo 1 > /sys/block/zram0/reset
-            echo 2202009600 > /sys/block/zram0/disksize
-            echo 742M > /sys/block/zram0/mem_limit
-            mkswap /dev/block/zram0
-            swapon /dev/block/zram0 -p 32758
-            if [ $? -eq 0 ]; then
-                echo 1 > /proc/sys/vm/memory_plus
-            fi
-            ;;
-    esac
-}
-
 function configure_memory_parameters() {
     # Set Memory parameters.
     #
@@ -4150,10 +4107,6 @@ case "$target" in
 
         # Limit the min frequency to 825MHz
         echo 825000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
-    #ifndef VENDOR_EDIT
-    #bin.zhong@BSP, 2019/6/10, add for config memplus
-    memplus_post_config=1
-    #endif VENDOR_EDIT
 
         # Enable oom_reaper
         echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
@@ -5102,7 +5055,3 @@ esac
 misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
 real_path=${misc_link##*>}
 setprop persist.vendor.mmi.misc_dev_path $real_path
-#ifndef VENDOR_EDIT
-#bin.zhong@BSP, 2019/6/10, add for config memplus
-configure_memplus_parameters
-#endif VENDOR_EDIT
