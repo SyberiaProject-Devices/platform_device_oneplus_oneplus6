@@ -190,7 +190,7 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 #QTI performance
-PRODUCT_BOOT_JARS += \
+#PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
 
