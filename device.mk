@@ -106,6 +106,11 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     vendor.display.config@1.7
 
+# Display Calibration
+PRODUCT_PACKAGES += \
+    qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml \
+    qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml
+
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
