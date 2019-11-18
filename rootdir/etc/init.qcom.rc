@@ -128,6 +128,13 @@ on property:vendor.post_boot.parsed=1
     # Disable sched stats
     write /proc/sys/kernel/sched_schedstats 0
 
+    # Setup final blkio
+    # value for group_idle is us
+    write /dev/blkio/blkio.weight 1000
+    write /dev/blkio/background/blkio.weight 200
+    write /dev/blkio/blkio.group_idle 2000
+    write /dev/blkio/background/blkio.group_idle 0
+
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
