@@ -73,8 +73,6 @@ on boot
     chown cameraserver audio /data/misc/camera/client_package_name
     chmod 0644 /data/misc/camera/client_package_name
 
-    write /dev/cpuset/little/cpus 0-3
-
 on post-fs
     chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
     chown system graphics /sys/devices/virtual/graphics/fb0/idle_time
