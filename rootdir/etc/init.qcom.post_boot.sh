@@ -4180,6 +4180,13 @@ case "$target" in
         echo 0-3 > /dev/cpuset/restricted/cpus
         echo 0-3 > /dev/cpuset/little/cpus
 
+        # Setup final blkio
+        # value for group_idle is us
+        echo 1000 > /dev/blkio/blkio.weight
+        echo 10 > /dev/blkio/background/blkio.weight
+        echo 2000 > /dev/blkio/blkio.group_idle
+        echo 0 > /dev/blkio/background/blkio.group_idle
+
         # Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
         # Disable CPU Retention
