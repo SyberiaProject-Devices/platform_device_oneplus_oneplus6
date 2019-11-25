@@ -1,4 +1,4 @@
-persist.camera.trace              u:object_r:camera_prop:s0
+persist.camera.trace              u:object_r:persist_camera_prop:s0
 
 audio.                            u:object_r:vendor_audio_prop:s0
 persist.audio                     u:object_r:vendor_audio_prop:s0
