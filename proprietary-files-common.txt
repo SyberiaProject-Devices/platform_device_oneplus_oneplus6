@@ -151,6 +151,7 @@ lib64/libavenhancements.so
 #QTI Performance
 -framework/QPerformance.jar
 -framework/UxPerformance.jar
+-app/workloadclassifier/workloadclassifier.apk
 bin/perfservice
 etc/init/perfservice.rc
 etc/perf/wlc_model.tflite
@@ -168,5 +169,6 @@ lib64/libqti-perfd-client_system.so
 lib64/libqti_performance.so
 lib64/libqti-iopd-client_system.so
 lib64/libqti-util_system.so
+lib64/libqti_workloadclassifiermodel.so
 product/lib64/vendor.qti.hardware.iop@2.0.so
 product/lib64/vendor.qti.hardware.perf@2.0.so
