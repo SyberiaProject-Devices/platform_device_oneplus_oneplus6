@@ -8,3 +8,4 @@ allow system_app proc_touchpanel:file w_file_perms;
 
 #DC dimming switch
 allow system_app sysfs_dm:file rw_file_perms;
+allow system_app sysfs_battery_supply:file r_file_perms;
