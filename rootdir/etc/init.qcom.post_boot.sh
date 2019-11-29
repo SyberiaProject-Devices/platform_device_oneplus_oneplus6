@@ -4079,26 +4079,18 @@ case "$target" in
         echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
 
         # Setting b.L scheduler parameters
-        echo 95 > /proc/sys/kernel/sched_upmigrate
-        echo 85 > /proc/sys/kernel/sched_downmigrate
-        echo 100 > /proc/sys/kernel/sched_group_upmigrate
-        echo 95 > /proc/sys/kernel/sched_group_downmigrate
-        echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+        echo 85 > /proc/sys/kernel/sched_upmigrate
+        echo 80 > /proc/sys/kernel/sched_downmigrate
 
         # configure governor settings for little cluster
         echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-        echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/rate_limit_us
-        echo 1228800 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
-        echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl
-        echo 576000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+        echo 480000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
         # configure governor settings for big cluster
         echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
-        echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/rate_limit_us
-        echo 1536000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq
-        echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl
-        echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-        echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+
+        # Stune
+        echo 5 > /dev/stune/top-app/schedtune.boost
 
         #ifdef VENDOR_EDIT
         # Enable Adaptive LMK liuyaxin@framework.perf change
