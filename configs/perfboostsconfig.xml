@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+/* Copyright (c) 2017 Qualcomm Technologies, Inc.
+ * All Rights Reserved.
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ */
+-->
+
+<!--Ids are used in identifying the boosts, increment ids linearly,
+    do not modify Ids, or add in between-->
+<!--follow the number format rules while specifying number, can be given
+    in any format-->
+
+<BoostConfigs>
+    <PerfBoost>
+
+    <!--Vertical Scroll boost-->
+        <!-- LLCBW_MIN_FREQ resource opcode, value-->
+        <!-- L3_MEMLAT_MIN_FREQ resource opcode, value -->
+
+        <!-- Type="1", Vertical Scroll boost -->
+        <Config
+            Id="0x00001080" Type="1" Enable="true" Target="sdm845"
+            Resources="0x43000000, 0x19, 0x43400000, 0x1F40" />
+
+    <!--Prefling Scroll boost-->
+        <!-- LLCBW_MIN_FREQ resource opcode, value-->
+        <!-- L3_MEMLAT_MIN_FREQ resource opcode, value -->
+        <!-- TIMEOUT 80ms -->
+        <!-- Type="4", Prefling boost -->
+        <Config
+            Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="sdm845"
+            Resources="0x43000000, 0x19, 0x43400000, 0x1F40" />
+
+
+    <!--Drag boost-->
+        <!-- LLCBW_MIN_FREQ resource opcode, value-->
+        <!-- L3_MEMLAT_MIN_FREQ resource opcode, value -->
+
+        <!-- Type="1", Drag boost -->
+        <Config
+            Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="sdm845"
+            Resources="0x43000000, 0x11, 0x43400000, 0x1F40" />
+
+    <!--Rotation animation boost-->
+        <!-- GPU MIN_FREQUENCY resource opcode,value-->
+        <!-- Type="", Rotation animation boost -->
+
+        <Config
+            Id="0x00001090" Enable="true" Timeout="1000" Target="sdm845"
+            Resources="0x4280C000, 596" />
+
+    <!--Display on Resource -->
+        <!-- Display on resource opcode, value -->
+        <Config
+                Id="0x00001041" Enable="true" Timeout="0" Target="sdm845"
+                Resources="0x40000000, 1" />
+    <!--Display off Resource -->
+        <!-- Display on resource opcode, value -->
+        <Config
+                Id="0x00001040" Enable="true" Timeout="0" Target="sdm845"
+                Resources="0x40000000, 0x0" />
+
+    </PerfBoost>
+</BoostConfigs>
