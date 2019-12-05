@@ -1,6 +1,9 @@
 audio.                            u:object_r:vendor_audio_prop:s0
 persist.audio                     u:object_r:vendor_audio_prop:s0
 persist.speaker                   u:object_r:vendor_audio_prop:s0
-persist.camera.bokeh.scale        u:object_r:exported_system_prop:s0 exact int
-persist.camera.trace              u:object_r:exported_system_prop:s0
-persist.camera.fd.dump            u:object_r:exported_system_prop:s0 exact int
+
+#Camera
+camera.opfb.                      u:object_r:exported_system_prop:s0
+persist.camera.                   u:object_r:exported_system_prop:s0
+persist.opcamera.                 u:object_r:exported_system_prop:s0
+ro.camera.                        u:object_r:exported_system_prop:s0
