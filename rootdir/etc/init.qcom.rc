@@ -1,21 +1,3 @@
-on early-init
-    # mount schedtune and blkio together in "on early-init",
-    # so that mount schedtune in init.rc will fail
-    mkdir /dev/stune
-    mount cgroup none /dev/stune nodev noexec nosuid schedtune,blkio
-
-    mkdir /dev/stune/foreground
-    mkdir /dev/stune/background
-    mkdir /dev/stune/top-app
-    mkdir /dev/stune/rt
-
-    # blkio init setting
-    write /dev/stune/blkio.group_idle 0
-    write /dev/stune/foreground/blkio.group_idle 0
-    write /dev/stune/background/blkio.group_idle 0
-    write /dev/stune/top-app/blkio.group_idle 0
-    write /dev/stune/rt/blkio.group_idle 0
-
 on init
     mkdir /dev/cpuset/little
     copy /dev/cpuset/cpus /dev/cpuset/little/cpus
