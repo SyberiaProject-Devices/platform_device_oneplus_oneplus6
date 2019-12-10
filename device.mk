@@ -84,6 +84,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perfconfigstore.xml:system/product/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/perf/perfconfigstore.xml \
     $(LOCAL_PATH)/configs/commonresourceconfigs.xml:system/product/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/perf/commonresourceconfigs.xml \
     $(LOCAL_PATH)/configs/perfboostsconfig.xml:system/product/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/perf/perfboostsconfig.xml \
+    $(LOCAL_PATH)/configs/powerhint.json:system/etc/powerhint.json \
     $(LOCAL_PATH)/display/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml:system/product/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml \
     $(LOCAL_PATH)/display/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml:system/product/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml \
 
@@ -131,6 +132,10 @@ PRODUCT_PACKAGES += \
 # LiveDisplay
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service.oneplus_sdm845
+
+# Libperfmgr
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.3-service.op6-libperfmgr
 
 # Net
 PRODUCT_PACKAGES += \
