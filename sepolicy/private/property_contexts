@@ -7,3 +7,10 @@ camera.opfb.                      u:object_r:exported_system_prop:s0
 persist.camera.                   u:object_r:exported_system_prop:s0
 persist.opcamera.                 u:object_r:exported_system_prop:s0
 ro.camera.                        u:object_r:exported_system_prop:s0
+
+# Powerhal
+vendor.powerhal.state      u:object_r:vendor_power_prop:s0
+vendor.powerhal.audio      u:object_r:vendor_power_prop:s0
+vendor.powerhal.lpm        u:object_r:vendor_power_prop:s0
+vendor.powerhal.init       u:object_r:vendor_power_prop:s0
+vendor.powerhal.rendering  u:object_r:vendor_power_prop:s0
