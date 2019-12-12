@@ -58,13 +58,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.color.matrix=2 \
     debug.cpurend.vsync=false
 
-# IOP and Workload Classifier props
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.iop.enable_uxe=1 \
-    vendor.perf.iop_v3.enable=true \
-    vendor.perf.gestureflingboost.enable=true \
-    vendor.perf.workloadclassifier.enable=true
-
 # OTG
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.oem.otg_support=true
