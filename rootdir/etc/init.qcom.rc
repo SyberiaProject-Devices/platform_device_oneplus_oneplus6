@@ -134,6 +134,9 @@ on property:vendor.post_boot.parsed=1
     write /sys/class/devfreq/soc:qcom,mincpubw/governor "compute"
     write /sys/class/devfreq/soc:qcom,mincpubw/polling_interval 10
 
+    # Disable sched stats
+    write /proc/sys/kernel/sched_schedstats 0
+
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
