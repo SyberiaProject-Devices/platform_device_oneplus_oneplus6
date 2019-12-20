@@ -59,4 +59,5 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 void vendor_load_properties()
 {
     property_override_dual("vendor.audio.feature.spkr_prot.enable", "vendor.audio.feature.spkr_prot.enable", "false");
+    property_override_dual("ro.control_privapp_permissions", "ro.control_privapp_permissions", "log");
 }
