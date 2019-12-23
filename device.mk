@@ -111,6 +111,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbthost_if \
+    libldacBT_dec \
     BluetoothQti
 
 # Camera
