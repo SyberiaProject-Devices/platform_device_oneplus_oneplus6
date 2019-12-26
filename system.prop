@@ -16,6 +16,7 @@ ro.config.vc_call_vol_steps=7
 
 # Camera
 camera.disable_zsl_mode=true
+persist.camera.managebuffer.enable=1
 persist.camera.privapp.list=com.oneplus.camera
 persist.vendor.camera.privapp.list=com.oneplus.camera
 vendor.camera.aux.packagelist=com.android.camera,com.oneplus.camera
