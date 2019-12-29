@@ -114,6 +114,13 @@
         </string-array>
         <int name="volte_replacement_rat_int" value="6" />
     </carrier_config>
+    <carrier_config mcc="204" mnc="16">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <boolean name="vendor_hide_wfc_preference_ui" value="true" />
+        <boolean name="display_hd_audio_property_bool" value="false" />
+    </carrier_config>
     <carrier_config mcc="208" mnc="01" />
     <carrier_config mcc="208" mnc="09" />
     <carrier_config mcc="208" mnc="11" />
@@ -1159,7 +1166,7 @@
         <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
         <string-array name="apn_hide_rule_strings_array" num="2">
             <item value="type" />
-            <item value="supl,ims" />
+            <item value="supl" />
         </string-array>
         <map name="apn_default_values_strings_array">
             <string name="protocol">IPV4V6</string>
@@ -1634,6 +1641,7 @@
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="160">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1659,6 +1667,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="200">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1684,6 +1693,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="210">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1711,6 +1721,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="220">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1736,6 +1747,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="230">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1761,6 +1773,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="240">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1786,6 +1799,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="250">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1811,6 +1825,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="270">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1836,6 +1851,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="300">
         <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
@@ -1864,6 +1880,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="490">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1889,6 +1906,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="530">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1940,6 +1958,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="310" mnc="800">
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -1965,6 +1984,7 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
         <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
         <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="rtt_always_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="311" mnc="00">
         <boolean name="allow_emergency_video_calls_bool" value="true" />
