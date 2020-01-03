@@ -524,6 +524,9 @@
          Otherwise, the device may fail to wake out of suspend reliably.
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+    
+    <!-- make sure you enable this only if your device supports deep slepp with active proximity sensor event listener --> 
+    <bool name="config_proxiSensorWakupCheck">true</bool>
 
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
