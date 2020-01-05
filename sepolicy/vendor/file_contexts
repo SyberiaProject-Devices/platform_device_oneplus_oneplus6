@@ -49,6 +49,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service       u:object_r:hal_param_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.rpmb@1\.0-service        u:object_r:hal_rpmb_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.wifi@1\.0-service        u:object_r:hal_wifi_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.1-service      u:object_r:hal_secure_element_default_exec:s0
 
 # DASH
 /system/bin/dashd    u:object_r:dashd_exec:s0
