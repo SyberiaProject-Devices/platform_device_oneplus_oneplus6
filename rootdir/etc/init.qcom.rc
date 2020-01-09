@@ -137,6 +137,9 @@ on property:vendor.post_boot.parsed=1
     # Disable sched stats
     write /proc/sys/kernel/sched_schedstats 0
 
+    # Enable LPM deepest idle state
+    write /sys/devices/system/cpu/cpuidle/use_deepest_state 1
+
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
