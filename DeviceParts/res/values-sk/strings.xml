@@ -30,8 +30,6 @@
   <string name="graphics_title">Grafika</string>
   <string name="srgb_mode_title">Režim sRGB</string>
   <string name="hbm_mode_title">Režim vysokého jasu</string>
-  <string name="proxi_summary_head">Kontrola senzoru priblíženia na ovládanie gest a snímača odtlačkov prstov</string>
-  <string name="proxi_title_head">Kontrola senzora priblíženia</string>
   <string name="slider_mode_off">Vypnutý</string>
   <string name="slider_mode_vibrate">Vibrovanie</string>
   <string name="slider_mode_silent">Tichý</string>

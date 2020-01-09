@@ -30,8 +30,6 @@
   <string name="graphics_title">Grafica</string>
   <string name="srgb_mode_title">Modalità sRGB</string>
   <string name="hbm_mode_title">Modalità alta luminosità</string>
-  <string name="proxi_summary_head">Controlla il sensore di prossimità per eventuali gesture e il sensore di impronte digitali</string>
-  <string name="proxi_title_head">Controllo di prossimità</string>
   <string name="slider_mode_off">Disattivo</string>
   <string name="slider_mode_vibrate">Vibrazione</string>
   <string name="slider_mode_silent">Silenzioso</string>

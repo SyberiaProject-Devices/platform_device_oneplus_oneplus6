@@ -29,8 +29,6 @@
   <string name="advanced_settings">Дополнительно</string>
   <string name="category_slider">Ползунок</string>
   <string name="slider_mode_title">Режим ползунка</string>
-  <string name="proxi_summary_head">Проверить датчики жестов и отпечатков пальцев</string>
-  <string name="proxi_title_head">Проверка датчика приближения</string>
   <string name="slider_mode_off">Выкл.</string>
   <string name="slider_mode_vibrate">Вибрация</string>
   <string name="slider_mode_silent">Без звука</string>

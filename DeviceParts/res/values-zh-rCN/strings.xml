@@ -30,8 +30,6 @@
   <string name="graphics_title">图形</string>
   <string name="srgb_mode_title">sRGB 模式</string>
   <string name="hbm_mode_title">高亮模式</string>
-  <string name="proxi_summary_head">处理手势和指纹传感器前检查近距离感器</string>
-  <string name="proxi_title_head">接近检查</string>
   <string name="slider_mode_off">关闭</string>
   <string name="slider_mode_vibrate">振动</string>
   <string name="slider_mode_silent">静音</string>
