@@ -24,8 +24,6 @@
   <string name="advanced_settings">Avanzado</string>
   <string name="category_slider">Deslizador</string>
   <string name="slider_mode_title">Modo del deslizador</string>
-  <string name="proxi_summary_head">Comprobar  el sensor de proximidad para el gestos y sensor de huellas</string>
-  <string name="proxi_title_head">Control de proximidad</string>
   <string name="off_screen_gesture_feedback_summary_head">Habilitar retroalimentación háptica para gestos</string>
   <string name="off_screen_gesture_feedback_title_head">Retroalimentación háptica</string>
   <string name="slider_mode_off">Off</string>

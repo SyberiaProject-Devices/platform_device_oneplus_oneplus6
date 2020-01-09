@@ -28,8 +28,6 @@
   <string name="graphics_title">Grafis</string>
   <string name="srgb_mode_title">mode sRGB</string>
   <string name="hbm_mode_title">Mode kecerahan tinggi</string>
-  <string name="proxi_summary_head">Periksa sensor jarak untuk penanganan isyarat dan sensor sidik jari</string>
-  <string name="proxi_title_head">Cek jarak</string>
   <string name="slider_mode_off">Mati</string>
   <string name="slider_mode_vibrate">Bergetar</string>
   <string name="slider_mode_silent">Diam</string>

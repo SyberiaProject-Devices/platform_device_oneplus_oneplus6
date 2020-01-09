@@ -28,8 +28,6 @@
     <string name="advanced_settings">Advanced</string>
     <string name="category_slider">Slider</string>
     <string name="slider_mode_title">Slider mode</string>
-    <string name="proxi_summary_head">Check proximity sensor for handling gesture and fingerprint sensor</string>
-    <string name="proxi_title_head">Proximity check</string>
     <string name="off_screen_gesture_feedback_summary_head">Enable haptic feedback for gestures</string>
     <string name="off_screen_gesture_feedback_title_head">Haptic feedback</string>
     <string name="slider_mode_off">Off</string>

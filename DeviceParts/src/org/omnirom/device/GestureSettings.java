@@ -53,7 +53,6 @@ import java.util.List;
 public class GestureSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    public static final String KEY_PROXI_SWITCH = "proxi";
     public static final String KEY_OFF_SCREEN_GESTURE_FEEDBACK_SWITCH = "off_screen_gesture_feedback";
     public static final String KEY_DOUBLE_SWIPE_APP = "double_swipe_gesture_app";
     public static final String KEY_CIRCLE_APP = "circle_gesture_app";
@@ -82,7 +81,6 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String DEVICE_GESTURE_MAPPING_9 = "device_gesture_mapping_9_0";
     public static final String DEVICE_GESTURE_MAPPING_10 = "device_gesture_mapping_10_0";
 
-    private TwoStatePreference mProxiSwitch;
     private TwoStatePreference mFpSwipeDownSwitch;
     private TwoStatePreference mOffscreenGestureFeedbackSwitch;
     private AppSelectListPreference mDoubleSwipeApp;
@@ -109,10 +107,6 @@ public class GestureSettings extends PreferenceFragment implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.gesture_settings, rootKey);
         mPm = getContext().getPackageManager();
-
-        mProxiSwitch = (TwoStatePreference) findPreference(KEY_PROXI_SWITCH);
-        mProxiSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.DEVICE_PROXI_CHECK_ENABLED, 1) != 0);
 
         mDoubleSwipeApp = (AppSelectListPreference) findPreference(KEY_DOUBLE_SWIPE_APP);
         mDoubleSwipeApp.setEnabled(isGestureSupported(KEY_DOUBLE_SWIPE_APP));
@@ -190,11 +184,6 @@ public class GestureSettings extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mProxiSwitch) {
-            Settings.System.putInt(getContext().getContentResolver(),
-                    Settings.System.DEVICE_PROXI_CHECK_ENABLED, mProxiSwitch.isChecked() ? 1 : 0);
-            return true;
-        }
         return super.onPreferenceTreeClick(preference);
     }
 

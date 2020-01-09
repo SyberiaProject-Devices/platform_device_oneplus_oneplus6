@@ -227,7 +227,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
         void observe() {
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.DEVICE_PROXI_CHECK_ENABLED),
+                    Settings.System.PROXIMITY_ON_WAKE),
                     false, this);
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DEVICE_FEATURE_SETTINGS),
@@ -253,7 +253,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
         public void update() {
             mUseProxiCheck = Settings.System.getIntForUser(
-                    mContext.getContentResolver(), Settings.System.DEVICE_PROXI_CHECK_ENABLED, 1,
+                    mContext.getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1,
                     UserHandle.USER_CURRENT) == 1;
         }
     }

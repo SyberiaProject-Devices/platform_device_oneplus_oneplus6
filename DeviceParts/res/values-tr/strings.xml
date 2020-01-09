@@ -30,8 +30,6 @@
   <string name="graphics_title">Grafikler</string>
   <string name="srgb_mode_title">sRGB modu</string>
   <string name="hbm_mode_title">Yüksek parlaklık modu</string>
-  <string name="proxi_summary_head">Hareketi ve parmak izi sensörünü idare etmek için yakınlık sensörünü denetle</string>
-  <string name="proxi_title_head">Yakınlık denetimi</string>
   <string name="slider_mode_off">Kapalı</string>
   <string name="slider_mode_vibrate">Titreşim</string>
   <string name="slider_mode_silent">Sessiz</string>
