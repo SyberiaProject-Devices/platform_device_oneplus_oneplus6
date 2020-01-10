@@ -58,6 +58,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_phase_offset_ns=1500000 \
     ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
     ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     persist.vendor.color.matrix=2 \
     debug.cpurend.vsync=false
 
