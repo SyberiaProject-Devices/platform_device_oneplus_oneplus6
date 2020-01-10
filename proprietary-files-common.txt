@@ -148,6 +148,7 @@ product/lib64/libsdm-disp-apis.qti.so
 lib/libFileMux.so
 lib/libmmosal.so
 lib/libmmparser_lite.so
+lib64/libmmparser_lite.so
 lib/libOmxMux.so
 lib64/libmmosal.so
 #-vendor/lib/libplatformconfig.so
@@ -470,8 +471,12 @@ product/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
 
 #QTI AV Enhancements
 lib/libavenhancements.so
-lib/libqct_resampler.so
 lib64/libavenhancements.so
+lib/libqct_resampler.so
+lib/vendor.qti.hardware.audiohalext-utils.so
+lib64/vendor.qti.hardware.audiohalext-utils.so
+product/lib/vendor.qti.hardware.audiohalext@1.0.so
+product/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 #QTI Performance
 #-framework/QPerformance.jar
