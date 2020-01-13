@@ -239,15 +239,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "SchedFeatures",
-      "Path": "/sys/kernel/debug/sched_features",
-      "Values": [
-        "NO_ENERGY_AWARE",
-        "ENERGY_AWARE"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -461,12 +452,6 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "SchedFeatures",
-      "Duration": 3000,
-      "Value": "NO_ENERGY_AWARE"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 3000,
       "Value": "9999999"
@@ -563,12 +548,6 @@
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
-      "Node": "SchedFeatures",
-      "Duration": 1000,
-      "Value": "NO_ENERGY_AWARE"
-    },
-    {
-      "PowerHint": "CAMERA_LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 1000,
       "Value": "9999999"
@@ -632,12 +611,6 @@
       "Node": "LLCCBWSampleMs",
       "Duration": 0,
       "Value": "10"
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "SchedFeatures",
-      "Duration": 1000,
-      "Value": "NO_ENERGY_AWARE"
     },
     {
       "PowerHint": "CAMERA_SHOT",
