@@ -137,9 +137,6 @@ on property:vendor.post_boot.parsed=1
     # Disable sched stats
     write /proc/sys/kernel/sched_schedstats 0
 
-    # Enable auto deepest idle cluster state when screen is off (if kernel supports it)
-    write /sys/module/lpm_levels/parameters/cluster_deepest_state_auto "Y"
-
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
