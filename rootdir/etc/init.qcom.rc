@@ -8,6 +8,9 @@ on init
     # BPF Just In Time compiler
     write /proc/sys/net/core/bpf_jit_enable 1
 
+    # Freezer setup
+    write /dev/freezer/frozen/freezer.killable 1
+
 on boot
     # Touchpanel
     chmod 0660 /proc/touchpanel/double_swipe_enable
