@@ -97,9 +97,6 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_OTG_SWITCH, false);
         restore(UsbOtgSwitch.getFile(), enabled);
 
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DT2W_SWITCH, false);
-        restore(DoubleTapSwitch.getFile(), enabled);
-
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
         restore(DCDimmingSwitch.getFile(), enabled);
 

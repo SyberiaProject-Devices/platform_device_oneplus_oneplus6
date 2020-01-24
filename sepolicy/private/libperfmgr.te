@@ -29,8 +29,9 @@ allow libperfmgr device_latency:chr_file rw_file_perms;
 allow libperfmgr proc_sysctl_schedboost:file rw_file_perms;
 allow libperfmgr debugfs_sched_features:dir search;
 allow libperfmgr debugfs_sched_features:file rw_file_perms;
-allow libperfmgr input_device:dir search;
-allow libperfmgr input_device:chr_file rw_file_perms;
+
+allow libperfmgr proc_touchpanel:dir search;
+allow libperfmgr proc_touchpanel:file rw_file_perms;
 
 allow libperfmgr hal_power_hwservice:hwservice_manager add;
 allow libperfmgr hidl_base_hwservice:hwservice_manager add;

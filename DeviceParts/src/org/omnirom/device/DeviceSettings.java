@@ -50,8 +50,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String KEY_OTG_SWITCH = "otg_switch";
 
-    public static final String KEY_DT2W_SWITCH = "dt2w_switch";
-
     public static final String KEY_DC_SWITCH = "dc_switch";
 
     public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
@@ -110,11 +108,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mOtgSwitch.setEnabled(UsbOtgSwitch.isSupported());
         mOtgSwitch.setChecked(UsbOtgSwitch.isCurrentlyEnabled(this.getContext()));
         mOtgSwitch.setOnPreferenceChangeListener(new UsbOtgSwitch());
-
-        mDt2wSwitch = (TwoStatePreference) findPreference(KEY_DT2W_SWITCH);
-        mDt2wSwitch.setEnabled(DoubleTapSwitch.isSupported());
-        mDt2wSwitch.setChecked(DoubleTapSwitch.isCurrentlyEnabled(this.getContext()));
-        mDt2wSwitch.setOnPreferenceChangeListener(new DoubleTapSwitch());
 
         mDc = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
         mDc.setEnabled(DCDimmingSwitch.isSupported());

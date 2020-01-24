@@ -95,8 +95,6 @@
     <string name="pocket_check_title">Pocket</string>
     <string name="ambient_display_enable">Ambient display must be enabled in display settings</string>
     <string name="wake_entry">Wakeup</string>
-    <string name="dt2w_title">Tap to wake</string>
-    <string name="dt2w_summary">Double-tap anywhere on the screen to wake device</string>
 
     <string name="toast_ringer">Ringer</string>
     <string name="toast_vibrate">Vibrate only</string>
