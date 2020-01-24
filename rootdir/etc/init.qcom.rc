@@ -135,6 +135,14 @@ on property:vendor.post_boot.parsed=1
     # Disable sched stats
     write /proc/sys/kernel/sched_schedstats 0
 
+    # Disable a few minor and overall pretty useless modules for slightly better battery life & system wide performance;
+    write /sys/module/bluetooth/parameters/disable_ertm "Y"
+    write /sys/module/bluetooth/parameters/disable_esco "Y"
+
+    # Enable display / screen panel power saving features;
+    write /sys/kernel/debug/dsi_samsung_sofef00_m_cmd_display/dsi-phy-0_allow_phy_power_off "Y
+    write /sys/kernel/debug/dsi_samsung_sofef00_m_cmd_display/ulps_enable "Y"
+
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
