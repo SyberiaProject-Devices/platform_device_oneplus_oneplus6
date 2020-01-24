@@ -4088,6 +4088,14 @@ case "$target" in
         # Limit the min frequency to 825MHz
         echo 825000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
+        # Disable a few minor and overall pretty useless modules for slightly better battery life & system wide performance;
+        echo "Y" > /sys/module/bluetooth/parameters/disable_ertm
+        echo "Y" > /sys/module/bluetooth/parameters/disable_esco
+
+        # Enable display / screen panel power saving features;
+        echo "Y" > /sys/kernel/debug/dsi_samsung_sofef00_m_cmd_display/dsi-phy-0_allow_phy_power_off
+        echo "Y" > /sys/kernel/debug/dsi_samsung_sofef00_m_cmd_display/ulps_enable
+
         # Enable oom_reaper
         echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
 
