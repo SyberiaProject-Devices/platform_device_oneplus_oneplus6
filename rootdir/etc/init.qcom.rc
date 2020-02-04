@@ -5,16 +5,6 @@ on init
     chown system system /dev/cpuset/little/tasks
     chmod 0664 /dev/cpuset/little/tasks
 
-    mount none /dev/null /vendor/bin/hw/android.hardware.power@1.0-service
-    mount none /dev/null /vendor/etc/init/android.hardware.power@1.0-service.rc
-    mount none /dev/null /vendor/lib64/power.qcom.so
-    mount none /dev/null /vendor/lib/power.qcom.so
-    mount none /dev/null /vendor/overlay/oneplus_shape_squircle/OnePlusIconShapeSquircleOverlay.apk bind
-    mount none /dev/null /vendor/overlay/oneplus_shape_circle/OnePlusIconShapeCircleOverlay.apk bind
-    mount none /dev/null /vendor/overlay/oneplus_shape_teardrop/OnePlusIconShapeTeardropOverlay.apk bind
-    mount none /dev/null /vendor/overlay/oneplus_shape_square/OnePlusIconShapeSquareOverlay.apk bind
-    mount none /dev/null /vendor/overlay/oneplus_shape_roundedrect/OnePlusIconShapeRoundedRectOverlay.apk bind
-
 on boot
     # Touchpanel
     chmod 0660 /proc/touchpanel/double_swipe_enable
