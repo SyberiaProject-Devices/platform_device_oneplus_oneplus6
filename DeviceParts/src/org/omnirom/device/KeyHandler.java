@@ -95,7 +95,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int GESTURE_DOWN_SWIPE_SCANCODE = 65;
     private static final int GESTURE_UP_SWIPE_SCANCODE = 66;
 
-    private static final int KEY_DOUBLE_TAP = 143;
     private static final int KEY_HOME = 102;
     private static final int KEY_BACK = 158;
     private static final int KEY_RECENTS = 580;
@@ -125,7 +124,6 @@ public class KeyHandler implements DeviceKeyHandler {
         GESTURE_UP_SWIPE_SCANCODE,
         GESTURE_LEFT_SWIPE_SCANCODE,
         GESTURE_RIGHT_SWIPE_SCANCODE,
-        KEY_DOUBLE_TAP,
         KEY_SLIDER_TOP,
         KEY_SLIDER_CENTER,
         KEY_SLIDER_BOTTOM,
@@ -143,7 +141,6 @@ public class KeyHandler implements DeviceKeyHandler {
         GESTURE_UP_SWIPE_SCANCODE,
         GESTURE_LEFT_SWIPE_SCANCODE,
         GESTURE_RIGHT_SWIPE_SCANCODE,
-        KEY_DOUBLE_TAP
     };
 
     protected final Context mContext;
@@ -380,15 +377,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
     @Override
     public boolean isWakeEvent(KeyEvent event){
-        if (event.getAction() != KeyEvent.ACTION_UP) {
-            return false;
-        }
-        String value = getGestureValueForScanCode(event.getScanCode());
-        if (!TextUtils.isEmpty(value) && value.equals(AppSelectListPreference.WAKE_ENTRY)) {
-            if (DEBUG) Log.i(TAG, "isWakeEvent " + event.getScanCode() + value);
-            return true;
-        }
-        return event.getScanCode() == KEY_DOUBLE_TAP;
+        return false;
     }
 
     @Override
