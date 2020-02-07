@@ -39,6 +39,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+PRODUCT_PACKAGES += \
+    OnePlusIconShapeCircleOverlay \
+    OnePlusIconShapeRoundedRectOverlay \
+    OnePlusIconShapeSquareOverlay \
+    OnePlusIconShapeSquircleOverlay \
+    OnePlusIconShapeTeardropOverlay
+
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
