@@ -143,6 +143,9 @@ persist.vendor.data.mode=concurrent
 nfc.delayese=true
 ro.boot.product.hardware.sku=ese
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # Radio
 ro.carrier=unknown
 persist.radio.multisim.config=dsds
