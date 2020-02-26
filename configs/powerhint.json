@@ -27,15 +27,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "TASchedtuneBoost",
-      "Path": "/dev/stune/top-app/schedtune.boost",
-      "Values": [
-        "20",
-        "10"
-      ],
-      "ResetOnInit": true
-     },
-     {
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
@@ -270,12 +261,6 @@
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
       "Value": "979200"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "TASchedtuneBoost",
-      "Duration": 0,
-      "Value": "20"
     },
     {
       "PowerHint": "INTERACTION",
