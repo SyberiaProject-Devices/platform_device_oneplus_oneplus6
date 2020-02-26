@@ -43,5 +43,10 @@
    "repository" : "LineageOS/android_vendor_nxp_opensource_hidlimpl",
    "target_path": "vendor/nxp/opensource/hidlimpl",
    "branch"     : "lineage-17.0-pn5xx"
+ },
+ {
+   "repository" : "kdrag0n/proton-clang",
+   "target_path": "prebuilts/clang/host/linux-x86/clang-11",
+   "branch"     : "11"
  }
 ]
