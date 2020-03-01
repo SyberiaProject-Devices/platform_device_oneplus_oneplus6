@@ -36,7 +36,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=true \
     persist.camera.privapp.list=com.oneplus.camera \
     persist.vendor.camera.privapp.list=com.oneplus.camera \
-    vendor.camera.aux.packagelist=com.android.camera
+    vendor.camera.aux.packagelist=com.android.camera,com.oneplus.camera
 
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
