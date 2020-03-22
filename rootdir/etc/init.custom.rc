@@ -11,6 +11,9 @@ on init
     # Freezer setup
     write /dev/freezer/frozen/freezer.killable 1
 
+on late-fs
+    start vendor.power-hal-aidl
+
 on boot
     # Touchpanel
     chmod 0660 /proc/touchpanel/double_swipe_enable
