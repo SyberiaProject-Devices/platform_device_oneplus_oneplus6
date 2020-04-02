@@ -102,7 +102,7 @@ product/lib64/libdpmframework.so
 product/lib64/libdpmtcm.so
 
 # DASH
--sbin/dashd;rootfs
+sbin/dashd:bin/dashd
 
 # Data modules
 product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
