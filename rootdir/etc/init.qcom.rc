@@ -5,6 +5,9 @@ on init
     chown system system /dev/cpuset/little/tasks
     chmod 0664 /dev/cpuset/little/tasks
 
+    # BPF Just In Time compiler
+    write /proc/sys/net/core/bpf_jit_enable 1
+
 on boot
     # Touchpanel
     chmod 0660 /proc/touchpanel/double_swipe_enable
