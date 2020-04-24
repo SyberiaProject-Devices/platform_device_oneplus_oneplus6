@@ -181,7 +181,8 @@ PRODUCT_COPY_FILES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0
+    netutils-wrapper-1.0 \
+    WifiOverlay
 
 # NFC
 PRODUCT_PACKAGES += \
