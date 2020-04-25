@@ -1,4 +1,5 @@
 # ART
+dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.dex2oat-filter=speed
 dalvik.vm.image-dex2oat-filter=speed
 ro.vendor.qti.am.reschedule_service=true
@@ -7,6 +8,7 @@ dalvik.vm.boot-dex2oat-threads=8
 dalvik.vm.dex2oat-threads=8
 
 # Audio
+
 audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
