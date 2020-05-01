@@ -156,7 +156,9 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
     device/qcom/sepolicy/qva/public
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(VENDOR_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(VENDOR_PATH) \
+    hardware/google/pixel
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
