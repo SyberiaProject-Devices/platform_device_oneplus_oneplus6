@@ -160,7 +160,8 @@ PRODUCT_PACKAGES += \
 
 # Libperfmgr
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.op6-libperfmgr
+    android.hardware.power@1.3-service.op6-libperfmgr \
+    android.hardware.power.stats@1.0-service.op6
 
 # Net
 PRODUCT_PACKAGES += \

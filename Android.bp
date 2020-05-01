@@ -1,5 +1,8 @@
 soong_namespace {
-    imports: ["hardware/qcom/bootctrl"],
+    imports: [
+        "hardware/qcom/bootctrl",
+        "hardware/google/pixel",
+    ],
 }
 
 subdirs = [
