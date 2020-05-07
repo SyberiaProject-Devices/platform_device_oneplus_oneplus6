@@ -3,17 +3,10 @@ type libperfmgr_exec, exec_type, file_type;
 
 init_daemon_domain(libperfmgr)
 
-allow libperfmgr debugfs_wlan:dir r_dir_perms;
-allow libperfmgr debugfs_wlan:file r_file_perms;
-
 allow libperfmgr system_file:file r_file_perms;
 
 allow libperfmgr sysfs_graphics:dir search;
 allow libperfmgr sysfs_graphics:file r_file_perms;
-
-allow libperfmgr sysfs_rpm:file r_file_perms;
-allow libperfmgr sysfs_system_sleep_stats:file r_file_perms;
-allow libperfmgr sysfs_power_stats:file r_file_perms;
 
 # To do powerhint on nodes defined in powerhint.json
 allow libperfmgr sysfs_devfreq:dir search;
