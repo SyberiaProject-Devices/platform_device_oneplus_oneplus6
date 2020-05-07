@@ -16,9 +16,7 @@
 
 #define LOG_TAG "android.hardware.power.stats@1.0-service.op6"
 
-#include <android-base/properties.h>
 #include <android/log.h>
-#include <binder/ProcessState.h>
 #include <binder/IPCThreadState.h>
 #include <binder/IServiceManager.h>
 #include <binder/ProcessState.h>
@@ -27,7 +25,6 @@
 #include <pixelpowerstats/AidlStateResidencyDataProvider.h>
 #include <pixelpowerstats/GenericStateResidencyDataProvider.h>
 #include <pixelpowerstats/PowerStats.h>
-#include <pixelpowerstats/WlanStateResidencyDataProvider.h>
 
 using android::OK;
 using android::sp;
@@ -49,15 +46,10 @@ using android::hardware::google::pixel::powerstats::AidlStateResidencyDataProvid
 using android::hardware::google::pixel::powerstats::GenericStateResidencyDataProvider;
 using android::hardware::google::pixel::powerstats::PowerEntityConfig;
 using android::hardware::google::pixel::powerstats::StateResidencyConfig;
-using android::hardware::google::pixel::powerstats::WlanStateResidencyDataProvider;
 
 int main(int /* argc */, char ** /* argv */) {
 
     ALOGI("power.stats service 1.0 is starting.");
-
-    android::ProcessState::initWithDriver("/dev/binder");
-
-    bool isDebuggable = android::base::GetBoolProperty("ro.debuggable", false);
 
     PowerStats *service = new PowerStats();
 
@@ -120,52 +112,6 @@ int main(int /* argc */, char ** /* argv */) {
 
     service->addStateResidencyDataProvider(socSdp);
 
-    if (isDebuggable) {
-        // Add WLAN power entity
-        uint32_t wlanId = service->addPowerEntity("WLAN", PowerEntityType::SUBSYSTEM);
-        sp<WlanStateResidencyDataProvider> wlanSdp =
-            new WlanStateResidencyDataProvider(wlanId, "/d/wlan0/power_stats");
-        service->addStateResidencyDataProvider(wlanSdp);
-
-        // Add Easel power entity
-        const std::string easelEntryCountPrefix = "Cumulative count:";
-        const std::string easelTotalTimePrefix = "Cumulative duration msec:";
-        const std::string easelLastEntryPrefix = "Last entry timestamp msec:";
-        std::vector<StateResidencyConfig> easelStateResidencyConfigs = {
-            {.name = "Off",
-             .header = "OFF",
-             .entryCountSupported = true,
-             .entryCountPrefix = easelEntryCountPrefix,
-             .totalTimeSupported = true,
-             .totalTimePrefix = easelTotalTimePrefix,
-             .lastEntrySupported = true,
-             .lastEntryPrefix = easelLastEntryPrefix},
-            {.name = "Active",
-             .header = "ACTIVE",
-             .entryCountSupported = true,
-             .entryCountPrefix = easelEntryCountPrefix,
-             .totalTimeSupported = true,
-             .totalTimePrefix = easelTotalTimePrefix,
-             .lastEntrySupported = true,
-             .lastEntryPrefix = easelLastEntryPrefix},
-            {.name = "Suspend",
-             .header = "SUSPEND",
-             .entryCountSupported = true,
-             .entryCountPrefix = easelEntryCountPrefix,
-             .totalTimeSupported = true,
-             .totalTimePrefix = easelTotalTimePrefix,
-             .lastEntrySupported = true,
-             .lastEntryPrefix = easelLastEntryPrefix}};
-        sp<GenericStateResidencyDataProvider> easelSdp =
-            new GenericStateResidencyDataProvider("/d/mnh_sm/power_stats");
-
-        uint32_t easelId = service->addPowerEntity("Easel", PowerEntityType::SUBSYSTEM);
-        easelSdp->addEntity(
-            easelId, PowerEntityConfig("Easel Subsystem Power Stats", easelStateResidencyConfigs));
-
-        service->addStateResidencyDataProvider(easelSdp);
-    }
-
     // Add Power Entities that require the Aidl data provider
     sp<AidlStateResidencyDataProvider> aidlSdp = new AidlStateResidencyDataProvider();
     uint32_t citadelId = service->addPowerEntity("Citadel", PowerEntityType::SUBSYSTEM);
@@ -177,6 +123,7 @@ int main(int /* argc */, char ** /* argv */) {
         ALOGE("Unable to register power.stats-vendor service %d", serviceStatus);
         return 1;
     }
+
     sp<android::ProcessState> ps{android::ProcessState::self()};  // Create non-HW binder threadpool
     ps->startThreadPool();
 
