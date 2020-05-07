@@ -22,9 +22,9 @@
 
 #include "Power.h"
 
+using android::OK;
 using android::sp;
 using android::status_t;
-using android::OK;
 
 // libhwbinder:
 using android::hardware::configureRpcThreadpool;
@@ -36,7 +36,6 @@ using android::hardware::power::V1_3::implementation::Power;
 
 int main(int /* argc */, char** /* argv */) {
     ALOGI("Power HAL Service 1.3 for op6 is starting.");
-//    android::ProcessState::initWithDriver("/dev/binder");
 
     android::sp<IPower> service = new Power();
     if (service == nullptr) {
