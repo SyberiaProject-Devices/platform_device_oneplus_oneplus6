@@ -215,48 +215,6 @@ product/lib/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 product/lib/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
-# Telephony (unsorted)
-framework/ActivityExt.jar
-framework/ConnectivityExt.jar
-framework/oem-services.jar
-product/app/CallFeaturesSetting/CallFeaturesSetting.apk
-product/app/DeviceInfo/DeviceInfo.apk
-product/app/remotesimlockservice/remotesimlockservice.apk
-product/app/uceShimService/uceShimService.apk
-product/app/uimgbaservice/uimgbaservice.apk
-product/app/uimlpaservice/uimlpaservice.apk
-product/app/uimremoteclient/uimremoteclient.apk
-product/app/uimremoteserver/uimremoteserver.apk
-product/priv-app/QAS_DVC_MSP/QAS_DVC_MSP.apk
-product/priv-app/dpmserviceapp/dpmserviceapp.apk
-product/etc/permissions/RemoteSimlock.xml
-product/etc/permissions/UimService.xml
-product/etc/permissions/lpa.xml
-product/etc/permissions/uimremoteclient.xml
-product/etc/permissions/uimremoteserver.xml
-product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
-product/framework/uimlpalibrary.jar
-product/framework/uimremoteclientlibrary.jar
-product/framework/uimremoteserverlibrary.jar
-product/framework/uimremotesimlocklibrary.jar
-product/framework/uimservicelibrary.jar
-product/framework/vendor.qti.data.factory-V2.1-java.jar
-product/lib/libdiag_system.so
-product/lib/libtrigger-handler.so
-product/lib/libupdateprof.qti.so
-product/lib/vendor.qti.data.factory@2.1.so
-product/lib/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
-product/lib/vendor.qti.hardware.radio.qtiradio@2.4.so
-product/lib/vendor.qti.hardware.radio.uim_remote_client@1.2.so
-product/lib64/libdiag_system.so
-product/lib64/libqmi_cci_system.so
-product/lib64/libtrigger-handler.so
-product/lib64/libupdateprof.qti.so
-product/lib64/vendor.qti.data.factory@2.1.so
-product/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
-product/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so
-product/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
-
 # Radio (qti-telephony-common) - from DRG - QKQ1.190828.002
 product/framework/qti-telephony-common.jar|74adbf98e89531ac385ab5c4cea3c2549a0d24b0
 
