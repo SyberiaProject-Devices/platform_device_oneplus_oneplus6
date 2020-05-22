@@ -74,7 +74,6 @@ TARGET_LMKD_STATS_LOG := true
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-BUILD_WITHOUT_VENDOR := true
 TARGET_BOARD_PLATFORM := sdm845
 
 # Properties
