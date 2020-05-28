@@ -25,8 +25,6 @@
   <string name="advanced_settings">Täpsemad</string>
   <string name="category_slider">Liugur</string>
   <string name="slider_mode_title">Liuguri režiim</string>
-  <string name="proxi_summary_head">Kontrolli lähedussensorit, haldamaks žeste ja sõrmejäljelugejat</string>
-  <string name="proxi_title_head">Läheduskontroll</string>
   <string name="slider_mode_off">Väljas</string>
   <string name="slider_mode_vibrate">Vibreeri</string>
   <string name="slider_mode_silent">Hääletu</string>
@@ -63,15 +61,6 @@
   <string name="category_fp_left_swipe_gesture">Sõrmejälje vasakule libistamine</string>
   <string name="fp_swipe_down_switch_summary_head">Vaikimisi sõrmejälje teate alla libistamise žest</string>
   <string name="fp_swipe_down_switch_title_head">Sõrmejälje alla libistamise žest</string>
-  <string name="doze_category_title">Ambientne ekraan</string>
-  <string name="doze_category_summary">Ärata ekraan, kui saad teateid</string>
-  <string name="wave_check_summary">Pulseeri teateid käeviibutusel</string>
-  <string name="wave_check_title">Käeviibutus</string>
-  <string name="tilt_check_summary">Pulseeri teateid, kui seade tõstetakse</string>
-  <string name="tilt_check_title">Tõstmine</string>
-  <string name="pocket_check_summary">Pulseeri teateid, kui seade võetakse taskust välja</string>
-  <string name="pocket_check_title">Tasku</string>
-  <string name="ambient_display_enable">Ambientne ekraan peab olema lubatud kuvaseadetes</string>
   <string name="off_mode_title">Väljas</string>
   <string name="wake_entry">Ärkamine</string>
 </resources>

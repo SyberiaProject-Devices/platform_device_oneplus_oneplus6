@@ -30,8 +30,6 @@
   <string name="graphics_title">图形</string>
   <string name="srgb_mode_title">sRGB 模式</string>
   <string name="hbm_mode_title">高亮模式</string>
-  <string name="proxi_summary_head">处理手势和指纹传感器前检查近距离感器</string>
-  <string name="proxi_title_head">接近检查</string>
   <string name="slider_mode_off">关闭</string>
   <string name="slider_mode_vibrate">振动</string>
   <string name="slider_mode_silent">静音</string>
@@ -70,14 +68,6 @@
   <string name="category_fp_left_swipe_gesture">指纹向左滑动</string>
   <string name="fp_swipe_down_switch_summary_head">向下滑动时默认的指纹通知</string>
   <string name="fp_swipe_down_switch_title_head">向下滑动指纹的手势</string>
-  <string name="doze_category_title">主动显示</string>
-  <string name="doze_category_summary">收到通知时点亮屏幕</string>
-  <string name="wave_check_summary">手电波脉冲通知</string>
-  <string name="tilt_check_summary">设备拾取时的脉冲通知</string>
-  <string name="tilt_check_title">拿起</string>
-  <string name="pocket_check_summary">从口袋里取出时的脉冲通知</string>
-  <string name="pocket_check_title">口袋</string>
-  <string name="ambient_display_enable">在显示设置中必须启用Ambient display</string>
   <string name="panel_category_title">面板模式</string>
   <string name="panel_category_summary">面板颜色校正模式</string>
   <string name="off_mode_title">关闭</string>

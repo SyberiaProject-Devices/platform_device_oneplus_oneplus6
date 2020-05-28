@@ -24,8 +24,6 @@
   <string name="advanced_settings">Avanzado</string>
   <string name="category_slider">Deslizador</string>
   <string name="slider_mode_title">Modo del deslizador</string>
-  <string name="proxi_summary_head">Comprobar  el sensor de proximidad para el gestos y sensor de huellas</string>
-  <string name="proxi_title_head">Control de proximidad</string>
   <string name="off_screen_gesture_feedback_summary_head">Habilitar retroalimentación háptica para gestos</string>
   <string name="off_screen_gesture_feedback_title_head">Retroalimentación háptica</string>
   <string name="slider_mode_off">Off</string>
@@ -74,15 +72,6 @@
   <string name="category_fp_long_press_gesture">Pulsación larga lector de huellas</string>
   <string name="fp_swipe_down_switch_summary_head">Utilice el gesto de pulsación larga para expandir las notificaciones</string>
   <string name="fp_swipe_down_switch_title_head">Pulsación larga lector de huellas</string>
-  <string name="doze_category_title">Pantalla ambiente</string>
-  <string name="doze_category_summary">Activar pantalla cuando recibas notificaciones</string>
-  <string name="wave_check_summary">Notificaciones pulse en pasada de mano</string>
-  <string name="wave_check_title">Pasar mano</string>
-  <string name="tilt_check_summary">Notificaciones pulse al coger el dispositivo</string>
-  <string name="tilt_check_title">Coger</string>
-  <string name="pocket_check_summary">Notificaciones pulse al sacar del bolsillo</string>
-  <string name="pocket_check_title">Bolsillo</string>
-  <string name="ambient_display_enable">La pantalla ambiente debe estar habilitada en los ajustes de pantalla</string>
   <string name="off_mode_title">Deshabilitado</string>
   <string name="wake_entry">Despestar</string>
   <string name="toast_ringer">Modo: Timbre</string>

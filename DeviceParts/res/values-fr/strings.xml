@@ -28,8 +28,6 @@
   <string name="buttons_title">Boutons</string>
   <string name="swap_back_recents_title">Permuter le bouton retour et le bouton app. récents</string>
   <string name="srgb_mode_title">mode sRGB</string>
-  <string name="proxi_summary_head">Vérifier le capteur de proximité pour les gestes tactiles et le capteur d\'empreinte</string>
-  <string name="proxi_title_head">Contrôle de proximité</string>
   <string name="slider_mode_off">Désactivé</string>
   <string name="slider_mode_vibrate">Vibreur</string>
   <string name="slider_mode_silent">Mode silencieux</string>

@@ -30,8 +30,6 @@
   <string name="graphics_title">Gráficos</string>
   <string name="srgb_mode_title">modo sRGB</string>
   <string name="hbm_mode_title">Modo de brilho alto</string>
-  <string name="proxi_summary_head">Verifique o sensor de proximidade para a manipulação de gesto e sensor de impressão digital</string>
-  <string name="proxi_title_head">Verificação de proximidade</string>
   <string name="slider_mode_off">Desligado</string>
   <string name="slider_mode_vibrate">Vibração</string>
   <string name="slider_mode_silent">Silêncio</string>
@@ -70,15 +68,6 @@
   <string name="category_fp_left_swipe_gesture">Deslizar para a esquerda na impressão digital</string>
   <string name="fp_swipe_down_switch_summary_head">Notificação padrão de impressões digitais ao deslizar para baixo</string>
   <string name="fp_swipe_down_switch_title_head">Gesto deslizante para baixo na impressão digital</string>
-  <string name="doze_category_title">Ambient Display</string>
-  <string name="doze_category_summary">Acordar o ecrã quando receber notificações</string>
-  <string name="wave_check_summary">Mostrar notificações ao passar a mão</string>
-  <string name="wave_check_title">Passar a mão</string>
-  <string name="tilt_check_summary">Mostrar notificações quando se levanta o dispositivo</string>
-  <string name="tilt_check_title">Levantamento</string>
-  <string name="pocket_check_summary">Mostrar notificações ao retirar do bolso</string>
-  <string name="pocket_check_title">Bolso</string>
-  <string name="ambient_display_enable">Ambient display deve ser habilitada nas configurações de exibição</string>
   <string name="panel_category_title">Modos do painel</string>
   <string name="panel_category_summary">Correcção de côr para os modos do painel</string>
   <string name="off_mode_title">Desligada</string>

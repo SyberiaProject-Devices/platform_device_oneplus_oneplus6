@@ -28,8 +28,6 @@
   <string name="graphics_title">Grafis</string>
   <string name="srgb_mode_title">mode sRGB</string>
   <string name="hbm_mode_title">Mode kecerahan tinggi</string>
-  <string name="proxi_summary_head">Periksa sensor jarak untuk penanganan isyarat dan sensor sidik jari</string>
-  <string name="proxi_title_head">Cek jarak</string>
   <string name="slider_mode_off">Mati</string>
   <string name="slider_mode_vibrate">Bergetar</string>
   <string name="slider_mode_silent">Diam</string>
@@ -60,13 +58,4 @@
   <string name="category_up_swipe_gesture">Gesek</string>
   <string name="category_left_swipe_gesture">Gesek ke kiri</string>
   <string name="category_right_swipe_gesture">Gesek kanan</string>
-  <string name="doze_category_title">Tampilan sekitar</string>
-  <string name="doze_category_summary">Nyalakan layar saat Anda menerima notifikasi</string>
-  <string name="wave_check_summary">Kedipkan pemberitahuan pada gelombang tangan</string>
-  <string name="wave_check_title">Gelombang tangan</string>
-  <string name="tilt_check_summary">Kesipkan pemberitahuan saat perangkat diambil</string>
-  <string name="tilt_check_title">Angkat</string>
-  <string name="pocket_check_summary">Kedipkan pemberitahuan untuk dihapus dari saku</string>
-  <string name="pocket_check_title">Saku</string>
-  <string name="ambient_display_enable">Tampilan sekeliling harus diaktifkan pada pengaturan tampilan</string>
 </resources>

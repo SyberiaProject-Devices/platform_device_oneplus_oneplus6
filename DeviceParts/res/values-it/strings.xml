@@ -30,8 +30,6 @@
   <string name="graphics_title">Grafica</string>
   <string name="srgb_mode_title">Modalità sRGB</string>
   <string name="hbm_mode_title">Modalità alta luminosità</string>
-  <string name="proxi_summary_head">Controlla il sensore di prossimità per eventuali gesture e il sensore di impronte digitali</string>
-  <string name="proxi_title_head">Controllo di prossimità</string>
   <string name="slider_mode_off">Disattivo</string>
   <string name="slider_mode_vibrate">Vibrazione</string>
   <string name="slider_mode_silent">Silenzioso</string>
@@ -70,15 +68,6 @@
   <string name="category_fp_left_swipe_gesture">Scorrimento verso sinistra</string>
   <string name="fp_swipe_down_switch_summary_head">Scorrimento verso il basso per le notifiche</string>
   <string name="fp_swipe_down_switch_title_head">Scorrimento verso il basso</string>
-  <string name="doze_category_title">Display ambient</string>
-  <string name="doze_category_summary">Riattiva lo schermo quando ricevi le notifiche</string>
-  <string name="wave_check_summary">Mostra le notifiche al passaggio della mano</string>
-  <string name="wave_check_title">Movimento della mano</string>
-  <string name="tilt_check_summary">Mostra le notifiche al sollevamento</string>
-  <string name="tilt_check_title">Sollevamento</string>
-  <string name="pocket_check_summary">Mostra le notifiche quando togli dalla tasca</string>
-  <string name="pocket_check_title">Tasca</string>
-  <string name="ambient_display_enable">Il display ambient deve essere abilitato dalle impostazioni del display</string>
   <string name="panel_category_title">Modalità schermo</string>
   <string name="panel_category_summary">Modalità per la correzione dei colori</string>
   <string name="off_mode_title">Disattivo</string>

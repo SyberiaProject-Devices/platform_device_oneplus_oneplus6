@@ -30,8 +30,6 @@
   <string name="graphics_title">Grafika</string>
   <string name="srgb_mode_title">Režim sRGB</string>
   <string name="hbm_mode_title">Režim vysokého jasu</string>
-  <string name="proxi_summary_head">Kontrola senzoru priblíženia na ovládanie gest a snímača odtlačkov prstov</string>
-  <string name="proxi_title_head">Kontrola senzora priblíženia</string>
   <string name="slider_mode_off">Vypnutý</string>
   <string name="slider_mode_vibrate">Vibrovanie</string>
   <string name="slider_mode_silent">Tichý</string>
@@ -70,15 +68,6 @@
   <string name="category_fp_left_swipe_gesture">Odtlačok prsta potiahnutie vľavo</string>
   <string name="fp_swipe_down_switch_summary_head">Predvolené upozornenie odtlačku prsta pri potiahnutí prstom nadol</string>
   <string name="fp_swipe_down_switch_title_head">Odtlačok prsta gesto potiahnutia dolu</string>
-  <string name="doze_category_title">Ambientny displej</string>
-  <string name="doze_category_summary">Prebudiť obrazovku po prijatí upozornenia</string>
-  <string name="wave_check_summary">Zobraziť upozornenia pri mávnutí rukou</string>
-  <string name="wave_check_title">Mávnutie rukou</string>
-  <string name="tilt_check_summary">Zobraziť upozornenia pri zdvihnutí zariadenia</string>
-  <string name="tilt_check_title">Zdvihnutie zariadenia</string>
-  <string name="pocket_check_summary">Zobraziť upozornenia pri vybratí zariadenia z vrecka</string>
-  <string name="pocket_check_title">Vrecko</string>
-  <string name="ambient_display_enable">V nastaveniach obrazovky musí byť zapnutý Ambientny displej</string>
   <string name="panel_category_title">Režimy panelu</string>
   <string name="panel_category_summary">Režimy korekcie farieb panelu</string>
   <string name="off_mode_title">Vyp.</string>

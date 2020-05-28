@@ -25,8 +25,6 @@
   <string name="advanced_settings">Erweitert</string>
   <string name="category_slider">Regler</string>
   <string name="slider_mode_title">Regler-Modus</string>
-  <string name="proxi_summary_head">Näherungssensor für die Nutzung von Gesten und des Fingerabdrucksensors überprüfen</string>
-  <string name="proxi_title_head">Näherungssensor überprüfen</string>
   <string name="slider_mode_off">Aus</string>
   <string name="slider_mode_vibrate">Vibrieren</string>
   <string name="slider_mode_silent">Lautlos</string>
@@ -63,15 +61,6 @@
   <string name="category_fp_left_swipe_gesture">Fingerabdruck nach links wischen</string>
   <string name="fp_swipe_down_switch_summary_head">Standard-Fingerabdruck-Benachrichtigungswischgeste nach unten</string>
   <string name="fp_swipe_down_switch_title_head">Fingerabdruck nach unten Wischgeste</string>
-  <string name="doze_category_title">Inaktivitätsdisplay</string>
-  <string name="doze_category_summary">Das Display einschalten, wenn eine Benachrichtigung empfangen wurde</string>
-  <string name="wave_check_summary">Benachrichtigungen pulsieren, wenn mit der Hand gewunken wird</string>
-  <string name="wave_check_title">Winken</string>
-  <string name="tilt_check_summary">Benachrichtigungen pulsieren, wenn das Gerät hochgenommen wird</string>
-  <string name="tilt_check_title">Aufheben</string>
-  <string name="pocket_check_summary">Benachrichtigungen pulsiren, wenn das Gerät aus der Tasche genommen wird</string>
-  <string name="pocket_check_title">Tasche</string>
-  <string name="ambient_display_enable">Inaktivitätsdisplay muss in den Display-Einstellungen aktiviert sein</string>
   <string name="off_mode_title">Aus</string>
   <string name="tile_panel_mode">Panel-Modi</string>
   <string name="tile_hbm_mode">Modus für max. Helligkeit</string>

@@ -28,8 +28,6 @@
     <string name="advanced_settings">Advanced</string>
     <string name="category_slider">Slider</string>
     <string name="slider_mode_title">Slider mode</string>
-    <string name="proxi_summary_head">Check proximity sensor for handling gesture and fingerprint sensor</string>
-    <string name="proxi_title_head">Proximity check</string>
     <string name="off_screen_gesture_feedback_summary_head">Enable haptic feedback for gestures</string>
     <string name="off_screen_gesture_feedback_title_head">Haptic feedback</string>
     <string name="slider_mode_off">Off</string>
@@ -84,16 +82,6 @@
     <string name="category_fp_long_press_gesture">Fingerprint long press</string>
     <string name="fp_swipe_down_switch_summary_head">Use long press gesture to expand notifications</string>
     <string name="fp_swipe_down_switch_title_head">Fingerprint long press gesture</string>
-
-    <string name="doze_category_title">Ambient display</string>
-    <string name="doze_category_summary">Wake screen when you receive notifications</string>
-    <string name="wave_check_summary">Pulse notifications on hand wave</string>
-    <string name="wave_check_title">Hand wave</string>
-    <string name="tilt_check_summary">Pulse notifications when device is picked up</string>
-    <string name="tilt_check_title">Pick up</string>
-    <string name="pocket_check_summary">Pulse notifications on removal from pocket</string>
-    <string name="pocket_check_title">Pocket</string>
-    <string name="ambient_display_enable">Ambient display must be enabled in display settings</string>
     <string name="wake_entry">Wakeup</string>
 
     <string name="toast_ringer">Ringer</string>

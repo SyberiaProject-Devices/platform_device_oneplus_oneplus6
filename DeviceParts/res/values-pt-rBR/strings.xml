@@ -27,8 +27,6 @@
   <string name="graphics_title">Gráficos</string>
   <string name="srgb_mode_title">Modo sRGB</string>
   <string name="hbm_mode_title">Modo de alto brilho</string>
-  <string name="proxi_summary_head">Verifique o sensor de proximidade para manusear o gesto e sensor de impressão digital</string>
-  <string name="proxi_title_head">Verificação de proximidade</string>
   <string name="slider_mode_off">Desligado</string>
   <string name="slider_mode_vibrate">Vibrar</string>
   <string name="slider_mode_silent">Silencioso</string>

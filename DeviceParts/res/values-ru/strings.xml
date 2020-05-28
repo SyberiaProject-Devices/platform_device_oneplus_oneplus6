@@ -29,8 +29,6 @@
   <string name="advanced_settings">Дополнительно</string>
   <string name="category_slider">Ползунок</string>
   <string name="slider_mode_title">Режим ползунка</string>
-  <string name="proxi_summary_head">Проверить датчики жестов и отпечатков пальцев</string>
-  <string name="proxi_title_head">Проверка датчика приближения</string>
   <string name="slider_mode_off">Выкл.</string>
   <string name="slider_mode_vibrate">Вибрация</string>
   <string name="slider_mode_silent">Без звука</string>
@@ -68,15 +66,6 @@
   <string name="category_fp_left_swipe_gesture">Отпечаток пальца влево</string>
   <string name="fp_swipe_down_switch_summary_head">Уведомление по умолчанию при свайпе вниз по сканеру отпечатков пальцев</string>
   <string name="fp_swipe_down_switch_title_head">Свайп вниз по сканеру отпечатков пальцев</string>
-  <string name="doze_category_title">Активный экран</string>
-  <string name="doze_category_summary">Включение экрана при получении уведомлений</string>
-  <string name="wave_check_summary">Пульсирующие уведомления при проведении рукой над телефоном</string>
-  <string name="wave_check_title">Провести рукой над телефоном</string>
-  <string name="tilt_check_summary">Пульсирующие уведомления при поднятии телефона</string>
-  <string name="tilt_check_title">Поднятие</string>
-  <string name="pocket_check_summary">Пульсирующие уведомления при извлечении из кармана</string>
-  <string name="pocket_check_title">Карман</string>
-  <string name="ambient_display_enable">Активный экран должен быть включен в настройках экрана</string>
   <string name="off_mode_title">Выкл.</string>
   <string name="wake_entry">Пробуждение</string>
   <string name="otg_switch_summary">Включение/отключени поддержки USB-OTG</string>

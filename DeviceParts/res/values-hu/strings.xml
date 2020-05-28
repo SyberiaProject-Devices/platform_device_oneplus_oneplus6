@@ -30,8 +30,6 @@
   <string name="graphics_title">Grafika</string>
   <string name="srgb_mode_title">sRGB üzemmód</string>
   <string name="hbm_mode_title">Nagy fényerő mód</string>
-  <string name="proxi_summary_head">Ellenőrizze a közelség érzékelőt a gesztus és az ujjlenyomat érzékelő kezeléséhez</string>
-  <string name="proxi_title_head">Közelség ellenőrzés</string>
   <string name="slider_mode_off">Ki</string>
   <string name="slider_mode_vibrate">Rezgés</string>
   <string name="slider_mode_silent">Néma</string>
@@ -70,15 +68,6 @@
   <string name="category_fp_left_swipe_gesture">Ujjlenyomat balra csúsztatás</string>
   <string name="fp_swipe_down_switch_summary_head">Alapértelmezett ujjlenyomat értesítés lefelé csúsztatás gesztushoz</string>
   <string name="fp_swipe_down_switch_title_head">Ujjlenyomat lefelé csúsztatás gesztus</string>
-  <string name="doze_category_title">Környezeti kijelző</string>
-  <string name="doze_category_summary">Képernyő felébresztése értesítés esetén</string>
-  <string name="wave_check_summary">Értesítések pulzálása lebegő simításkor</string>
-  <string name="wave_check_title">Lebegő simítás</string>
-  <string name="tilt_check_summary">Értesítések pulzálása készülék felemelésekor</string>
-  <string name="tilt_check_title">Felemelés</string>
-  <string name="pocket_check_summary">Értesítések pulzálása zsebből való kivétel után</string>
-  <string name="pocket_check_title">Zseb</string>
-  <string name="ambient_display_enable">A környezeti kijelzőt engedélyezni kell a képernyő beállításokban</string>
   <string name="panel_category_title">Panel módok</string>
   <string name="panel_category_summary">Panel színkorrekciós módjai</string>
   <string name="off_mode_title">Ki</string>

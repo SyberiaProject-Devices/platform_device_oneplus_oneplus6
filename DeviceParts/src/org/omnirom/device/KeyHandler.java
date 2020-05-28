@@ -31,10 +31,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.database.ContentObserver;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.media.IAudioService;
 import android.media.AudioManager;
 import android.media.session.MediaSessionLegacyHelper;
@@ -54,14 +50,14 @@ import android.os.UEventObserver;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.provider.Settings.Global;
-import android.telecom.PhoneAccountHandle;
-import android.telecom.TelecomManager;
-import android.telephony.SubscriptionInfo;
-import android.telephony.SubscriptionManager;
+//import android.telecom.PhoneAccountHandle;
+//import android.telecom.TelecomManager;
+//import android.telephony.SubscriptionInfo;
+//import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.HapticFeedbackConstants;
-import android.view.WindowManagerGlobal;
+//import android.view.WindowManagerGlobal;
 import android.view.Gravity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -78,11 +74,9 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = "KeyHandler";
     private static final boolean DEBUG = true;
-    private static final boolean DEBUG_SENSOR = true;
 
     protected static final int GESTURE_REQUEST = 1;
     private static final int GESTURE_WAKELOCK_DURATION = 2000;
-    private static final String GOODIX_CONTROL_PATH = "/sys/devices/platform/soc/soc:goodix_fp/proximity_state";
 
     private static final int GESTURE_CIRCLE_SCANCODE = 250;
     private static final int GESTURE_V_SCANCODE = 252;
@@ -102,10 +96,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int KEY_SLIDER_CENTER = 602;
     private static final int KEY_SLIDER_BOTTOM = 603;
 
-    private static final int MIN_PULSE_INTERVAL_MS = 2500;
-    private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
-    private static final int HANDWAVE_MAX_DELTA_MS = 1000;
-    private static final int POCKET_MIN_DELTA_MS = 5000;
     private static final int FP_GESTURE_LONG_PRESS = 305;
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
@@ -130,38 +120,14 @@ public class KeyHandler implements DeviceKeyHandler {
         FP_GESTURE_LONG_PRESS,
     };
 
-    private static final int[] sProxiCheckedGestures = new int[]{
-        GESTURE_II_SCANCODE,
-        GESTURE_CIRCLE_SCANCODE,
-        GESTURE_V_SCANCODE,
-        GESTURE_A_SCANCODE,
-        GESTURE_LEFT_V_SCANCODE,
-        GESTURE_RIGHT_V_SCANCODE,
-        GESTURE_DOWN_SWIPE_SCANCODE,
-        GESTURE_UP_SWIPE_SCANCODE,
-        GESTURE_LEFT_SWIPE_SCANCODE,
-        GESTURE_RIGHT_SWIPE_SCANCODE,
-    };
-
     protected final Context mContext;
     private final PowerManager mPowerManager;
     private EventHandler mEventHandler;
     private WakeLock mGestureWakeLock;
     private Handler mHandler = new Handler();
-    private SettingsObserver mSettingsObserver;
     private static boolean mButtonDisabled;
     private final NotificationManager mNoMan;
     private final AudioManager mAudioManager;
-    private SensorManager mSensorManager;
-    private boolean mProxyIsNear;
-    private boolean mUseProxiCheck;
-    private Sensor mTiltSensor;
-    private boolean mUseTiltCheck;
-    private boolean mProxyWasNear;
-    private long mProxySensorTimestamp;
-    private boolean mUseWaveCheck;
-    private Sensor mPocketSensor;
-    private boolean mUsePocketCheck;
     private boolean mFPcheck;
     private boolean mDispOn;
     private boolean isFpgesture;
@@ -173,118 +139,14 @@ public class KeyHandler implements DeviceKeyHandler {
     private final Context mResContext;
     private boolean mToggleTorch = false;
 
-    private SensorEventListener mProximitySensor = new SensorEventListener() {
-        @Override
-        public void onSensorChanged(SensorEvent event) {
-            mProxyIsNear = event.values[0] == 1;
-            if (DEBUG_SENSOR) Log.i(TAG, "mProxyIsNear = " + mProxyIsNear + " mProxyWasNear = " + mProxyWasNear);
-            if (mUseProxiCheck) {
-                if (Utils.fileWritable(GOODIX_CONTROL_PATH)) {
-                    Utils.writeValue(GOODIX_CONTROL_PATH, mProxyIsNear ? "1" : "0");
-                }
-            }
-            if (mUseWaveCheck || mUsePocketCheck) {
-                if (mProxyWasNear && !mProxyIsNear) {
-                    long delta = SystemClock.elapsedRealtime() - mProxySensorTimestamp;
-                    if (DEBUG_SENSOR) Log.i(TAG, "delta = " + delta);
-                    if (mUseWaveCheck && delta < HANDWAVE_MAX_DELTA_MS) {
-                        launchDozePulse();
-                    }
-                    if (mUsePocketCheck && delta > POCKET_MIN_DELTA_MS) {
-                        launchDozePulse();
-                    }
-                }
-                mProxySensorTimestamp = SystemClock.elapsedRealtime();
-                mProxyWasNear = mProxyIsNear;
-            }
-        }
-
-        @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        }
-    };
-
-    private SensorEventListener mTiltSensorListener = new SensorEventListener() {
-        @Override
-        public void onSensorChanged(SensorEvent event) {
-            if (event.values[0] == 1) {
-                launchDozePulse();
-            }
-        }
-
-        @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        }
-    };
-
-    private class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.DEVICE_PROXI_CHECK_ENABLED),
-                    false, this);
-            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.DEVICE_FEATURE_SETTINGS),
-                    false, this);
-            update();
-            updateDozeSettings();
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            update();
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.DEVICE_FEATURE_SETTINGS))){
-                updateDozeSettings();
-                return;
-            }
-            update();
-        }
-
-        public void update() {
-            mUseProxiCheck = Settings.System.getIntForUser(
-                    mContext.getContentResolver(), Settings.System.DEVICE_PROXI_CHECK_ENABLED, 1,
-                    UserHandle.USER_CURRENT) == 1;
-        }
-    }
-
-    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
-         @Override
-         public void onReceive(Context context, Intent intent) {
-             if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-                 mDispOn = true;
-                 onDisplayOn();
-             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-                 mDispOn = false;
-                 onDisplayOff();
-             }
-         }
-    };
-
     public KeyHandler(Context context) {
         mContext = context;
-        mDispOn = true;
         mEventHandler = new EventHandler();
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "GestureWakeLock");
-        mSettingsObserver = new SettingsObserver(mHandler);
-        mSettingsObserver.observe();
         mNoMan = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        mTiltSensor = getSensor(mSensorManager, "oneplus.sensor.pickup");
-        mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
-        IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
-        screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
         mSysUiContext = ActivityThread.currentActivityThread().getSystemUiContext();
         mResContext = getPackageContext(mContext, "org.omnirom.device");
         (new UEventObserver() {
@@ -352,12 +214,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
     @Override
     public boolean isDisabledKeyEvent(KeyEvent event) {
-        boolean isProxyCheckRequired = mUseProxiCheck &&
-                ArrayUtils.contains(sProxiCheckedGestures, event.getScanCode());
-        if (mProxyIsNear && isProxyCheckRequired) {
-            if (DEBUG) Log.i(TAG, "isDisabledKeyEvent: blocked by proxi sensor - scanCode=" + event.getScanCode());
-            return true;
-        }
         return false;
     }
 
@@ -429,45 +285,6 @@ public class KeyHandler implements DeviceKeyHandler {
         }
     }
 
-    private void onDisplayOn() {
-        if (DEBUG) Log.i(TAG, "Display on");
-        if (enableProxiSensor()) {
-            mSensorManager.unregisterListener(mProximitySensor, mPocketSensor);
-            enableGoodix();
-        }
-        if (mUseTiltCheck) {
-            mSensorManager.unregisterListener(mTiltSensorListener, mTiltSensor);
-        }
-        if ((mClientObserver == null) && (isOPCameraAvail)) {
-            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
-            mClientObserver.startWatching();
-        }
-    }
-
-    private void enableGoodix() {
-        if (Utils.fileWritable(GOODIX_CONTROL_PATH)) {
-            Utils.writeValue(GOODIX_CONTROL_PATH, "0");
-        }
-    }
-
-    private void onDisplayOff() {
-        if (DEBUG) Log.i(TAG, "Display off");
-        if (enableProxiSensor()) {
-            mProxyWasNear = false;
-            mSensorManager.registerListener(mProximitySensor, mPocketSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
-            mProxySensorTimestamp = SystemClock.elapsedRealtime();
-        }
-        if (mUseTiltCheck) {
-            mSensorManager.registerListener(mTiltSensorListener, mTiltSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
-        }
-        if (mClientObserver != null) {
-            mClientObserver.stopWatching();
-            mClientObserver = null;
-        }
-    }
-
     private int getSliderAction(int position) {
         String value = Settings.System.getStringForUser(mContext.getContentResolver(),
                     Settings.System.BUTTON_EXTRA_KEY_MAPPING,
@@ -513,12 +330,8 @@ public class KeyHandler implements DeviceKeyHandler {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             showToast(R.string.toast_flash, Toast.LENGTH_SHORT, yOffset);
-            if (mProxyIsNear && mUseProxiCheck) {
-                return;
-            } else {
                 mToggleTorch = true;
                 toggleTorch(true);
-            }
         }
     }
 
@@ -643,50 +456,9 @@ public class KeyHandler implements DeviceKeyHandler {
         return null;
     }
 
-    private void launchDozePulse() {
-        if (DEBUG) Log.i(TAG, "Doze pulse");
-        mContext.sendBroadcastAsUser(new Intent(DOZE_INTENT),
-                new UserHandle(UserHandle.USER_CURRENT));
-    }
-
-    private boolean enableProxiSensor() {
-        return mUsePocketCheck || mUseWaveCheck || mUseProxiCheck;
-    }
-
-    private void updateDozeSettings() {
-        String value = Settings.System.getStringForUser(mContext.getContentResolver(),
-                    Settings.System.DEVICE_FEATURE_SETTINGS,
-                    UserHandle.USER_CURRENT);
-        if (DEBUG) Log.i(TAG, "Doze settings = " + value);
-        if (!TextUtils.isEmpty(value)) {
-            String[] parts = value.split(":");
-            mUseWaveCheck = Boolean.valueOf(parts[0]);
-            mUsePocketCheck = Boolean.valueOf(parts[1]);
-            mUseTiltCheck = Boolean.valueOf(parts[2]);
-        }
-    }
-
-    protected static Sensor getSensor(SensorManager sm, String type) {
-        for (Sensor sensor : sm.getSensorList(Sensor.TYPE_ALL)) {
-            if (type.equals(sensor.getStringType())) {
-                return sensor;
-            }
-        }
-        return null;
-    }
 
     IStatusBarService getStatusBarService() {
         return IStatusBarService.Stub.asInterface(ServiceManager.getService("statusbar"));
-    }
-
-    @Override
-    public boolean getCustomProxiIsNear(SensorEvent event) {
-        return event.values[0] == 1;
-    }
-
-    @Override
-    public String getCustomProxiSensor() {
-        return "oneplus.sensor.pocket";
     }
 
     private class ClientPackageNameObserver extends FileObserver {
