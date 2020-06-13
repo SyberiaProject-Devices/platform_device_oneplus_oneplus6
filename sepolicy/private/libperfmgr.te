@@ -38,9 +38,6 @@ allow libperfmgr hidl_base_hwservice:hwservice_manager add;
 binder_call(libperfmgr, hwservicemanager)
 binder_call(libperfmgr, hal_audio)
 
-# Allow set display low power mode
-unix_socket_connect(libperfmgr, pps, mm-pp-daemon)
-
 # To get hwservicemanager state
 get_prop(libperfmgr, hwservicemanager_prop)
 
