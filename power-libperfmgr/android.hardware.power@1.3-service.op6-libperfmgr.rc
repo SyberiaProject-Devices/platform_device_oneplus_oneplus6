@@ -22,3 +22,7 @@ on property:init.svc.surfaceflinger=restarting && property:vendor.powerhal.rende
    setprop vendor.powerhal.lpm ""
    setprop vendor.powerhal.rendering ""
    restart vendor.power-hal-1-3
+
+# initialize powerHAL when boot is completed
+on property:sys.boot_completed=1
+   setprop vendor.powerhal.init 1
