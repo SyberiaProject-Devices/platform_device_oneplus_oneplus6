@@ -131,7 +131,6 @@ persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=0
 
 # Media
-debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 debug.stagefright.ccodec=1
 vendor.media.target.version=2
