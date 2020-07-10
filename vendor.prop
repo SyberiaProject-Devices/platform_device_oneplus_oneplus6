@@ -143,3 +143,6 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 drm.service.enabled=true
+
+# Ccodec
+debug.stagefright.omx_default_rank=0
