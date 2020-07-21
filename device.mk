@@ -126,6 +126,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.qcom.post_boot.sh \
+    init.safailnet.rc \
     ueventd.qcom.rc
 
 # Dex
