@@ -202,6 +202,10 @@ PRODUCT_PACKAGES += \
     DeviceParts \
     OnePlusDoze
 
+# Shims
+PRODUCT_PACKAGES += \
+    libcutils_shim
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
