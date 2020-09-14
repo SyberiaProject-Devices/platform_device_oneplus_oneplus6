@@ -26,6 +26,7 @@ cc_library {
     ],
     cflags: [
         "-Wall",
+        "-Wno-macro-redefined",
         "-Werror",
     ],
     srcs: [
