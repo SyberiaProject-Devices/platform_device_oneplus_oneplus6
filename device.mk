@@ -27,6 +27,8 @@ $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 # setup dalvik vm configs
 #$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
+TARGET_OTA_ASSERT_DEVICE := oneplus6,OnePlus6,enchilada
+
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -53,7 +55,7 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_TARGET_VNDK_VERSION := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
 # Permissions
