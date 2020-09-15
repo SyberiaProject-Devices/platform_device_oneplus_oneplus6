@@ -160,6 +160,10 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.op6-libperfmgr \
     android.hardware.power.stats@1.0-service.op6
 
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media_profiles_vendor.xml:system/etc/media_profiles_vendor.xml
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
