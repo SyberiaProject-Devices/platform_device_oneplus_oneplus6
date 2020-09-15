@@ -43,7 +43,7 @@ debug.cpurend.vsync=false
 persist.sys.oem.otg_support=true
 
 # Media
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.settings.xml=/system/etc/media_profiles_vendor.xml
 
 # Radio
 persist.vendor.ims.dropset_feature=0
