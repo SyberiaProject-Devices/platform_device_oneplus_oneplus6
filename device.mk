@@ -25,7 +25,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 
 # setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
+#$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
