@@ -155,10 +155,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus_sdm845
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service.oneplus_sdm845
-
 # Libperfmgr
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.op6-libperfmgr \
