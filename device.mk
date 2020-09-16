@@ -181,6 +181,11 @@ PRODUCT_PACKAGES += \
     vendor.nxp.nxpese@1.0:64 \
     vendor.nxp.nxpnfc@1.0:64
 
+# NXP NFC (Q) dependencied
+PRODUCT_PACKAGES += \
+    libmetricslogger \
+    libhwbinder
+
 # OnePlus Camera HIDL
 PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0 \

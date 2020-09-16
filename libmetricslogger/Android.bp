@@ -1,0 +1,19 @@
+// Copyright 2017 The Android Open Source Project
+
+metricslogger_lib_src_files = [
+    "metrics_logger.cpp",
+]
+
+// metricslogger shared library
+// -----------------------------------------------------------------------------
+cc_library {
+    name: "libmetricslogger",
+    local_include_dirs: ["include"],
+    srcs: metricslogger_lib_src_files,
+    cflags: [
+        "-Wno-unused-parameter",
+    ],
+    shared_libs: [
+        "libbase",
+    ],
+}
