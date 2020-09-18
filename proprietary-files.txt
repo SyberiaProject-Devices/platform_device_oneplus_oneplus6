@@ -1414,9 +1414,7 @@ vendor/lib/libtime_genoff.so|9f1e0fd1180207b3df81aa65c319b0d5a467d74c
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
-vendor/lib64/hw/thermal.sdm845.so
 vendor/lib64/libthermalclient.so
-vendor/lib/hw/thermal.sdm845.so
 vendor/lib/libthermalclient.so
 
 # Touchscreen
