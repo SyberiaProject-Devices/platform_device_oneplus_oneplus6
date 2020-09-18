@@ -16,10 +16,6 @@ product/framework/vendor.qti.voiceprint-V1.0-java.jar
 product/lib64/vendor.qti.voiceprint@1.0.so
 product/lib/vendor.qti.voiceprint@1.0.so
 
-# Android Auto
--product/priv-app/AndroidAutoStub/AndroidAutoStub.apk;PRESIGNED
-product/etc/permissions/priv-app-permission-google_auto.xml
-
 # ANT+
 -lib/libantradio.so
 -lib64/libantradio.so
