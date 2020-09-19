@@ -3,6 +3,7 @@ soong_namespace {
         "hardware/qcom/bootctrl",
         "hardware/google/pixel",
         "hardware/google/interfaces",
+        "vendor/qcom/opensource/commonsys/packages/apps/Bluetooth",
     ],
 }
 
