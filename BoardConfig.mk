@@ -172,7 +172,8 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 PRODUCT_SOONG_NAMESPACES += \
     $(VENDOR_PATH) \
     hardware/google/pixel \
-    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    vendor/qcom/opensource/commonsys/system/bt/conf
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
