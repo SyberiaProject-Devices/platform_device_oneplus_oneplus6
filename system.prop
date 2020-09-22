@@ -93,3 +93,4 @@ debug.sf.enable_hwc_vds=1
 # Vendor
 ro.vendor.qti.va_aosp.support=1
 ro.fingerprint.inscreen_disabled=true
+ro.kernel.ebpf.supported=true
