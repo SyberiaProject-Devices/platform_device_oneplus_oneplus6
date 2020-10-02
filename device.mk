@@ -171,11 +171,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/lib64/pixel-power-ext-V1-ndk_platform.so:system/lib64/pixel-power-ext-V1-ndk_platform.so
 
-
-# Media
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_profiles_vendor.xml:system/etc/media_profiles_vendor.xml
-
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
