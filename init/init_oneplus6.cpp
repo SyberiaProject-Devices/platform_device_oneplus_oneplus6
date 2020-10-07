@@ -60,6 +60,6 @@ void vendor_load_properties()
 {
     property_override("vendor.audio.feature.spkr_prot.enable", "false");
     property_override("ro.control_privapp_permissions", "log");
-    property_override_dual("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "google/sunfish/sunfish:11/RP1A.200720.011/6746289:user/release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.product.build.fingerprint", "google/sunfish/sunfish:11/RP1A.200720.011/6746289:user/release-keys");
+    property_override_dual("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "google/sunfish/sunfish:11/RP1A.201005.006/6828489:user/release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.product.build.fingerprint", "google/sunfish/sunfish:11/RP1A.201005.006/6828489:user/release-keys");
 }
