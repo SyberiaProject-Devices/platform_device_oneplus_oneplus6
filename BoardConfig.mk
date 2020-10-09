@@ -157,13 +157,13 @@ TARGET_LD_SHIM_LIBS := \
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 
-#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+    device/qcom/sepolicy_q/generic/private \
+    device/qcom/sepolicy_q/qva/private
 
-#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+    device/qcom/sepolicy_q/generic/public \
+    device/qcom/sepolicy_q/qva/public
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
