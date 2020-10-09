@@ -7,6 +7,7 @@ allow powerstats sysfs_system_sleep_stats:file r_file_perms;
 allow powerstats sysfs_power_stats:file r_file_perms;
 
 allow powerstats default_android_service:service_manager add;
+allow powerstats hal_power_stats_hwservice:hwservice_manager find;
 allow powerstats hal_power_stats_hwservice:hwservice_manager add;
 allow powerstats hidl_base_hwservice:hwservice_manager add;
 get_prop(powerstats, hwservicemanager_prop)

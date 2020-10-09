@@ -35,8 +35,10 @@ allow libperfmgr proc_touchpanel:file rw_file_perms;
 
 allow libperfmgr hal_power_hwservice:hwservice_manager add;
 allow libperfmgr hidl_base_hwservice:hwservice_manager add;
+allow libperfmgr hal_power_service:service_manager add;
 binder_call(libperfmgr, hwservicemanager)
 binder_call(libperfmgr, hal_audio)
+binder_call(libperfmgr, servicemanager);
 
 # To get hwservicemanager state
 get_prop(libperfmgr, hwservicemanager_prop)

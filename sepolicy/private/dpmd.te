@@ -1,0 +1,4 @@
+allow dpmd diag_device:chr_file open;
+allow dpmd diag_device:chr_file { read write };
+allow dpmd hal_dpmqmi_hwservice:hwservice_manager find;
+allow dpmd netutils_wrapper_exec:file execute;
