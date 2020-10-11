@@ -208,6 +208,7 @@ PRODUCT_PACKAGES += \
 
 # OnePlus Camera HIDL
 PRODUCT_PACKAGES += \
+    libcvface_api \
     vendor.oneplus.camera.CameraHIDL@1.0 \
     vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
     vendor.oneplus.camera.CameraHIDL-V1.0-java
