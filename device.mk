@@ -132,7 +132,6 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Common init scripts
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.qcom.post_boot.sh \
