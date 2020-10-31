@@ -177,17 +177,16 @@ PRODUCT_PACKAGES += \
     gralloc.sdm845 \
     hwcomposer.sdm845 \
     libdisplayconfig \
-    libqdMetaData \
-    libqdMetaData.system \
-    libtinyxml \
-    libvulkan \
+    libdisplayconfig.vendor \
+    libdisplayconfig.qti \
     libvulkan \
     libdisplayconfig \
     libqdMetaData \
     libqdMetaData.system \
     memtrack.sdm845 \
-    vendor.display.config@1.7 \
-    vendor.display.config@1.7.vendor \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
+    memtrack.sdm845 \
     vendor.qti.hardware.display.allocator@1.0-service
 
 # DRM
