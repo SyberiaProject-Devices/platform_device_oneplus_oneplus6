@@ -96,6 +96,7 @@ debug.sf.enable_hwc_vds=1
 ro.vendor.qti.va_aosp.support=1
 ro.fingerprint.inscreen_disabled=true
 ro.kernel.ebpf.supported=true
+persist.device_config.use_cgroup_freezer=true
 
 # QTI Bluetooth
 ro.bluetooth.library_name=libbluetooth_qti.so
