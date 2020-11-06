@@ -267,7 +267,10 @@ product/lib/vendor.qti.ims.callinfo@1.0.so
 product/lib/vendor.qti.ims.rcsconfig@1.0.so
 product/lib/vendor.qti.imsrtpservice@2.0.so
 product/lib/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk|4161acfa23df5ed8c095754e325f48d0f6968c6e
+
+# Telephony - from LA.QSSI.11.0.r1-07800-qssi.0.
+system_ext/framework/qti-telephony-common.jar
+-system_ext/priv-app/ims/ims.apk
 
 # SecureMSM
 product/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
@@ -457,7 +460,6 @@ product/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 product/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
 product/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
 
-#QTI AV Enhancements
 #QTI AV Enhancements
 system_ext/lib/libavenhancements.so
 -system_ext/lib/libqct_resampler.so
