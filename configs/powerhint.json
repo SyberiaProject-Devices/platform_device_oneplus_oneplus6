@@ -213,22 +213,12 @@
       "HoldFd": true
     },
     {
-      "Name": "UfsClkGateEnable",
-      "Path": "/sys/devices/platform/soc/1d84000.ufshc/clkgate_enable",
+      "Name": "DisplayWakeup",
+      "Path": "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/early_wakeup",
       "Values": [
-        "0",
-        "1"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "UfsHibern8Enable",
-      "Path": "/sys/devices/platform/soc/1d84000.ufshc/hibern8_on_idle_enable",
-      "Values": [
-        "0",
-        "1"
-      ],
-      "ResetOnInit": true
+        "1",
+        "0"
+      ]
     },
     {
       "Name": "PowerHALMainState",
@@ -264,6 +254,12 @@
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1363200"
+    },
+    {
+      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "Node": "PowerHALMainState",
+      "Duration": 0,
+      "Value": "SUSTAINED_PERFORMANCE"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
@@ -318,18 +314,6 @@
       "Node": "LLCCBWMinFreq",
       "Duration": 0,
       "Value": "2597"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "UfsClkGateEnable",
-      "Duration": 200,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "UfsHibern8Enable",
-      "Duration": 200,
-      "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
@@ -416,28 +400,22 @@
       "Value": "1478400000"
     },
     {
-      "PowerHint": "LAUNCH",
-      "Node": "UfsClkGateEnable",
-      "Duration": 3000,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "UfsHibern8Enable",
-      "Duration": 3000,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "PowerHALAudioState",
-      "Duration": 0,
-      "Value": "AUDIO_STREAMING_LOW_LATENCY"
+      "PowerHint": "AUDIO_LAUNCH",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 2000,
+      "Value": "1459200"
     },
     {
       "PowerHint": "AUDIO_LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
       "Value": "44"
+    },
+    {
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
+      "Node": "PowerHALAudioState",
+      "Duration": 0,
+      "Value": "AUDIO_STREAMING_LOW_LATENCY"
     },
     {
       "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
@@ -464,10 +442,10 @@
       "Value": "710000000"
     },
     {
-      "PowerHint": "ML_ACC",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 2000,
-      "Value": "44"
+      "PowerHint": "DISPLAY_UPDATE_IMMINENT",
+      "Node": "DisplayWakeup",
+      "Duration": 60,
+      "Value": "1"
     }
   ]
 }

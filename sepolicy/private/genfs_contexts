@@ -35,8 +35,6 @@ genfscon debugfs /sched_features                      u:object_r:debugfs_sched_f
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_state    u:object_r:sysfs_graphics:s0
 
 genfscon sysfs /class/devfreq                         u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkgate_enable               u:object_r:sysfs_scsi_devices:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/hibern8_on_idle_enable       u:object_r:sysfs_scsi_devices:s0
 
 genfscon sysfs /power/rpmh_stats/master_stats         u:object_r:sysfs_rpm:s0
 genfscon sysfs /power/system_sleep/stats              u:object_r:sysfs_system_sleep_stats:s0
@@ -46,3 +44,4 @@ genfscon proc /sys/kernel/sched_boost                 u:object_r:proc_sysctl_sch
 
 # FPS info
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps       u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/early_wakeup     u:object_r:sysfs_msm_subsys:s0
