@@ -10,4 +10,6 @@ allow init sysfs_type:file { open read setattr };
 # Allow init create cgroups
 allow init cgroup:file create;
 
+binder_call(init, system_server);
+
 permissive init;

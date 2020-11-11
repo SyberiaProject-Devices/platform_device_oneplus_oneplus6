@@ -16,3 +16,7 @@ allow system_server camera_data_file:file { read open getattr };
 
 #Smart charger
 allow system_server sysfs_battery_supply:file rw_file_perms;
+
+# Vibrator service
+binder_call(system_server, init);
+allow system_server init:service_manager  { find };
