@@ -93,24 +93,11 @@ PRODUCT_PACKAGES += \
 
 # QTI Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio@2.0-impl \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
     BluetoothQti
 
 # Media
 PRODUCT_PACKAGES += \
     libmediaplayerservice
-
-# Radio
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.0 \
-    android.hardware.radio@1.1 \
-    android.hardware.radio@1.2 \
-    android.hardware.radio@1.3 \
-    android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.0 \
-    android.hardware.radio.deprecated@1.0
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
@@ -191,9 +178,9 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2:64 \
     android.hardware.secure_element@1.0:64 \
     com.android.nfc_extras \
-    Tag \
     vendor.nxp.nxpese@1.0:64 \
-    vendor.nxp.nxpnfc@1.0:64
+    vendor.nxp.nxpnfc@1.0:64 \
+    Tag
 
 # NXP NFC (Q) dependencied
 PRODUCT_PACKAGES += \
