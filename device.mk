@@ -335,6 +335,13 @@ PRODUCT_PACKAGES += \
     libmetricslogger \
     libhwbinder
 
+# OnePlus
+PRODUCT_PACKAGES += \
+    oneplus-fwk.oneplus_msmnile
+
+PRODUCT_BOOT_JARS += \
+    oneplus-fwk.oneplus_msmnile
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
