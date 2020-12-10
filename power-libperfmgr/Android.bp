@@ -16,6 +16,7 @@
 
 cc_library {
     name: "libdisppower-op6",
+    vendor: true,
     srcs: [
         "disp-power/InteractionHandler.cpp",
     ],
@@ -33,6 +34,7 @@ cc_binary {
     relative_install_path: "hw",
     vintf_fragments: ["hidl/android.hardware.power@1.3-service.op6.xml"],
     init_rc: ["hidl/android.hardware.power@1.3-service.op6-libperfmgr.rc"],
+    vendor: true,
     srcs: ["hidl/service.cpp", "hidl/Power.cpp"],
     cflags: [
         "-Wall",
@@ -58,6 +60,7 @@ cc_binary {
     relative_install_path: "hw",
     init_rc: ["aidl/android.hardware.power-service.op6-libperfmgr.rc"],
     vintf_fragments: ["aidl/android.hardware.power-service.op6.xml"],
+    vendor: true,
     shared_libs: [
         "android.hardware.power-ndk_platform",
         "libbase",

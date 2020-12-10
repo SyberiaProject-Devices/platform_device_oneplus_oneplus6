@@ -1,0 +1,17 @@
+cc_library_shared {
+    name: "libcvface_api",
+    proprietary: true,
+    vendor: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libcvface_api.c",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libutils",
+    ],
+}

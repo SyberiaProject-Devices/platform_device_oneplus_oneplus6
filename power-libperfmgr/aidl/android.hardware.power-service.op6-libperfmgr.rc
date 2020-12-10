@@ -1,4 +1,4 @@
-service vendor.power-hal-aidl /system/bin/hw/android.hardware.power-service.op6-libperfmgr
+service vendor.power-hal-aidl /vendor/bin/hw/android.hardware.power-service.op6-libperfmgr
     class hal
     user root
     group system

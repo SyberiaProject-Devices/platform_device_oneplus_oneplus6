@@ -18,6 +18,7 @@ cc_binary {
     init_rc: ["lineage.livedisplay@2.0-service.oneplus_sdm845.rc"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
+    vendor: true,
     srcs: [
         "DisplayModes.cpp",
         "PictureAdjustment.cpp",

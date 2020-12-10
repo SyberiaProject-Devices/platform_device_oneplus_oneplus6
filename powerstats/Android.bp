@@ -16,6 +16,7 @@ cc_binary {
     name: "android.hardware.power.stats@1.0-service.op6",
     relative_install_path: "hw",
     init_rc: ["android.hardware.power.stats@1.0-service.op6.rc"],
+    vendor: true,
     srcs: ["service.cpp"],
     cflags: [
         "-Wall",

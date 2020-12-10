@@ -25,7 +25,7 @@
 #include "PictureAdjustment.h"
 #include "SunlightEnhancement.h"
 
-#define SDM_DISP_LIB "libsdm-disp-apis.qti.so"
+#define SDM_DISP_LIB "libsdm-disp-vndapis.so"
 
 using ::vendor::lineage::livedisplay::V2_0::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::ISunlightEnhancement;
@@ -48,7 +48,7 @@ int main() {
     uint8_t services = 0;
     android::status_t status = android::OK;
 
-    android::ProcessState::initWithDriver("/dev/binder");
+    android::ProcessState::initWithDriver("/dev/vndbinder");
 
     LOG(INFO) << "LiveDisplay HAL service is starting.";
 

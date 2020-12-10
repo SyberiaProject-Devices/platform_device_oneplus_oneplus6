@@ -30,7 +30,7 @@ using aidl::google::hardware::power::impl::pixel::Power;
 using aidl::google::hardware::power::impl::pixel::PowerExt;
 using ::android::perfmgr::HintManager;
 
-constexpr char kPowerHalConfigPath[] = "/system/etc/powerhint.json";
+constexpr char kPowerHalConfigPath[] = "/vendor/etc/powerhint.json";
 constexpr char kPowerHalInitProp[] = "vendor.powerhal.init";
 
 int main() {
