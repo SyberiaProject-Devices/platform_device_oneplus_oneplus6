@@ -45,11 +45,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
-
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:system/etc/permissions/android.hardware.telephony.ims.xml \
@@ -120,14 +115,12 @@ PRODUCT_PACKAGES += \
     RemovePackages
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/msm_irqbalance.conf \
-    $(LOCAL_PATH)/configs/powerhint.json:system/etc/powerhint.json \
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
     $(LOCAL_PATH)/configs/privapp-permissions-ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-ims.xml \
     $(LOCAL_PATH)/configs/backuptool_blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
-    $(LOCAL_PATH)/display/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml:system/product/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml \
-    $(LOCAL_PATH)/display/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml:system/product/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml
+    $(LOCAL_PATH)/display/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml \
+    $(LOCAL_PATH)/display/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml
 
 # Boot control
 PRODUCT_PACKAGES_DEBUG += \
@@ -191,7 +184,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power.stats@1.0-service.op6
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/lib64/pixel-power-ext-V1-ndk_platform.so:system/lib64/pixel-power-ext-V1-ndk_platform.so
+    $(LOCAL_PATH)/prebuilts/lib64/pixel-power-ext-V1-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib64/pixel-power-ext-V1-ndk_platform.so
 
 # Net
 PRODUCT_PACKAGES += \
@@ -268,7 +261,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # WiFi Display
 PRODUCT_PACKAGES += \
