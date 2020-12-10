@@ -112,10 +112,13 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.bluetooth.default \
+    BluetoothQti \
     libbthost_if \
     libldacBT_dec \
-    BluetoothQti \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
