@@ -17,6 +17,8 @@
 
 set -e
 
+DEVICE=oneplus6
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -51,16 +53,9 @@ if [ -z "$SRC" ]; then
     SRC=adb
 fi
 
-# Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$SYBERIA_ROOT" true "$CLEAN_VENDOR"
+# Reinitialize the helper for device
+setup_vendor "$DEVICE" "$VENDOR" "$SYBERIA_ROOT" false "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
-
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
-    # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$SYBERIA_ROOT" false "$CLEAN_VENDOR"
-
-    extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
-fi
+extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh

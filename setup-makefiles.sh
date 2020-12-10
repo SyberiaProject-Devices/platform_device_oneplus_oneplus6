@@ -19,7 +19,7 @@
 set -e
 
 # Required!
-DEVICE_COMMON=sdm845-common
+DEVICE=oneplus6
 VENDOR=oneplus
 
 INITIAL_COPYRIGHT_YEAR=2018
@@ -37,14 +37,14 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Initialize the helper for common
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$SYBERIA_ROOT" true
+# Initialize the helper for device
+setup_vendor "$DEVICE" "$VENDOR" "$SYBERIA_ROOT" true
 
 # Copyright headers and guards
-write_headers "oneplus6 oneplus6t"
+write_headers "oneplus6"
 
 # The standard common blobs
-write_makefiles "$MY_DIR"/proprietary-files-common.txt true
+write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 # We are done!
 write_footers
