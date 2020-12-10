@@ -149,10 +149,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 TARGET_PREBUILT_RECOVERY_RAMDISK := $(VENDOR_PATH)/ramdisk-twrp.cpio.gz
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/product/lib64/libdpmframework.so|libcutils_shim.so
-
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
