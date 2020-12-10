@@ -1,20 +1,22 @@
-type hal_livedisplay_sdm845, coredomain, domain;
+type hal_livedisplay_sdm845, domain;
 hal_server_domain(hal_livedisplay_sdm845, hal_lineage_livedisplay)
 
 type hal_livedisplay_sdm845_exec, system_file_type, exec_type, file_type;
 init_daemon_domain(hal_livedisplay_sdm845)
 
+vndbinder_use(hal_livedisplay_sdm845)
+
 # Allow LiveDisplay to perform binder IPC to vendor.display.color::IDisplayColor
-type hal_display_color_default, domain;
+#type hal_display_color_default, domain;
 binder_call(hal_livedisplay_sdm845, hal_display_color_default)
 
 allow hal_livedisplay_sdm845 hal_display_color_hwservice:hwservice_manager find;
 allow init hal_display_color_default:binder call;
 allow init hal_display_color_hwservice:hwservice_manager find;
-allow init hal_lineage_livedisplay_hwservice:hwservice_manager { add find };
+#allow init hal_lineage_livedisplay_hwservice:hwservice_manager { add find };
 
 # Allow LiveDisplay to access pps socket
-type mm-pp-daemon, domain;
+#type mm-pp-daemon, domain;
 typeattribute mm-pp-daemon socket_between_core_and_vendor_violators;
 unix_socket_connect(hal_livedisplay_sdm845, pps, mm-pp-daemon)
 

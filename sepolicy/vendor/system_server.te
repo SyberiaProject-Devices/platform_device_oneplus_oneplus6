@@ -1,6 +1,4 @@
 allow system_server sysfs_fpc_proximity:file rw_file_perms;
-allow system_server libperfmgr:binder call;
-allow system_server powerstats:binder call;
 
 # OTA updater
 allow system_server sdcardfs:file rw_file_perms;
@@ -16,3 +14,6 @@ allow system_server camera_data_file:file { read open getattr };
 
 #Smart charger
 allow system_server sysfs_battery_supply:file rw_file_perms;
+
+allow system_server default_android_hwservice:hwservice_manager find;
+allow system_server init:binder call;

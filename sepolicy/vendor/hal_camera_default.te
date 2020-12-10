@@ -1,0 +1,7 @@
+allow hal_camera_default sysfs:file read;
+allow hal_camera_default sdcardfs:dir { search };
+allow hal_camera_default sdcardfs:file { rw_file_perms };
+allow hal_camera_default nfc_data_file: dir { search open};
+allow hal_camera_default default_android_hwservice:hwservice_manager find;
+allow hal_camera_default mnt_vendor_file:dir { add_name write };
+allow hal_camera_default mnt_vendor_file:file { create getattr open read write };
