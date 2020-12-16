@@ -3,3 +3,8 @@
 
 # Allow qti_init_shell to write to sysfs_scsi_host
 allow qti_init_shell sysfs_scsi_host:file w_file_perms;
+
+allow qti_init_shell configfs:dir search;
+allow qti_init_shell configfs:file rw_file_perms;
+allow qti_init_shell default_prop:file r_file_perms;
+allow qti_init_shell self:capability dac_override;
