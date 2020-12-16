@@ -21,6 +21,7 @@ set -e
 # Required!
 DEVICE=oneplus6
 VENDOR=oneplus
+DEVICE_COMMON=$DEVICE
 
 INITIAL_COPYRIGHT_YEAR=2018
 
