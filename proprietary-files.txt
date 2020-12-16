@@ -473,6 +473,7 @@ vendor/lib64/libops.so|fc77360638cc155f6396994825481c4afa77a75b
 vendor/lib64/libqisl.so|529d7e20bb33147fe3404c1a58d266e49228046a
 vendor/lib64/libQSEEComAPI.so|3b2ca26bda9fd3531ee3c6f7e5d869e77291727d
 vendor/lib64/librpmb.so|fe965bdb4c1630dd1985861e65a2fafec355715a
+vendor/lib64/libspl.so
 vendor/lib64/libSecureUILib.so|107d2b82a9bba31bbb59efab7be4f3f2692062ff
 vendor/lib64/libsecureui.so|39e1b811126765e119daf891420d6f6a5dc47765
 vendor/lib64/libsecureui_svcsock.so|2232f56927964f10d41868919d94711930d50ed0
