@@ -110,6 +110,12 @@ PRODUCT_PACKAGES_DEBUG += \
     android.hardware.boot@1.0-impl.recovery \
     bootctl
 
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+    bootctrl.sdm845
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
@@ -211,7 +217,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor
-
 
 # Input
 PRODUCT_COPY_FILES += \
