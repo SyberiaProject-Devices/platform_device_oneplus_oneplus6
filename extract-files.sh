@@ -18,6 +18,7 @@
 set -e
 
 DEVICE=oneplus6
+VENDOR=oneplus
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
