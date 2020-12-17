@@ -68,15 +68,6 @@
  |          | 720     480     480     160     648000              |
  |          |                                                     |
 
- |          | 8192    4320    3       160     138240              |
- |          | 7680    4320    3       160     138240              |
- |          | 4096    2304    12      160     307200              |
- | heic     | 4096    2160    12      160     307200      2073600 |
- |          | 3840    2160    12      160     307200              |
- |          | 1920    1088    40      160     1944000             |
- |          | 1280    720     80      160     819200              |
- |          | 720     480     240     160     1228800             |
- |          |                                                     |
  |          | 4096    2304    24      40      884736              |
  |          | 4096    2160    30      40      1036800             |
  | vp8      | 3840    2160    30      40      972000      1036800 |
@@ -275,21 +266,6 @@
             <Limit name="quality" range="0-100" default="80" />
             <Limit name="performance-point-512x512" value="480" />
             <Feature name="bitrate-modes" value="VBR,CBR,CQ" />
-        </MediaCodec>
-        <MediaCodec name="c2.qti.heic.encoder" type="image/vnd.android.heic">
-            <Limit name="size" min="96x96" max="8192x8192" />
-            <Limit name="block-count" range="1024-138240" /> <!--max-spatial: 8192x4320 -->
-            <Limit name="blocks-per-second" min="24" max="2073600" />
-            <Limit name="frame-rate" range="1-480" />
-            <Limit name="concurrent-instances" max="6" />
-            <Limit name="quality" range="0-100" default="80" />
-            <Limit name="performance-point-8192x4320" value="3" />
-            <Limit name="performance-point-4096x2304" value="12" />
-            <Limit name="performance-point-1920x1080" value="40" />
-            <Limit name="performance-point-1920x1080" value="30" />
-            <Limit name="performance-point-1280x720" value="80" />
-            <Limit name="performance-point-1280x720" value="60" />
-            <Feature name="bitrate-modes" value="CQ" />
         </MediaCodec>
         <MediaCodec name="c2.qti.vp8.encoder" type="video/x-vnd.on2.vp8">
             <Alias name="OMX.qcom.video.encoder.vp8" />
