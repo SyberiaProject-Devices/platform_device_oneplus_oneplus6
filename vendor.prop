@@ -146,3 +146,4 @@ drm.service.enabled=true
 
 # Ccodec
 debug.stagefright.omx_default_rank=0
+ro.boot.adb=true
