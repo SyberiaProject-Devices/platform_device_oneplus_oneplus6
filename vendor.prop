@@ -1,25 +1,4 @@
-persist.vendor.qcomsysd.enabled=1
-ro.hardware.vulkan=adreno
-ro.hardware.egl=adreno
-keyguard.no_require_sim=true
-ro.config.mms_notification=free.ogg
-ro.config.notification_sound=meet.ogg
-ro.config.alarm_alert=spring.ogg
-ro.config.ringtone=oneplus_tune.ogg
-ro.carrier=unknown
-persist.backup.ntpServer=0.pool.ntp.org
-sys.vendor.shutdown.waittime=500
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-dalvik.vm.heapstartsize=8m
-dalvik.vm.heapgrowthlimit=256m
-dalvik.vm.heapsize=512m
-dalvik.vm.heaptargetutilization=0.75
-dalvik.vm.heapminfree=512k
-dalvik.vm.heapmaxfree=8m
-ro.opengles.version=196610
-nfc.delayese=true
-ro.camera.notify_nfc=1
-ro.boot.product.hardware.sku=ese
+# Audio
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
@@ -114,41 +93,62 @@ vendor.audio.feature.vbat.enable=true
 vendor.audio.feature.wsa.enable=false
 vendor.audio.feature.audiozoom.enable=false
 vendor.audio.feature.snd_mon.enable=true
-debug.stagefright.omx_default_rank.sw-audio=1
-debug.stagefright.omx_default_rank=0
-persist.radio.multisim.config=dsds
-persist.sys.oem_smooth=1
-ro.apex.updatable=true
-ro.vendor.use_data_netmgrd=true
-persist.vendor.data.mode=concurrent
-qemu.hw.mainkeys=0
-vendor.qcom.bluetooth.soc=cherokee
-persist.bluetooth.enableinbandringing=true
-ro.sf.lcd_density=420
-ro.vendor.extension_library=libqti-perfd-client.so
+
+# ADB
+ro.boot.adb=true
+
+# Bluetooth
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 ro.vendor.bluetooth.wipower=false
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
-persist.demo.hdmirotationlock=false
-persist.sys.sf.color_saturation=1.0
+vendor.qcom.bluetooth.soc=cherokee
+persist.bluetooth.enableinbandringing=true
+
+# Camera
+ro.camera.notify_nfc=1
+
+# Display
 ro.vendor.display.cabl=2
+vendor.display.enable_default_color_mode=1
+ro.sf.lcd_density=420
+
+# DRM
+drm.service.enabled=true
+
+# Factory Reset Protection
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Graphics
+ro.hardware.vulkan=adreno
+ro.hardware.egl=adreno
+ro.opengles.version=196610
 debug.sf.hw=0
 debug.egl.hw=0
-vendor.display.enable_default_color_mode=1
+persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=0
+
+# Media
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
+debug.stagefright.ccodec=1
+
+# NetMgr
 ro.telephony.iwlan_operation_mode=legacy
+ro.vendor.use_data_netmgrd=true
+persist.vendor.data.mode=concurrent
+
+# NFC
+nfc.delayese=true
+ro.boot.product.hardware.sku=ese
+
+# Radio
+ro.carrier=unknown
+persist.radio.multisim.config=dsds
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.sib16_support=1
 persist.vendor.radio.custom_ecc=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
-drm.service.enabled=true
-
-# Ccodec
-debug.stagefright.omx_default_rank=0
-debug.stagefright.ccodec=1
-
-ro.boot.adb=true
