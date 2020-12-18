@@ -427,10 +427,26 @@ vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|3e517ec6b460
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|eb1a99915765fca7add8de87d7c4ef9bf031e155
 
 # CVP
-#product/lib64/vendor.qti.hardware.cvp@1.0-adapter-helper.so
-#product/lib64/vendor.qti.hardware.cvp@1.0.so
-#product/lib/vendor.qti.hardware.cvp@1.0-adapter-helper.so
-#product/lib/vendor.qti.hardware.cvp@1.0.so
+product/lib64/vendor.qti.hardware.cvp@1.0-adapter-helper.so
+product/lib64/vendor.qti.hardware.cvp@1.0.so
+product/lib/vendor.qti.hardware.cvp@1.0-adapter-helper.so
+product/lib/vendor.qti.hardware.cvp@1.0.so
+vendor/bin/hw/vendor.qti.hardware.cvp@1.0-service
+vendor/etc/init/vendor.qti.hardware.cvp@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.cvp@1.0-impl.so
+vendor/lib/libcvp.so
+vendor/lib/libcvp_common.so
+vendor/lib/libcvp_stub.so
+vendor/lib/libcvpcpuRev_skel.so
+vendor/lib/vendor.qti.hardware.cvp@1.0-halimpl.so
+vendor/lib/vendor.qti.hardware.cvp@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.cvp@1.0-impl.so
+vendor/lib64/libcvp.so
+vendor/lib64/libcvp_common.so
+vendor/lib64/libcvp_stub.so
+vendor/lib64/libcvpcpuRev_skel.so
+vendor/lib64/vendor.qti.hardware.cvp@1.0-halimpl.so
+vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 
 # DPM - from instantnoodlep - RP1A.201005.001/2009301800
 system_ext/bin/dpmd|95c1d9e3fd30f17a61fd776c9454a148fa4cf103
