@@ -251,6 +251,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
+    libavservices_minijail_vendor \
     libcodec2_vndk.vendor \
     libcodec2_hidl@1.0.vendor \
     libc2dcolorconvert \
