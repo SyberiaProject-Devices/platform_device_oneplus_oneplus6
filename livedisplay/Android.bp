@@ -21,7 +21,6 @@ cc_binary {
     vendor: true,
     srcs: [
         "DisplayModes.cpp",
-        "PictureAdjustment.cpp",
         "SunlightEnhancement.cpp",
         "service.cpp",
     ],

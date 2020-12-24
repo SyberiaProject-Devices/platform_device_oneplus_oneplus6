@@ -57,10 +57,6 @@ DisplayModes::DisplayModes() : mDefaultModeId(0) {
     setDisplayMode(mDefaultModeId, false);
 }
 
-bool DisplayModes::isSupported() {
-    return true;
-}
-
 // Methods from ::vendor::lineage::livedisplay::V2_0::IDisplayModes follow.
 Return<void> DisplayModes::getDisplayModes(getDisplayModes_cb resultCb) {
     std::vector<DisplayMode> modes;

@@ -44,10 +44,6 @@ Return<bool> SunlightEnhancement::setEnabled(bool enabled) {
     return !file.fail();
 }
 
-bool SunlightEnhancement::isSupported() {
-    return true;
-}
-
 }  // namespace implementation
 }  // namespace V2_0
 }  // namespace livedisplay

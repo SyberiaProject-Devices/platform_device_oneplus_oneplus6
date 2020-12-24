@@ -4,28 +4,14 @@ hal_server_domain(hal_livedisplay_sdm845, hal_lineage_livedisplay)
 type hal_livedisplay_sdm845_exec, system_file_type, exec_type, file_type;
 init_daemon_domain(hal_livedisplay_sdm845)
 
+# Talk to the vendor binder
 vndbinder_use(hal_livedisplay_sdm845)
 
-# Allow LiveDisplay to perform binder IPC to vendor.display.color::IDisplayColor
-#type hal_display_color_default, domain;
-binder_call(hal_livedisplay_sdm845, hal_display_color_default)
-
+# Allow hal_livedisplay to call hal_sensors_default via binder
 binder_call(hal_livedisplay_sdm845, hal_graphics_composer_default)
 
+# Allow hal_livedisplay to find qdisplay_service
 allow hal_livedisplay_sdm845 qdisplay_service:service_manager find;
-
-allow hal_livedisplay_sdm845 hal_display_color_hwservice:hwservice_manager find;
-allow init hal_display_color_default:binder call;
-allow init hal_display_color_hwservice:hwservice_manager find;
-#allow init hal_lineage_livedisplay_hwservice:hwservice_manager { add find };
-
-# Allow LiveDisplay to access pps socket
-#type mm-pp-daemon, domain;
-typeattribute mm-pp-daemon socket_between_core_and_vendor_violators;
-unix_socket_connect(hal_livedisplay_sdm845, pps, mm-pp-daemon)
-
-# Allow LiveDisplay to read display props
-get_prop(hal_livedisplay_sdm845, vendor_display_prop)
 
 # Allow LiveDisplay to store files under /data/display and access them
 allow hal_livedisplay_sdm845 display_data_file:dir rw_dir_perms;
@@ -33,3 +19,6 @@ allow hal_livedisplay_sdm845 display_data_file:file create_file_perms;
 
 # Grant access over LiveDisplay tuneables
 allow hal_livedisplay_sdm845 sysfs_livedisplay_tuneable:file rw_file_perms;
+
+# Allow hal_livedisplay to set vendor display prop
+set_prop(hal_livedisplay_sdm845, vendor_display_prop)
