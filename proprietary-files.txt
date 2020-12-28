@@ -730,6 +730,7 @@ vendor/etc/cacert_location.pem
 # GNSS - from LA.UM.9.8.r1-02700-SDM710.0
 -vendor/app/CACertService/CACertService.apk|f824c7584a4e725f8a8eda86b45824c2849c08c5
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti|bd3d5174f69cf65047c8d8b159554515b0f3d022
+vendor/bin/garden_app|bcb8e4d63c6f5f5fd9a31018c2f02f50f2ca9a7b
 vendor/bin/loc_launcher|bf13787d95c2fec6fadb2552fa63b12ab606575c
 vendor/bin/lowi-server|1898971a9a10d8a849a436e1bcbf1ab60b8ac0de
 vendor/bin/mlid|1345e5df78c7fb2583af0c4e046ae6d21a4e75da
@@ -751,6 +752,8 @@ vendor/lib/hw/vendor.qti.gnss@4.0-impl.so|15cdd45990bc385999bbfbe797d3caccdd2288
 vendor/lib/libaoa.so|502cbb20f5531e9e79dbc12bcb5edf0b7dc994ec
 vendor/lib/libbatching.so|635e4548c9d23d4648dfc65bcef84229979a83da
 vendor/lib/libcacertclient.so|1d9c1fc6b730810fbb800d8cc20aa2b352233998
+vendor/lib/libcdfw.so|50cc59e5352081c96d59adbfad61276a64bda45b
+vendor/lib/libcdfw_remote_api.so|0cafadaa390d782a2650949da1d4bab33de149cb
 vendor/lib/libdataitems.so|a7bfc8331422c64a561de26b1e63eb475f7c0fa5
 vendor/lib/libgdtap.so|b08005436f55e34adc61eb4f6b9658a4114b459d
 vendor/lib/libgeofencing.so|b1dcca9580e89da3c78ad91a5309cae155509d88
@@ -785,6 +788,8 @@ vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so|205438f107138df8d3c831b62b23bb6bdbe2
 vendor/lib64/libaoa.so|548073afa1ce13cb9d9b252dd933e91d835f02d8
 vendor/lib64/libbatching.so|eafd89f91d275c9946a66f0f322ea4c0fa1cc5d0
 vendor/lib64/libcacertclient.so|90281ef665d6a66ad7aa0806d97c20866fe1a83d
+vendor/lib64/libcdfw.so|cfd91b5f028f9ab050f15f265f60f52cca7e42ad
+vendor/lib64/libcdfw_remote_api.so|2939e767c15fd965322d6e11045fa3fb851b29d4
 vendor/lib64/libdataitems.so|f13cb93394d8aae1eef85c4730b5c8f9ace092a9
 vendor/lib64/libgdtap.so|510075724d368816c89a5f9e76b2529484e03d36
 vendor/lib64/libgeofencing.so|a6fffe98ddc82de53cf353c4f3fca602702a8330
@@ -797,6 +802,7 @@ vendor/lib64/libjnihelper.so|fb8690fbb5b8fbb97ded1bd8d4f87285ec74cf41
 vendor/lib64/liblbs_core.so|d9aff7749ab717d0aa1bc77ae886f3a16c438b41
 vendor/lib64/libloc_api_v02.so|fa4be5b879f21aae9d65a4b16ab2c6326d894ed8
 vendor/lib64/libloc_core.so|107da3079c22d9505d3737033bab1e22c3005f53
+vendor/lib64/libloc_socket.so|ec77c6a51bf7dbf179ef6232913c311c4b2a95e1
 vendor/lib64/liblocation_api.so|fe3a227e511bfd52a6c52efae64ac32cfc492669
 vendor/lib64/liblocationservice.so|58d16c5b145399cd3069ba7d556e3688f8f43d66
 vendor/lib64/liblocationservice_glue.so|d08f9e61fc5f731b224692f434cf43a4aa2b6eb8
