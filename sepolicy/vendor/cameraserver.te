@@ -1,2 +1,2 @@
-allow cameraserver camera_data_file:file { getattr open write };
-allow cameraserver camera_data_file:dir { add_name search write };
+allow cameraserver camera_data_file:file create_file_perms;
+allow cameraserver camera_data_file:dir rw_dir_perms;

@@ -15,6 +15,7 @@
 /dev/dash         u:object_r:dash_device:s0
 /dev/goodix_fp    u:object_r:fingerprintd_device:s0
 /dev/p73          u:object_r:nfc_device:s0
+/dev/pn553        u:object_r:nfc_device:s0
 
 # DC dimming
 /sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en           u:object_r:sysfs_dm:s0
@@ -30,26 +31,27 @@
 
 # Persist files
 /mnt/vendor/persist/camera(/.*)?                     u:object_r:persist_camera_file:s0
+/mnt/vendor/persist/goodix(/.*)?                     u:object_r:persist_fingerprint_file:s0
 /mnt/vendor/persist/dual_camera_calibration(/.*)?    u:object_r:persist_camera_file:s0
 /mnt/vendor/persist/engineermode(/.*)?               u:object_r:persist_engineer_file:s0
 
 # Custom HALs
-/vendor/bin/hw/android\.hardware\.light@2\.0-service                                             u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.light@2\.0-service\.oneplus_sdm845                             u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/lineage\.livedisplay@2\.0-service\.oneplus_sdm845                                 u:object_r:hal_livedisplay_sdm845_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service\.op6-libperfmgr                                  u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power\.stats@1\.0-service\.op6                                 u:object_r:hal_power_stats_default_exec:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service           u:object_r:hal_dms_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.camera\.CameraHIDL@1\.0-service    u:object_r:hal_cameraHIDL_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.display@1\.0-service     u:object_r:hal_display_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.drmkey@1\.0-service      u:object_r:hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.hdcpkey@1\.0-service     u:object_r:hal_hdcpkey_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.ifaa@2\.0-service        u:object_r:hal_ifaa_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service       u:object_r:hal_param_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.rpmb@1\.0-service        u:object_r:hal_rpmb_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.wifi@1\.0-service        u:object_r:hal_wifi_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.1-service      u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.media\.c2@1\.0-service                 u:object_r:mediacodec_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti  u:object_r:hal_neuralnetworks_default_exec:s0
 
 # DASH
 /system/bin/dashd    u:object_r:dashd_exec:s0

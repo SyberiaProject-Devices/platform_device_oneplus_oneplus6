@@ -5,6 +5,7 @@ binder_call(hal_camera_default, hal_cameraHIDL)
 allow hal_camera_default hal_cameraHIDL_hwservice:hwservice_manager find;
 
 allow hal_camera_default default_android_hwservice:hwservice_manager find;
+allow hal_camera_default hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
 allow hal_camera_default mnt_vendor_file:dir { add_name write };
 allow hal_camera_default mnt_vendor_file:file { create getattr open read write };
 
@@ -14,3 +15,4 @@ allow hal_camera_default persist_camera_file:file create_file_perms;
 
 # Properties
 set_prop(hal_camera_default, vendor_camera_prop)
+

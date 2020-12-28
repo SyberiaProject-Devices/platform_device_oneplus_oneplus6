@@ -10,4 +10,10 @@ allow init sysfs_type:file { open read setattr };
 # Allow init create cgroups
 allow init cgroup:file create;
 
+allow init socket_device:sock_file { create setattr unlink };
+allow init sysfs_graphics:file rw_file_perms;
+
+allow init dash_device:chr_file { ioctl open read write };
+allow init dashd_exec:file { execute execute_no_trans getattr open read };
+
 permissive init;

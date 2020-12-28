@@ -12,3 +12,4 @@ vendor.nxp.nxpese::INxpWiredSe                              u:object_r:hal_wired
 vendor.nxp.nxpnfc::INxpNfc                                  u:object_r:hal_nfc_hwservice:s0
 vendor.nxp.nxpwiredse::INxpWiredSe                          u:object_r:hal_wiredse_hwservice:s0
 vendor.nxp.eventprocessor::INxpEseEvtProcessor              u:object_r:hal_secure_element_hwservice:s0
+vendor.qti.hardware.cvp::ICvp                               u:object_r:vendor_hal_cvp_hwservice:s0

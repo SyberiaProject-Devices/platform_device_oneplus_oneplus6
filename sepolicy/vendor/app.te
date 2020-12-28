@@ -1,3 +1,4 @@
 # Allow appdomain to get some props
 get_prop(appdomain, vendor_camera_prop)
 get_prop(appdomain, camera_prop)
+allow appdomain sysfs_battery_supply:file r_file_perms;
