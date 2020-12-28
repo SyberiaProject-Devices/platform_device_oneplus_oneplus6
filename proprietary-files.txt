@@ -666,8 +666,11 @@ vendor/firmware/a630_zap.b02
 vendor/firmware/a630_zap.elf
 vendor/firmware/a630_zap.mdt
 
-# Graphics (RenderScript)
-vendor/lib64/libRSDriver_adreno.so
+# Graphics (RenderScript) - from crosshatch RQ1A.201205.003
+vendor/lib64/libbccQTI.so|61732bb9193b3bf4b593d24b0605cfffd7a38e29
+vendor/lib64/librs_adreno_sha1.so|727a62917ec8006850d2634c4d6e77e7f8ddae52
+vendor/lib64/librs_adreno.so|c915361633f7d32f27ab627a0e4400e25a0a5c43
+vendor/lib64/libRSDriver_adreno.so|5f32eff420408fe60d7e14800a213275ce0e0895
 
 # Graphics (Vulkan) - LA.UM.9.8.r1-02700-SDM710.0
 vendor/lib64/hw/vulkan.adreno.so
