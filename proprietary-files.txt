@@ -490,7 +490,7 @@ vendor/lib64/libops.so|fc77360638cc155f6396994825481c4afa77a75b
 vendor/lib64/libqisl.so|529d7e20bb33147fe3404c1a58d266e49228046a
 vendor/lib64/libQSEEComAPI.so|3b2ca26bda9fd3531ee3c6f7e5d869e77291727d
 vendor/lib64/librpmb.so|fe965bdb4c1630dd1985861e65a2fafec355715a
-vendor/lib64/libspl.so
+vendor/lib64/libspl.so|71110978cf440994ff093a8514817a0bbe714b40
 vendor/lib64/libSecureUILib.so|107d2b82a9bba31bbb59efab7be4f3f2692062ff
 vendor/lib64/libsecureui.so|39e1b811126765e119daf891420d6f6a5dc47765
 vendor/lib64/libsecureui_svcsock.so|2232f56927964f10d41868919d94711930d50ed0
@@ -809,7 +809,6 @@ vendor/lib64/liblocationservice_glue.so|d08f9e61fc5f731b224692f434cf43a4aa2b6eb8
 vendor/lib64/liblowi_client.so|fd5cb6bb1c4eaacf3ef8a93e083d37d117137096
 vendor/lib64/liblowi_wifihal.so|db68a6c99c2fb8315d5f7a6954cdcb894a7de8ad
 vendor/lib64/libminksocket.so|fa81f5c47ee5a1f05fee71c464095bb1e89c26fd
-vendor/lib64/libqdma_file_agent.so|f86c29c4a23558be984248b512ccf4b1de672946
 vendor/lib64/libslimclient.so|1ed7b7f52d21477bb6414ba0a01f32ffb740e8d6
 vendor/lib64/libxtadapter.so|453f9095f8979213c5bec9de73b1b7c6d085e265
 vendor/lib64/vendor.qti.gnss@1.0.so|b291e8be101b7a2d75b8830cb7d243746c1568f8
@@ -1035,8 +1034,8 @@ vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 -vendor/lib64/libMpeg4SwEncoder.so|9197ade83f762c2dc955954141be23d53a1bc2e2
 vendor/etc/configstore/vpp.configstore.xml|ed961545186c66fd9523f25866c74f2e11ee63d7
 vendor/etc/init/vppservice.rc|24c089e0e413cbb3fa6daaf0af4215870bdf1b8e
-vendor/lib/libAlacSwDec.so|e49062c9fd9377e8264bf8f7901394653b9f02dc
-vendor/lib/libApeSwDec.so|f14f08a55b32cc252417e3970b1d2cb296d48fa0
+vendor/lib/libAlacSwDec.so|0a1071dd2cad2f287cf1c519c1a848022faaf949
+vendor/lib/libApeSwDec.so|f174d7de8ff2314e2a9c5af9dbf2dba43a63c88a
 vendor/lib/libFlacSwDec.so|bba6d4155029b2fd1a3d2dfe9f75f422f0d8a35e
 vendor/lib/libI420colorconvert.so|2471423164022733a1bc453355e04726740818b6
 vendor/lib/libOmxAacDec.so|5d53a6407f46cdde7d420fbe10a37373b0053704
@@ -1171,6 +1170,24 @@ vendor/lib/libperipheral_client.so|4f4700270730d4043580a1e76566fd0124b01e18
 vendor/lib/libspcom.so|5b922831b6108b3f704001a2ffd966667caf329f
 vendor/lib64/libperipheral_client.so|8cb65f4c93719767048dd7b1b845473fe6074ff7
 vendor/lib64/libspcom.so|8bef0f37e62c4c11f2660d8300015d615b023269
+
+# QCC/QDMA - from from LA.UM.9.8.r1-02700-SDM710.0
+
+system_ext/bin/qccsyshalservice|e56b40ea7b0320e3edf1e9054029aa62f863047a
+system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.0-service.rc|a6be39306a3d6c1f6fbe54b59282d11ce12a3319
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0-halimpl.so|1720abbe45eb8485cb6775d5700f0a438d4dedc6
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0.so|dd1f49afe5f90ee79316422257902f69abe04536
+system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so|6c764b7ee4f9e4c3891bb708b2deb6d38cc915c3
+system_ext/lib64/libqcc.so|ccaa547db3bafe12bed3f45800f930e0ecc759e7
+system_ext/lib64/libqcc_file_agent_sys.so|4c531e8ceefb6bbb3c582d968092ef3b81ae1fe9
+vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service|66eed303012e050a8ee2eb8550a49dbd7665b2e6
+vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc|afeb332a4750a11587658fcc9a75a27f63bbccdd
+vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so|d1fccf72e4d84f31b7f0ea2d762be4ac5e185df3
+vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|19a1f7ffb8118c207aa8cb2318996605771c339a
+vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so|8c85aec8456f69296722c10ae034bd228cd70be2
+vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so|711f50db51cd10607f9065998cac4521950c4d5a
+vendor/lib64/libqcc_file_agent.so|ddfc0babc52ab12b6b159b36505bc0b5ef460a0a
+vendor/lib64/libqdma_file_agent.so|f86c29c4a23558be984248b512ccf4b1de672946
 
 # QMI - from LA.UM.9.8.r1-02700-SDM710.0
 system_ext/etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
