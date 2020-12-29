@@ -346,12 +346,6 @@ PRODUCT_PACKAGES += \
     libjson \
     librmnetctl
 
-# RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
-
 # Permissions (device)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
