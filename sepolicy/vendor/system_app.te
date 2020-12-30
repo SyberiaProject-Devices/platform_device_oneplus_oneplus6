@@ -1,7 +1,9 @@
 # Pocketmode
 allow system_app sysfs_fpc_proximity:file { w_file_perms getattr };
+allow system_app sysfs_leds:dir r_dir_perms;
 allow system_app sysfs_leds:file rw_file_perms;
 
 #DC dimming switch
 allow system_app sysfs_dm:file rw_file_perms;
+allow system_app sysfs_battery_supply:dir r_dir_perms;
 allow system_app sysfs_battery_supply:file r_file_perms;
