@@ -1591,9 +1591,7 @@ vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 #QTI AV Enhancements
 system_ext/lib/libavenhancements.so
 -system_ext/lib/libqct_resampler.so
--system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so
 system_ext/lib64/libavenhancements.so
--system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 # WiFi Display - from instantnoodlep - RP1A.201005.001/2009301800
 -framework/WfdCommon.jar|de1adc7a4adbb117123aa5bb116c5df83c686433
