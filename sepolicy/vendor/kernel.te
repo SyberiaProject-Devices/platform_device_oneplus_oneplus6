@@ -7,3 +7,5 @@ allow kernel kmsg_device:chr_file r_file_perms;
 allow kernel block_device:dir search;
 allow kernel debugfs_wlan:dir search;
 allow kernel self:socket create;
+
+allow kernel param_block_device:blk_file { read write };

@@ -2,4 +2,4 @@
 get_prop(sensors, vendor_sensors_prop)
 get_prop(sensors, sensors_dbg_prop)
 
-allow sensors sensors_persist_file:fifo_file read;
+allow sensors sensors_persist_file:fifo_file { read open };
