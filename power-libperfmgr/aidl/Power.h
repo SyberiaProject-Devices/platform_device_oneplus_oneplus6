@@ -49,7 +49,10 @@ class Power : public ::aidl::android::hardware::power::BnPower {
   private:
     std::shared_ptr<HintManager> mHintManager;
     std::unique_ptr<InteractionHandler> mInteractionHandler;
+    std::atomic<bool> mDoubleTapEnabled;
     std::atomic<bool> mSustainedPerfModeOn;
+
+    ndk::ScopedAStatus updateHint(const char *hint, bool enable);
 };
 
 }  // namespace pixel

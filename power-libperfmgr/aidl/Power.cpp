@@ -30,10 +30,6 @@
 #include <utils/Log.h>
 #include <utils/Trace.h>
 
-#ifndef TARGET_TAP_TO_WAKE_NODE
-#define TARGET_TAP_TO_WAKE_NODE "/proc/touchpanel/double_tap_enable"
-#endif
-
 namespace aidl {
 namespace google {
 namespace hardware {
@@ -48,6 +44,7 @@ constexpr char kPowerHalRenderingProp[] = "vendor.powerhal.rendering";
 Power::Power(std::shared_ptr<HintManager> hm)
     : mHintManager(hm),
       mInteractionHandler(nullptr),
+      mDoubleTapEnabled(false),
       mSustainedPerfModeOn(false) {
     mInteractionHandler = std::make_unique<InteractionHandler>(mHintManager);
     mInteractionHandler->Init();
@@ -75,32 +72,18 @@ Power::Power(std::shared_ptr<HintManager> hm)
 
     // Now start to take powerhint
     ALOGI("PowerHAL ready to process hints");
+
+    updateHint("DOUBLE_TAP_TO_WAKE", mDoubleTapEnabled);
 }
 
-static int sysfs_write(const char *path, const char *s)
-{
-    char buf[80];
-    int len;
-    int ret = 0;
-    int fd = open(path, O_WRONLY);
-
-    if (fd < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error opening %s: %s\n", path, buf);
-        return -1 ;
+ndk::ScopedAStatus Power::updateHint(const char *hint, bool enable) {
+    if (enable) {
+        mHintManager->DoHint(hint);
+    } else {
+        mHintManager->EndHint(hint);
     }
 
-    len = write(fd, s, strlen(s));
-    if (len < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error writing to %s: %s\n", path, buf);
-
-        ret = -1;
-    }
-
-    close(fd);
-
-    return ret;
+    return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
@@ -115,15 +98,15 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             }
             mSustainedPerfModeOn = true;
             break;
+        case Mode::DOUBLE_TAP_TO_WAKE:
+            mDoubleTapEnabled = enabled;
+            updateHint("DOUBLE_TAP_TO_WAKE", enabled);
+            break;
         case Mode::LAUNCH:
             if (mSustainedPerfModeOn) {
                 break;
             }
             [[fallthrough]];
-        case Mode::DOUBLE_TAP_TO_WAKE:
-            {
-            sysfs_write(TARGET_TAP_TO_WAKE_NODE, enabled ? "1" : "0");
-            }
         case Mode::FIXED_PERFORMANCE:
             [[fallthrough]];
         case Mode::EXPENSIVE_RENDERING:
@@ -150,9 +133,15 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
 
 ndk::ScopedAStatus Power::isModeSupported(Mode type, bool *_aidl_return) {
     bool supported = mHintManager->IsHintSupported(toString(type));
-    // LOW_POWER handled insides PowerHAL specifically
-    if (type == Mode::LOW_POWER) {
-        supported = true;
+    switch (type) {
+        case Mode::LOW_POWER: // LOW_POWER handled insides PowerHAL specifically
+            supported = true;
+            break;
+        case Mode::DOUBLE_TAP_TO_WAKE:
+            supported = true;
+            break;
+        default:
+            break;
     }
     LOG(INFO) << "Power mode " << toString(type) << " isModeSupported: " << supported;
     *_aidl_return = supported;
