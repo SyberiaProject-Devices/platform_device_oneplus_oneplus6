@@ -27,6 +27,8 @@ vendor/lib64/libfastcvopt.so
 # ADSP modules
 vendor/etc/dirac/interfacedb
 vendor/etc/diracvdd.bin
+vendor/lib/libcapiv2svacnn.so
+vendor/lib/libcapiv2vop.so
 vendor/lib/libblur_halide.so
 vendor/lib/libfastcrc.so
 vendor/lib/libfastcvdsp_stub.so
@@ -59,6 +61,8 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/libthread_blur_skel.so
+vendor/lib64/libcapiv2svacnn.so
+vendor/lib64/libcapiv2vop.so
 vendor/lib64/libfastcvdsp_stub.so
 vendor/lib64/libfastcvopt.so
 vendor/lib64/libfastrpc_utf_stub.so
@@ -89,28 +93,30 @@ vendor/lib64/libscvePanorama.so
 vendor/lib64/libscvePanorama_lite.so
 vendor/lib64/libscveScan3D.so
 
-# Audio
+# Audio stock
 vendor/lib/hw/audio.primary.sdm845.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libaudcal.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib/libaudioalsa.so
-vendor/lib/libaudioparsers.so
-vendor/lib/libqtigef.so
 vendor/lib64/hw/audio.primary.sdm845.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
-vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libaudioalsa.so
-vendor/lib64/libaudioparsers.so
-vendor/lib64/libqtigef.so
+
+# Audio - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/lib/libacdb-fts.so|a5f687bcaa1f8a766b37685991b22d2e7674c510
+vendor/lib/libacdbloader.so|e6b48906e57001a61f3bc9852fa37b6f774d38ec
+vendor/lib/libacdbrtac.so|af5b7454db542bdbd1ff398beccb222a65112447
+vendor/lib/libadiertac.so|70cd136ab4dc4d1bbf0d7901f19a951d10ac12aa
+vendor/lib/libadm.so|61825f91c7f02e685c03d1fb78aeb3bd2d5db10b
+vendor/lib/libaudcal.so|b7a45bdcd87af35463303a23470544da54308252
+vendor/lib/libaudio_log_utils.so|7a2bb17dd61a9ad30fdbf42eb2766f06e686a66c
+vendor/lib/libaudioalsa.so|725194ef7a0eaa859dd0ef2f4c19f6e6ae9e85c9
+vendor/lib/libaudioparsers.so|0308854020da0aca45fc0a5718c907d07c6fb73f
+vendor/lib/libqtigef.so|4b8348b025f0d6e1343c1c28e6c325e968dfd973
+vendor/lib64/libacdb-fts.so|6e582a64c2665f227bedacfcaff4c8f00e53eab3
+vendor/lib64/libacdbloader.so|802f468d19347a22c407507525726e45aae48f5b
+vendor/lib64/libacdbrtac.so|dbb5cbee7abc0eb7c9d13b2743628470eaa57a15
+vendor/lib64/libadiertac.so|90323921dfe83ff07fd11d30e537711481139a14
+vendor/lib64/libaudcal.so|92504add7a1c0e8ed39976a79d22c5e5086d5623
+vendor/lib64/libaudio_log_utils.so|bbbcf112349e154613a43452b1325b2a643be7bc
+vendor/lib64/libaudioalsa.so|534d4dc07fecea0611273c745721b1ed2015a3a3
+vendor/lib64/libaudioparsers.so|1463c5ee0f2f040835386d9ccb4a4b010c5bdf58
+vendor/lib64/libqtigef.so|e77f065c124771a3204dfb793938f8fe887b6ebb
 
 # Audio extensions
 vendor/lib/liba2dpoffload.so
@@ -991,27 +997,19 @@ vendor/firmware/ipa_fws.mdt
 # IRQ balance
 vendor/bin/msm_irqbalance
 
-# Listen
+# Listen - from from LA.UM.9.8.r1-02700-SDM710.0
 vendor/lib/hw/sound_trigger.primary.sdm845.so|5454d56f9e19a8bcc00c1f3cd0bf305406c125a5
-vendor/lib/libadpcmdec.so
-vendor/lib/libcapiv2svacnn.so
-vendor/lib/libcapiv2vop.so
-vendor/lib/libgcs-calwrapper.so
-vendor/lib/libgcs-ipc.so
-vendor/lib/libgcs-osal.so
-vendor/lib/libgcs.so
-vendor/lib/libmulawdec.so
-vendor/lib/liblistenjni.so
-vendor/lib/liblistensoundmodel2.so
-vendor/lib/libsmwrapper.so
-vendor/lib64/libcapiv2svacnn.so
-vendor/lib64/libcapiv2vop.so
-vendor/lib64/libgcs-calwrapper.so
-vendor/lib64/libgcs-ipc.so
-vendor/lib64/libgcs-osal.so
-vendor/lib64/libgcs.so
-vendor/lib64/liblistenjni.so
-vendor/lib64/liblistensoundmodel2.so
+vendor/lib/libadpcmdec.so|491fedbdcf9a395340ce4142c277156c0056bcf8
+vendor/lib/libgcs-calwrapper.so|3ccd371b37495f08960c721dafb22901b7f9e011
+vendor/lib/libgcs-ipc.so|77d9b5b8b072f2cc6d846519fc65a991e06401f3
+vendor/lib/libgcs-osal.so|0e762ecaf6b0d59e5322323b0fef17e8c76d0b4a
+vendor/lib/libgcs.so|6ed6a8bd7ed3142e98a3c69a29ed0e1480b10f25
+vendor/lib/libmulawdec.so|53257dee0befc2a353ceb84a906a680a33d745f1
+vendor/lib/libsmwrapper.so|4a85352d09277e3cd10cc4fc438e4d48ca83da0e
+vendor/lib64/libgcs-calwrapper.so|d84a7f09c9e99c5b2caa33de89eb96b43ca27109
+vendor/lib64/libgcs-ipc.so|03c1f8407658c102c84f28ece49a2618d3ca3ebd
+vendor/lib64/libgcs-osal.so|e5cd3ed3385b3797a67a8f4519eb59d63ae0a5d4
+vendor/lib64/libgcs.so|39c3cffb161f7ff2f52f046920b1243a9de62965
 
 # Keystore
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
