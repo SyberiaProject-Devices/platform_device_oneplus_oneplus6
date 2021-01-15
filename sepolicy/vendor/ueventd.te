@@ -1,1 +1,1 @@
-allow ueventd unlabeled:dir r_dir_perms;
+allow ueventd unlabeled:dir rw_dir_perms;
