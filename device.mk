@@ -164,7 +164,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.oem.rc \
     init.target.rc \
-    init.custom.rc \
+    init.power.rc \
     init.recovery.qcom.rc \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
