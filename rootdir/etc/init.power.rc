@@ -1,4 +1,15 @@
 on init
+
+    # Add a cpuset for the camera daemon
+    # We want all cores for camera
+
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/mems 0
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
+
     mkdir /dev/cpuset/little
     copy /dev/cpuset/cpus /dev/cpuset/little/cpus
     copy /dev/cpuset/mems /dev/cpuset/little/mems
@@ -7,9 +18,6 @@ on init
 
     # BPF Just In Time compiler
     write /proc/sys/net/core/bpf_jit_enable 1
-
-    # Freezer setup
-    write /dev/freezer/frozen/freezer.killable 1
 
 on boot
     # Touchpanel
@@ -57,8 +65,8 @@ on post-fs
     chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
     chown system graphics /sys/devices/virtual/graphics/fb0/idle_time
     write /sys/devices/virtual/graphics/fb0/idle_time 64
- 
-   # Vibrator
+
+    # Vibrator
     chown system system /sys/class/leds/vibrator/vmax_override
     write /sys/class/leds/vibrator/vmax_override 1
     chown system system /sys/class/leds/vibrator/vmax_mv_user
@@ -70,11 +78,24 @@ on post-fs
     chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en
 
 on charger
+    setprop persist.sys.usb.config mass_storage
     write /sys/class/backlight/panel0-backlight/brightness 150
 
+    write /sys/module/msm_thermal/parameters/enabled "N"
+    symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
+    mkdir /mnt/vendor/persist
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    start vendor.hvdcp_opti
+    start vendor.power_off_alarm
+    start vendor.poweroffm64
+    mount tmpfs tmpfs /data
+    start vendor.thermal-engine
+    setprop vendor.usb.controller a600000.dwc3
+    setprop sys.usb.configfs 1
 
-on property:vendor.post_boot.parsed=1
-
+on enable-low-power
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
@@ -141,7 +162,37 @@ on property:vendor.post_boot.parsed=1
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
+    # Post-setup services
+    setprop vendor.post_boot.parsed 1
+
+on property:sys.boot_completed=1
+    trigger enable-low-power
+
+on property:init.svc.recovery=running
+    trigger enable-low-power
+
 service dashd /system/bin/dashd
     class core
     critical
     group root system
+
+service charger /charger
+    class charger
+    group system graphics
+    seclabel u:r:healthd:s0
+
+service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
+    class main
+    user root
+    group system wakelock
+
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
+
+service vendor.poweroffm64 /vendor/bin/poweroffm64
+    class late_start
+    oneshot
+    seclabel u:r:poweroffm64:s0

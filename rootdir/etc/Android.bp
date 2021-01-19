@@ -19,8 +19,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.custom.rc",
-    src: "init.custom.rc",
+    name: "init.power.rc",
+    src: "init.power.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
