@@ -99,10 +99,9 @@ on enable-low-power
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
-    write /sys/class/devfreq/soc:qcom,cpubw/min_freq 1525
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/mbps_zones "2288 4577 6500 8132 9155 10681"
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/sample_ms 4
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/io_percent 50
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/io_percent 40
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory 20
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length 10
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/guard_band_mbps 0
@@ -111,7 +110,6 @@ on enable-low-power
 
     write /sys/class/devfreq/soc:qcom,llccbw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,llccbw/polling_interval 50
-    write /sys/class/devfreq/soc:qcom,llccbw/min_freq 1525
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881"
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/sample_ms 4
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/io_percent 80
@@ -121,33 +119,30 @@ on enable-low-power
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/up_scale 250
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/idle_mbps 1600
 
-    # Enable mem_latency governor for DDR scaling
+    write /sys/class/devfreq/soc:qcom,mincpubw/governor "cpufreq"
+
+    # Enable memlat governor
     write /sys/class/devfreq/soc:qcom,memlat-cpu0/governor "mem_latency"
     write /sys/class/devfreq/soc:qcom,memlat-cpu0/polling_interval 10
     write /sys/class/devfreq/soc:qcom,memlat-cpu0/mem_latency/ratio_ceil 400
-
     write /sys/class/devfreq/soc:qcom,memlat-cpu4/governor "mem_latency"
     write /sys/class/devfreq/soc:qcom,memlat-cpu4/polling_interval 10
     write /sys/class/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
 
-    # Enable mem_latency governor for L3 scaling
     write /sys/class/devfreq/soc:qcom,l3-cpu0/governor "mem_latency"
     write /sys/class/devfreq/soc:qcom,l3-cpu0/polling_interval 10
     write /sys/class/devfreq/soc:qcom,l3-cpu0/mem_latency/ratio_ceil 400
-
     write /sys/class/devfreq/soc:qcom,l3-cpu4/governor "mem_latency"
     write /sys/class/devfreq/soc:qcom,l3-cpu4/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 400
-
-    # Enable userspace governor for L3 cdsp nodes
-    write /sys/class/devfreq/soc:qcom,l3-cdsp/governor "userspace"
-    chown system /sys/class/devfreq/soc:qcom,l3-cdsp/userspace/set_freq
-
-    # Gold L3 ratio ceil
     write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 4000
 
-    write /sys/class/devfreq/soc:qcom,mincpubw/governor "compute"
-    write /sys/class/devfreq/soc:qcom,mincpubw/polling_interval 10
+    # Enable idle state listener
+    write /sys/class/drm/card0/device/idle_encoder_mask 1
+    write /sys/class/drm/card0/device/idle_timeout_ms 100
+
+    # Change l3-cdsp to userspace governor
+    write /sys/class/devfreq/soc:qcom,l3-cdsp/governor userspace
+    chown system system /sys/class/devfreq/soc:qcom,l3-cdsp/userspace/set_freq
 
     # Disable sched stats
     write /proc/sys/kernel/sched_schedstats 0
@@ -158,6 +153,27 @@ on enable-low-power
     write /dev/blkio/background/blkio.weight 200
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
+
+    # Runtime fs tuning: as we have init boottime setting and kernel patch setting
+    # default readahead to 2048KB. We should adjust the setting upon boot_complete
+    # for runtime performance
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/nr_requests 128
+    write /sys/block/sda/queue/iostats 1
+    write /sys/block/sdf/queue/read_ahead_kb 128
+    write /sys/block/sdf/queue/nr_requests 128
+    write /sys/block/sdf/queue/iostats 1
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/dm-2/queue/read_ahead_kb 128
+    write /sys/block/dm-3/queue/read_ahead_kb 128
+    write /sys/block/dm-4/queue/read_ahead_kb 128
+    write /sys/block/dm-5/queue/read_ahead_kb 128
+    write /sys/block/dm-6/queue/read_ahead_kb 128
+
+    # Block layer tuning: discard chunk size up to 128MB
+    # Otherwise, contiguous discards can be merged
+    write /sys/block/sda/queue/discard_max_bytes 134217728
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
