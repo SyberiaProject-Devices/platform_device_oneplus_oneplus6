@@ -29,30 +29,10 @@
 
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules pinctrl-wcd wcd-dsp-glink snd-soc-wcd-spi snd-soc-sdm845
-    write /proc/sys/kernel/sched_boost 1
     mkdir /dsp 0771 media media
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
     symlink /data/tombstones /tombstones
-
-on init
-    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
-    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
-    write /dev/stune/schedtune.colocate 0
-    write /dev/stune/background/schedtune.colocate 0
-    write /dev/stune/system-background/schedtune.colocate 0
-    write /dev/stune/foreground/schedtune.colocate 0
-    write /dev/stune/top-app/schedtune.colocate 1
-    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
-
-# Add a cpuset for the camera daemon
-# We want all cores for camera
-    mkdir /dev/cpuset/camera-daemon
-    write /dev/cpuset/camera-daemon/cpus 0-7
-    write /dev/cpuset/camera-daemon/mems 0
-    chown cameraserver cameraserver /dev/cpuset/camera-daemon
-    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
-    chmod 0660 /dev/cpuset/camera-daemon/tasks
 
 on fs
     wait /dev/block/platform/soc/1d84000.ufshc
@@ -85,26 +65,11 @@ on post-fs-data
     mkdir /data/vendor/tloc 0700 system drmrpc
     mkdir /data/vendor/nnhal 0700 system system
 
-# For cpusets initialize for Silver Only first and then Silver + Gold
-# Silver Only configuration cannot work with 0-7
 on boot
 # cache
-    start boot_lc_main
-    start boot_dmesg
     chown system system /sys/kernel/hbtp/display_pwr
     start rmt_storage
     start rfs_access
-    write /dev/cpuset/top-app/cpus 0-3
-    write /dev/cpuset/audio-app/cpus 1-2
-    write /dev/cpuset/foreground/cpus 0-3
-    write /dev/cpuset/foreground/boost/cpus 0-3
-    write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 0-7
-    write /dev/cpuset/background/cpus 0-7
-    write /dev/cpuset/system-background/cpus 0-7
 
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
@@ -126,29 +91,6 @@ on property:vendor.usb.controller=*
 
    chmod 0660 /sys/class/drm/card0-DSI-1/aod_disable
    chown system system /sys/class/drm/card0-DSI-1/aod_disable
-
-   chmod 0666 /sys/class/drm/card0-DSI-1/SRGB
-   chmod 0666 /sys/class/drm/card0-DSI-1/DCI_P3
-   chmod 0666 /sys/class/drm/card0-DSI-1/hbm
-   chmod 0666 /sys/class/drm/card0-DSI-1/aod
-   chmod 0666 /sys/class/drm/card0-DSI-1/night_mode
-   chmod 0666 /sys/class/drm/card0-DSI-1/panel_serial_number
-   chmod 0666 /sys/class/drm/card0-DSI-1/oneplus_mode
-   chmod 0666 /sys/class/drm/card0-DSI-1/adaption_mode
-   chmod 0666 /sys/class/drm/card0-DSI-1/dynamic_dsitiming
-   chmod 0666 /sys/class/drm/card0-DSI-1/notify_fppress
-   chmod 0666 /sys/class/drm/card0-DSI-1/dim_alpha
-   chmod 0666 /sys/class/drm/card0-DSI-1/notify_dim
-   chmod 0666 /sys/class/drm/card0-DSI-1/force_screenfp
-   chmod 0666 /sys/class/drm/card0-DSI-1/dimlayer_bl_en
-   chmod 0666 /sys/class/drm/card0-DSI-1/dither_en
-   chmod 0666 /sys/class/drm/card0-DSI-1/dp_en
-   chmod 0666 /sys/class/drm/card0-DSI-1/dsi_seed_command
-   chmod 0666 /sys/class/drm/card0-DSI-1/native_display_p3_mode
-   chmod 0666 /sys/class/drm/card0-DSI-1/native_display_wide_color_mode
-   chmod 0666 /sys/class/drm/card0-DSI-1/native_display_srgb_color_mode
-   chmod 0666 /sys/class/drm/card0-DSI-1/native_display_customer_srgb_mode
-   chmod 0666 /sys/class/drm/card0-DSI-1/native_display_customer_p3_mode
 
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
@@ -255,19 +197,6 @@ on property:init.svc.vendor.hwcomposer-2-3=running
 
 on property:init.svc.vendor.hwcomposer-2-3=restarting
     stop ppd
-
-service hbtp /system/vendor/bin/hbtp_daemon
-     class main
-     user system
-     group system
-     capabilities SYS_NICE
-     disabled
-
-service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
-    class main
-    user root
-    group system wakelock
-    disabled
 
 service smcinvoked /system/bin/smcinvoked
     class main
