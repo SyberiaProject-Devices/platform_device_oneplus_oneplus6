@@ -211,10 +211,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
-# HotwordEnrollement app permissions
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
-
 # Dummy HIDL packages
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -406,7 +402,9 @@ PRODUCT_PACKAGES += \
     OnePlusCameraService
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml \
+    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem-system.xml:system/etc/permissions/privapp-permissions-oem.xml \
+    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem-product.xml:system/product/etc/permissions/privapp-permissions-oem.xml \
+    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem-system_ext.xml:system/system_ext/etc/permissions/privapp-permissions-oem.xml \
     $(LOCAL_PATH)/prebuilts/etc/sysconfig/hiddenapi-package-whitelist-oneplus.xml:system/etc/sysconfig/hiddenapi-package-whitelist-oneplus.xml
 
 # Device Parts
