@@ -111,7 +111,6 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             {
             sysfs_write(TARGET_TAP_TO_WAKE_NODE, enabled ? "1" : "0");
             }
-            break;
         case Mode::LOW_POWER:
             break;
         case Mode::SUSTAINED_PERFORMANCE:
