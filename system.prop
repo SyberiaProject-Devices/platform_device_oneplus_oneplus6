@@ -88,6 +88,9 @@ ro.telephony.default_network=22,22
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
+#Netflix custom property
+ro.netflix.bsp_rev=Q845-14477-1
+
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 

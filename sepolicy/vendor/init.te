@@ -16,4 +16,6 @@ allow init sysfs_graphics:file rw_file_perms;
 allow init dash_device:chr_file { ioctl open read write };
 allow init dashd_exec:file { execute execute_no_trans getattr open read };
 
+allow init apex_metadata_file:lnk_file r_file_perms;
+
 permissive init;
