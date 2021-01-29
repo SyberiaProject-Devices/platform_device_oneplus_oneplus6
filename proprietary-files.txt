@@ -196,6 +196,8 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 
 # Camera
+lib64/libjni_clearsight.so
+lib64/libopcameralib-em.so
 #vendor/lib/libcvface_api.so
 vendor/bin/hw/vendor.oneplus.camera.CameraHIDL@1.0-service
 vendor/etc/camera/ashdr/iso617_4608x3456.ncf
@@ -323,6 +325,9 @@ vendor/lib/vendor.oneplus.camera.CameraHIDL@1.0.so
 vendor/lib64/libcamxfdalgov7.so
 vendor/lib64/libcamxfdengine.so
 vendor/lib64/libcamxstatscore.so
+vendor/lib64/libcamxtintlessalgo.so
+vendor/lib64/libmmcamera_faceproc.so
+vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libnanopb.so
 vendor/lib64/libsns_api.so
 vendor/lib64/libsns_device_mode_stub.so
@@ -332,6 +337,7 @@ vendor/lib64/libsnsapi.so
 vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libswvdec.so
+vendor/lib64/libskewknob.so
 
 # Charger
 vendor/bin/hvdcp_opti
@@ -1504,9 +1510,9 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|5e8423e080be3febc34152508153a58761c17a0f
 
 # Sensors
-#product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
-#product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
-#product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
+product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 etc/sensors/proto/descriptor.proto
 etc/sensors/proto/nanopb.proto
 etc/sensors/proto/qti_gravity.proto
