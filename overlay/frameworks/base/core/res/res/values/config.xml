@@ -651,6 +651,9 @@
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
 
+    <!-- Default radius of the software rounded corners. -->
+    <dimen name="rounded_corner_radius">106px</dimen>
+
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
