@@ -321,7 +321,6 @@ vendor/lib/libswregistrationalgo.so
 vendor/lib/libswvdec.so
 vendor/lib/libvideoutils.so
 vendor/lib/libvidhance.so
-vendor/lib/vendor.oneplus.camera.CameraHIDL@1.0.so
 vendor/lib64/libcamxfdalgov7.so
 vendor/lib64/libcamxfdengine.so
 vendor/lib64/libcamxstatscore.so
