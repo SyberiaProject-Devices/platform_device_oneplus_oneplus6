@@ -1,4 +1,10 @@
 on boot
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+    chmod 660 sys/class/leds/red/blink
+    chmod 660 sys/class/leds/green/blink
+    chmod 660 sys/class/leds/blue/blink
     chown system system /sys/class/leds/red/start_idx
     chown system system /sys/class/leds/green/start_idx
     chown system system /sys/class/leds/blue/start_idx
