@@ -21,13 +21,17 @@
 #include <hidl/HidlTransportSupport.h>
 #include <livedisplay/sdm/PictureAdjustment.h>
 #include "DisplayModes.h"
+#include "AntiFlicker.h"
 #include "SunlightEnhancement.h"
 
 using ::vendor::lineage::livedisplay::V2_0::IPictureAdjustment;
 using ::vendor::lineage::livedisplay::V2_0::sdm::PictureAdjustment;
+using ::vendor::lineage::livedisplay::V2_0::sdm::SDMController;
 using ::vendor::lineage::livedisplay::V2_0::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_1::ISunlightEnhancement;
+using ::vendor::lineage::livedisplay::V2_1::IAntiFlicker;
 using ::vendor::lineage::livedisplay::V2_0::implementation::DisplayModes;
+using ::vendor::lineage::livedisplay::V2_1::implementation::AntiFlicker;
 using ::vendor::lineage::livedisplay::V2_1::implementation::SunlightEnhancement;
 
 int main() {
@@ -35,6 +39,7 @@ int main() {
     android::sp<IDisplayModes> modesService = new DisplayModes();
     android::sp<IPictureAdjustment> paService = new PictureAdjustment(controller);
     android::sp<ISunlightEnhancement> sreService = new SunlightEnhancement();
+    android::sp<AntiFlicker> afService = new AntiFlicker();
 
     android::hardware::configureRpcThreadpool(2, true /*callerWillJoin*/);
 
@@ -45,6 +50,11 @@ int main() {
 
     if (paService->registerAsService() != android::OK) {
         LOG(ERROR) << "Cannot register picture adjustment HAL service.";
+        return 1;
+    }
+
+    if (afService->registerAsService() != android::OK) {
+        LOG(ERROR) << "Cannot register Antiflicker HAL service.";
         return 1;
     }
 
