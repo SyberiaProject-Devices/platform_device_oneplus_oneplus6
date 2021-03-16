@@ -492,7 +492,7 @@ PRODUCT_PACKAGES += \
     libnl \
     libdl
 
-PRODUCT_BOOT_JARS += \
+#PRODUCT_BOOT_JARS += \
     WfdCommon
 
 #PRODUCT_COPY_FILES += \
