@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.INJECT_EVENTS" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <protected-broadcast android:name="org.omnirom.device.DeviceParts.UPDATE_SLIDER_POSITION" />
+
     <uses-sdk
         android:minSdkVersion="26"
         android:targetSdkVersion="26" />

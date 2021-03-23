@@ -18,4 +18,15 @@
 <resources>
     <dimen name="rounded_corner_radius_top">84.0px</dimen>
     <dimen name="rounded_corner_radius_bottom">68.0px</dimen>
+
+    <!-- Tri-state UI -->
+    <dimen name="tri_state_down_dialog_position">423.0px</dimen>
+    <dimen name="tri_state_down_dialog_position_l">270.375px</dimen>
+    <dimen name="tri_state_middle_dialog_position">296.0px</dimen>
+    <dimen name="tri_state_middle_dialog_position_l">270.375px</dimen>
+    <dimen name="tri_state_up_dialog_position">165.0px</dimen>
+    <dimen name="tri_state_up_dialog_position_l">270.375px</dimen>
+    <dimen name="tri_state_up_dialog_position_deep">21.0px</dimen>
+    <dimen name="tri_state_up_dialog_position_deep_land">21.0px</dimen>
+
 </resources>

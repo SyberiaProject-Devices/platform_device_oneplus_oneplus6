@@ -62,7 +62,6 @@ import android.view.Gravity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.widget.Toast;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.syberia.SyberiaUtils;
@@ -103,6 +102,22 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public static final String PACKAGE_SYSTEMUI = "com.android.systemui";
 
+    // TriStateUI Modes
+    private static final int MODE_TOTAL_SILENCE = 600;
+    private static final int MODE_ALARMS_ONLY = 601;
+    private static final int MODE_PRIORITY_ONLY = 602;
+    private static final int MODE_VIBRATE = 604;
+    private static final int MODE_RING = 605;
+    private static final int MODE_SILENT = 620;
+    private static final int MODE_FLASHLIGHT_ON = 621;
+
+    private static final String ACTION_UPDATE_SLIDER_POSITION
+            = "org.omnirom.device.DeviceParts.UPDATE_SLIDER_POSITION";
+
+    private static final String EXTRA_SLIDER_POSITION = "position";
+    private static final String EXTRA_SLIDER_POSITION_VALUE = "position_value";
+
+
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_II_SCANCODE,
         GESTURE_CIRCLE_SCANCODE,
@@ -134,9 +149,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private ClientPackageNameObserver mClientObserver;
     private IOnePlusCameraProvider mProvider;
     private boolean isOPCameraAvail;
-    private Toast toast;
-    private final Context mSysUiContext;
-    private final Context mResContext;
     private boolean mToggleTorch = false;
 
     public KeyHandler(Context context) {
@@ -147,8 +159,6 @@ public class KeyHandler implements DeviceKeyHandler {
                 "GestureWakeLock");
         mNoMan = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        mSysUiContext = ActivityThread.currentActivityThread().getSystemUiContext();
-        mResContext = getPackageContext(mContext, "org.omnirom.device");
         (new UEventObserver() {
             @Override
             public void onUEvent(UEventObserver.UEvent event) {
@@ -159,11 +169,11 @@ public class KeyHandler implements DeviceKeyHandler {
                     boolean vibrate = state.contains("USB_HOST=0");
                     android.util.Log.v("DeviceParts", "Got ringing = " + ringing + ", silent = " + silent + ", vibrate = " + vibrate);
                     if(ringing && !silent && !vibrate)
-                        doHandleSliderAction(2, 350);
+                        doHandleSliderAction(2);
                     if(silent && !ringing && !vibrate)
-                        doHandleSliderAction(0, 170);
+                        doHandleSliderAction(0);
                     if(vibrate && !silent && !ringing)
-                        doHandleSliderAction(1, 260);
+                        doHandleSliderAction(1);
                 } catch(Exception e) {
                     android.util.Log.d("DeviceParts", "Failed parsing uevent", e);
                 }
@@ -304,35 +314,45 @@ public class KeyHandler implements DeviceKeyHandler {
         return 0;
     }
 
-    private void doHandleSliderAction(int position, int yOffset) {
+    private void doHandleSliderAction(int position) {
         int action = getSliderAction(position);
+        int positionValue = 0;
         if ( action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             toggleTorch(false);
-            showToast(R.string.toast_ringer, Toast.LENGTH_SHORT, yOffset);
+            positionValue = MODE_RING;
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
             toggleTorch(false);
-            showToast(R.string.toast_vibrate, Toast.LENGTH_SHORT, yOffset);
+            positionValue = MODE_VIBRATE;
         } else if (action == 2) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             toggleTorch(false);
-            showToast(R.string.toast_dnd, Toast.LENGTH_SHORT, yOffset);
+            positionValue = MODE_TOTAL_SILENCE;
         } else if (action == 3) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
             toggleTorch(false);
-            showToast(R.string.toast_silent, Toast.LENGTH_SHORT, yOffset);
+            positionValue = MODE_SILENT;
         } else if (action == 4) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
-            showToast(R.string.toast_flash, Toast.LENGTH_SHORT, yOffset);
-                mToggleTorch = true;
-                toggleTorch(true);
+            mToggleTorch = true;
+            toggleTorch(true);
+            positionValue = MODE_FLASHLIGHT_ON;
         }
+        sendUpdateBroadcast(position, positionValue);
+    }
+
+    private void sendUpdateBroadcast(int position, int position_value) {
+        Intent intent = new Intent(ACTION_UPDATE_SLIDER_POSITION);
+        intent.putExtra(EXTRA_SLIDER_POSITION, position);
+        intent.putExtra(EXTRA_SLIDER_POSITION_VALUE, position_value);
+        mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
+        intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
     }
 
     private void toggleTorch(boolean value) {
@@ -480,35 +500,5 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
             }
         }
-    }
-
-    void showToast(int messageId, int duration, int yOffset) {
-        final String message = mResContext.getResources().getString(messageId);
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-        @Override
-        public void run() {
-            if (toast != null) toast.cancel();
-            toast = Toast.makeText(mSysUiContext, message, duration);
-            toast.setGravity(Gravity.TOP|Gravity.RIGHT, 0, yOffset);
-            toast.show();
-            }
-        });
-    }
-
-    public static Context getPackageContext(Context context, String packageName) {
-        Context pkgContext = null;
-        if (context.getPackageName().equals(packageName)) {
-            pkgContext = context;
-        } else {
-            try {
-                pkgContext = context.createPackageContext(packageName,
-                        Context.CONTEXT_IGNORE_SECURITY
-                                | Context.CONTEXT_INCLUDE_CODE);
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-        return pkgContext;
     }
 }
