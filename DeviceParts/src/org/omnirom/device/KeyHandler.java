@@ -46,7 +46,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.os.SystemProperties;
-import android.os.UEventObserver;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.provider.Settings.Global;
@@ -159,27 +158,6 @@ public class KeyHandler implements DeviceKeyHandler {
                 "GestureWakeLock");
         mNoMan = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        (new UEventObserver() {
-            @Override
-            public void onUEvent(UEventObserver.UEvent event) {
-                try {
-                    String state = event.get("STATE");
-                    boolean ringing = state.contains("USB=0");
-                    boolean silent = state.contains("(null)=0");
-                    boolean vibrate = state.contains("USB_HOST=0");
-                    android.util.Log.v("DeviceParts", "Got ringing = " + ringing + ", silent = " + silent + ", vibrate = " + vibrate);
-                    if(ringing && !silent && !vibrate)
-                        doHandleSliderAction(2);
-                    if(silent && !ringing && !vibrate)
-                        doHandleSliderAction(0);
-                    if(vibrate && !silent && !ringing)
-                        doHandleSliderAction(1);
-                } catch(Exception e) {
-                    android.util.Log.d("DeviceParts", "Failed parsing uevent", e);
-                }
-
-            }
-        }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
 
         isOPCameraAvail = SyberiaUtils.isAvailableApp("com.oneplus.camera", context);
         if (isOPCameraAvail) {
@@ -194,18 +172,34 @@ public class KeyHandler implements DeviceKeyHandler {
         }
     }
 
+    private boolean hasSetupCompleted() {
+        return Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.USER_SETUP_COMPLETE, 0) != 0;
+    }
+
     @Override
     public boolean handleKeyEvent(KeyEvent event) {
+
+        if (!hasSetupCompleted()) {
+            return false;
+        }
+
         if (event.getAction() != KeyEvent.ACTION_UP) {
             return false;
         }
 
+        int scanCode = event.getScanCode();
+
+        if (scanCode > 600 && scanCode < 604) {
+            doHandleSliderAction(scanCode == 601 ? 2 : scanCode == 602 ? 1 : 0);
+            return true;
+        }
+
         isFpgesture = false;
 
-        if (DEBUG) Log.i(TAG, "nav_code= " + event.getScanCode());
-        int fpcode = event.getScanCode();
+        if (DEBUG) Log.i(TAG, "nav_code= " + scanCode);
         mFPcheck = canHandleKeyEvent(event);
-        String value = getGestureValueForFPScanCode(fpcode);
+        String value = getGestureValueForFPScanCode(scanCode);
         if (mFPcheck && mDispOn && !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY)){
             isFpgesture = true;
             if (!launchSpecialActions(value) && !isCameraLaunchEvent(event)) {
