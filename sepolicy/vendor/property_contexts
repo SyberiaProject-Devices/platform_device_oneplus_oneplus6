@@ -30,6 +30,9 @@ ro.vendor.nfc.notify_tp    u:object_r:vendor_nfc_prop:s0
 persist.nfc.               u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.            u:object_r:vendor_nfc_prop:s0
 
+# Dolby
+persist.vendor.dolby.      u:object_r:vendor_dolby_loglevel_prop:s0
+
 # RIL
 ro.ril.supportLTE               u:object_r:radio_prop:s0
 vendor.oem.bt.addr              u:object_r:vendor_radio_prop:s0

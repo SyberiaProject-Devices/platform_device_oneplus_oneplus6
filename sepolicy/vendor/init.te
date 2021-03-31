@@ -27,4 +27,6 @@ binder_call(init, servicemanager);
 allow init sysfs_leds:dir add_name;
 allow init sysfs_leds:file create;
 
+allow init vendor_data_file:file lock;
+allow init hal_audio_default:binder call;
 permissive init;
