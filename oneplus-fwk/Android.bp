@@ -1,5 +1,5 @@
 java_library {
-    name: "oneplus-fwk.oneplus_msmnile",
+    name: "oneplus-fwk.oneplus_sdm845",
     installable: true,
 
     srcs: [
