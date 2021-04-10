@@ -1,9 +1,8 @@
 on init
-    mkdir /dev/cpuset/little
-    copy /dev/cpuset/cpus /dev/cpuset/little/cpus
-    copy /dev/cpuset/mems /dev/cpuset/little/mems
-    chown system system /dev/cpuset/little/tasks
-    chmod 0664 /dev/cpuset/little/tasks
+
+    # create an uclamp group for camera-specific processes
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 0
 
     # BPF Just In Time compiler
     write /proc/sys/net/core/bpf_jit_enable 1
@@ -148,6 +147,13 @@ on property:vendor.post_boot.parsed=1
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
+
+    # Setup runtime uclamp
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 128
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/top-app/cpu.uclamp.min 10
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
