@@ -148,6 +148,9 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
 
+    #RT scheduler
+    write /proc/sys/kernel/sched_rt_runtime_us 450000
+
     # Setup runtime uclamp
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 128
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
