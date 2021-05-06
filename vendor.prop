@@ -114,6 +114,8 @@ ro.camera.notify_nfc=1
 ro.vendor.display.cabl=2
 vendor.display.enable_default_color_mode=1
 ro.sf.lcd_density=420
+ro.surface_flinger.supports_background_blur=1
+ro.sf.blurs_are_expensive=1
 
 # DRM
 drm.service.enabled=true
