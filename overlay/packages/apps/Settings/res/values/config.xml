@@ -27,8 +27,4 @@
     <bool name="config_enableManualSubProvisioning">true</bool>
 
     <bool name="config_show_color_mode">false</bool>
-
-    <!-- Device specific doze package -->
-    <string name="config_customDozePackage">org.lineageos.settings.doze/org.lineageos.settings.doze.DozeSettingsActivity</string>
-
 </resources>

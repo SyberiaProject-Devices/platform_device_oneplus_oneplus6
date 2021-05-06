@@ -434,8 +434,7 @@ PRODUCT_COPY_FILES += \
 
 # Device Parts
 PRODUCT_PACKAGES += \
-    DeviceParts \
-    OnePlusDoze
+    DeviceParts
 
 # Sensors
 PRODUCT_PACKAGES += \
