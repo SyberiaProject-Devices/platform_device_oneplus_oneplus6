@@ -547,6 +547,9 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
+on property:ro.boot.rf_version=*
+    setprop vendor.rf.version ${ro.boot.rf_version}
+
 service vendor.cnd /system/vendor/bin/cnd
     class main
     user system
