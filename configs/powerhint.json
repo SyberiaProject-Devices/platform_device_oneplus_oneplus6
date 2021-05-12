@@ -114,10 +114,10 @@
       "Name": "TA_uClampBoost",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
-     "0", 
+     "0",
      "10",
-     "25",
-     "35",
+     "30",
+     "45",
      "max"
       ],
       "DefaultIndex": 1,
@@ -322,8 +322,8 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "TA_uClampBoost",
-      "Duration": 0,
-      "Value": "35"
+      "Duration": 5000,
+      "Value": "30"
     },
     {
       "PowerHint": "INTERACTION",
@@ -365,7 +365,7 @@
       "PowerHint": "LAUNCH",
       "Node": "TA_uClampBoost",
       "Duration": 3000,
-      "Value": "25"
+      "Value": "45"
     },
     {
       "PowerHint": "LAUNCH",
