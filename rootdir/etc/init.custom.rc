@@ -157,7 +157,6 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/kernel/sched_rt_runtime_us 450000
 
     # Setup runtime uclamp
-    write /proc/sys/kernel/sched_util_clamp_min_rt_default 128
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/foreground/cpu.uclamp.min 0
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
