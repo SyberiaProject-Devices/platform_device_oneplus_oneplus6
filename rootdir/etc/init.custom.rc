@@ -10,6 +10,9 @@ on init
     # Freezer setup
     write /dev/freezer/frozen/freezer.killable 1
 
+    # ZRAM parameters
+    write /proc/sys/vm/page-cluster 0
+
 on late-fs
     start vendor.power-hal-aidl
 
