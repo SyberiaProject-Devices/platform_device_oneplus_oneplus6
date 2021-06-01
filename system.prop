@@ -8,7 +8,6 @@ dalvik.vm.boot-dex2oat-threads=8
 dalvik.vm.dex2oat-threads=8
 
 # Audio
-
 audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
@@ -23,6 +22,9 @@ vendor.camera.aux.packagelist=com.android.camera,com.oneplus.camera
 
 # Boot
 sys.vendor.shutdown.waittime=500
+
+# Bluetooth
+persist.bluetooth.sbc_hd_higher_bitrate=1
 
 # CNE/DPM
 persist.vendor.cne.feature=1
