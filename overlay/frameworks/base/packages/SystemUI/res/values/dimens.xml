@@ -16,9 +16,6 @@
 */
 -->
 <resources>
-    <dimen name="rounded_corner_radius_top">84.0px</dimen>
-    <dimen name="rounded_corner_radius_bottom">68.0px</dimen>
-
     <!-- Tri-state UI -->
     <dimen name="tri_state_down_dialog_position">423.0px</dimen>
     <dimen name="tri_state_down_dialog_position_l">270.375px</dimen>
@@ -29,4 +26,6 @@
     <dimen name="tri_state_up_dialog_position_deep">21.0px</dimen>
     <dimen name="tri_state_up_dialog_position_deep_land">21.0px</dimen>
 
+    <!--  Allow CornerHandleView and PathSpecCornerPathRenderer to decouple from corner-radius -->
+    <dimen name="config_rounded_mask_size">97px</dimen>
 </resources>
