@@ -117,7 +117,6 @@
      "0",
      "10",
      "30",
-     "45",
      "max"
       ],
       "DefaultIndex": 1,
@@ -322,7 +321,7 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "TA_uClampBoost",
-      "Duration": 5000,
+      "Duration": 0,
       "Value": "30"
     },
     {
@@ -365,7 +364,7 @@
       "PowerHint": "LAUNCH",
       "Node": "TA_uClampBoost",
       "Duration": 3000,
-      "Value": "45"
+      "Value": "max"
     },
     {
       "PowerHint": "LAUNCH",
