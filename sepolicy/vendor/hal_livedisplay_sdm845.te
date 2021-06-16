@@ -22,3 +22,6 @@ allow hal_livedisplay_sdm845 sysfs_livedisplay_tuneable:file rw_file_perms;
 
 # Allow hal_livedisplay to set vendor display prop
 set_prop(hal_livedisplay_sdm845, vendor_display_prop)
+
+# Anti flicker
+allow hal_livedisplay_sdm845 sysfs_dm:file rw_file_perms;
