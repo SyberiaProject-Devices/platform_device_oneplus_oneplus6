@@ -1,0 +1,5 @@
+service vendor.light-oneplus_sdm845 /vendor/bin/hw/android.hardware.lights-service.oneplus_sdm845
+    class hal
+    user nobody
+    group nobody
+    shutdown critical
