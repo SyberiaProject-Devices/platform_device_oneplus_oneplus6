@@ -6,6 +6,7 @@ cc_binary {
     vendor: true,
     shared_libs: [
         "libbase",
+        "liblog",
         "libbinder_ndk",
         "android.hardware.light-ndk_platform",
     ],

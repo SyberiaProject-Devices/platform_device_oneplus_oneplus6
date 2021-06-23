@@ -54,7 +54,7 @@ Light::Light() {
     mLights.emplace(Type::NOTIFICATIONS, std::bind(&Light::handleRgb, this, std::placeholders::_1, 1));
 }
 
-void Light::handleRgb(const LightState& state, size_t index) {
+ndk::ScopedAStatus Light::handleRgb(const LightState& state, size_t index) {
     mLightStates.at(index) = state;
 
     LightState stateToUse = mLightStates.front();

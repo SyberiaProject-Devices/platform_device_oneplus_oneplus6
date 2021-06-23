@@ -17,6 +17,8 @@
 #pragma once
 
 #include <aidl/android/hardware/light/BnLights.h>
+#include <map>
+#include <mutex>
 
 namespace aidl {
 namespace android {
@@ -25,8 +27,17 @@ namespace light {
 
 // Default implementation that reports no supported lights.
 class Lights : public BnLights {
+  public:
+    Lights();
+
     ndk::ScopedAStatus setLightState(int id, const HwLightState& state) override;
     ndk::ScopedAStatus getLights(std::vector<HwLight>* types) override;
+
+  private:
+    std::mutex mLock;
+    std::map<int, int> mLights;
+    std::vector<HwLight> mAvailableLights;
+    std::array<HwLightState, 3> mLightStates;
 };
 
 }  // namespace light
