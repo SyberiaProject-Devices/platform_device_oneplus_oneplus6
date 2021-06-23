@@ -238,7 +238,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.oneplus_sdm845
+    android.hardware.lights-service.oneplus_sdm845
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
