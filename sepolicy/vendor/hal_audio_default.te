@@ -16,3 +16,4 @@ r_dir_file(hal_audio_default, mnt_vendor_file)
 
 get_prop(hal_audio_default, audio_prop)
 allow hal_audio_default sysfs:dir r_dir_perms;
+allow hal_audio_default diag_device:chr_file rw_file_perms;

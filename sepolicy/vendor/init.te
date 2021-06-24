@@ -18,4 +18,13 @@ allow init dashd_exec:file { execute execute_no_trans getattr open read };
 
 allow init apex_metadata_file:lnk_file r_file_perms;
 
+allow init sysfs_zram:dir add_name;
+allow init sysfs_zram:file create;
+
+allow init hal_light_service:service_manager add;
+binder_call(init, servicemanager);
+
+allow init sysfs_leds:dir add_name;
+allow init sysfs_leds:file create;
+
 permissive init;
