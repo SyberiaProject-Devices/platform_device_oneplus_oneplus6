@@ -158,6 +158,7 @@ on property:vendor.post_boot.parsed=1
 
     #RT scheduler
     write /proc/sys/kernel/sched_rt_runtime_us 450000
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 96
 
     # Setup runtime uclamp
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
