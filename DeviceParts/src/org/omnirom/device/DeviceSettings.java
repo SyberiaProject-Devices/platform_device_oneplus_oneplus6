@@ -50,8 +50,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String KEY_OTG_SWITCH = "otg_switch";
 
-    public static final String KEY_DC_SWITCH = "dc_switch";
-
     public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
 
     private VibratorStrengthPreference mVibratorStrength;
@@ -62,7 +60,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private ListPreference mSliderModeBottom;
     private static TwoStatePreference mOtgSwitch;
     private static TwoStatePreference mDt2wSwitch;
-    private static TwoStatePreference mDc;
+
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -108,11 +106,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mOtgSwitch.setEnabled(UsbOtgSwitch.isSupported());
         mOtgSwitch.setChecked(UsbOtgSwitch.isCurrentlyEnabled(this.getContext()));
         mOtgSwitch.setOnPreferenceChangeListener(new UsbOtgSwitch());
-
-        mDc = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
-        mDc.setEnabled(DCDimmingSwitch.isSupported());
-        mDc.setChecked(DCDimmingSwitch.isCurrentlyEnabled(this.getContext()));
-        mDc.setOnPreferenceChangeListener(new DCDimmingSwitch());
     }
 
     @Override

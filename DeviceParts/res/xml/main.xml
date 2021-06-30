@@ -67,10 +67,4 @@
             android:persistent="false" />
     </PreferenceCategory>
 
-
-   <SwitchPreference
-        android:key="dc_switch"
-        android:summary="@string/dcdimming_summary"
-        android:title="@string/dcdimming_title" />
-
 </PreferenceScreen>
