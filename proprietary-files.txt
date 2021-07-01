@@ -933,8 +933,8 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
-# IRQ balance
-vendor/bin/msm_irqbalance
+# IRQ balance - from redfin RQ3A.210605.005
+vendor/bin/msm_irqbalance|f5cd3f61a678d459884241cb0da23e49d355c5c4
 
 # Listen - from from LA.UM.9.8.r1-02700-SDM710.0
 vendor/lib/hw/sound_trigger.primary.sdm845.so|5454d56f9e19a8bcc00c1f3cd0bf305406c125a5
