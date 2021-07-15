@@ -38,4 +38,7 @@ binder_call(init, hwservicemanager);
 binder_call(init, hal_nfc_default);
 binder_call(init, secure_element);
 
+allow init adsprpcd_file:file mounton;
+
+
 permissive init;
