@@ -134,10 +134,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libc++demangle_vendor \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
-    vendor.qti.hardware.camera.device@1.0.vendor
+    android.hardware.camera.provider@2.4-service
 
 # Codec2
 PRODUCT_PACKAGES += \
