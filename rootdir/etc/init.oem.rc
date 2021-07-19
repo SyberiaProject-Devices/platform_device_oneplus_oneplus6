@@ -78,6 +78,11 @@ on boot
     #shankai@bsp , 2017/12/29, Modify for rf_cable support
     chown system system /proc/rf_cable_config
 
+    chmod 666 /dev/input/event1
+    chmod 666 /dev/input/event2
+    chmod 666 /dev/input/event8
+    chmod 666 /dev/input/event10
+
  #endif /*VENDOR_EDIT*/
 
 #ifdef VENDOR_EDIT
@@ -386,6 +391,11 @@ service bootcontrollog /system/bin/bootcontrollog
     group system
     oneshot
     disabled
+
+service dashd /vendor/bin/dashd
+    class core
+    seclabel u:r:dashd:s0
+    group root system
 
 on property:vendor.bootcontrol.log=1
     start bootcontrollog

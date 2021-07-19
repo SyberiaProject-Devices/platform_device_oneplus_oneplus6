@@ -81,3 +81,9 @@ sh_binary {
     src: "init.qcom.sensors.sh",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.qti.qcv.sh",
+    src: "init.qti.qcv.sh",
+    vendor: true,
+}
