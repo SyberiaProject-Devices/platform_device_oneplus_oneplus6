@@ -77,7 +77,8 @@ vendor.audio.feature.hdmi_passthrough.enable=true
 vendor.audio.feature.hfp.enable=true
 vendor.audio.feature.hifi_audio.enable=false
 vendor.audio.feature.hwdep_cal.enable=false
-vendor.audio.feature.incall_music.enable=false
+vendor.audio.feature.incall_music.enable=true
+vendor.audio.feature.multi_voice_session.enable=true
 vendor.audio.feature.keep_alive.enable=false
 vendor.audio.feature.kpi_optimize.enable=false
 vendor.audio.feature.maxx_audio.enable=false
@@ -105,14 +106,17 @@ ro.vendor.bluetooth.wipower=false
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 vendor.qcom.bluetooth.soc=cherokee
+persist.vendor.qcom.bluetooth.soc=cherokee
 persist.bluetooth.enableinbandringing=true
 
 # Camera
 ro.camera.notify_nfc=1
 
 # Display
-ro.vendor.display.cabl=2
-vendor.display.enable_default_color_mode=1
+ro.vendor.display.cabl=0
+vendor.display.enable_default_color_mode=0
+persist.sys.sf.native_mode=0
+persist.sys.sf.color_saturation=1.0
 ro.sf.lcd_density=420
 ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
@@ -159,3 +163,9 @@ persist.vendor.radio.sib16_support=1
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
+
+# Sensors
+persist.vendor.sensors.firmware_property_read_support=false
+
+#QTI sysd
+persist.vendor.qcomsysd.enabled=1

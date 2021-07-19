@@ -17,6 +17,7 @@ ro.config.vc_call_vol_steps=7
 # Camera
 camera.disable_zsl_mode=true
 persist.camera.managebuffer.enable=1
+persist.camera.assert.panic=true
 persist.camera.privapp.list=com.oneplus.camera
 persist.vendor.camera.privapp.list=com.oneplus.camera
 vendor.camera.aux.packagelist=com.android.camera,com.oneplus.camera
@@ -91,6 +92,9 @@ persist.vendor.data.mode=concurrent
 #Netflix custom property
 ro.netflix.bsp_rev=Q845-14477-1
 
+#Property to enable Mag filter
+persist.vendor.sensors.enable.mag_filter=true
+
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
@@ -112,6 +116,7 @@ persist.vendor.btstack.enable.splita2dp=true
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.btstack.enable.twsplus=true
 persist.vendor.bt.a2dp.aac_whitelist=false
+persist.vendor.btstack.enable.lpa=true
 
 # ZRam
 ro.zram.mark_idle_delay_mins=60
