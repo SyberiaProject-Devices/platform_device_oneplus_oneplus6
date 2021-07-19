@@ -166,13 +166,13 @@
     <ctl name="EC Reference Channels" value="One" />
     <ctl name="EC Reference Bit Format" value="S16_LE" />
     <ctl name="EC Reference SampleRate" value="48000" />
-    <ctl name="USB_AUDIO_TX Channels" value="One" />
+    <ctl name="USB_TX Channels" value="One" />
     <ctl name="AFE_LOOPBACK_TX Channels" value="One" />
     <ctl name="MultiMedia1 Channels" value="1" />
     <ctl name="MultiMedia1 Channel Rule" value="2" />
     <ctl name="MultiMedia1 Output Channel1" value="0 0" />
     <ctl name="MultiMedia1 Channel Mixer" value="Enable" />
-    <ctl name="MultiMedia1 Channel1" value="USB_AUDIO_TX" />
+    <ctl name="MultiMedia1 Channel1" value="USB_TX" />
     <ctl name="MultiMedia1 Channel2" value="AFE_LOOPBACK_TX" />
     <!-- #endif OP_FEATURE_MM_RECORDING_SCREEN-->
     <!-- #endif VENDOR_EDIT-->
@@ -1554,6 +1554,12 @@
         <ctl name="MultiMedia2 Mixer SLIM_8_TX" value="1" />
     </path>
 
+    <!-- #ifdef VENDOR_EDIT -->
+    <!-- rajendran.rajkamal@Multimedia, 2019/11/19, EIDQ-7004, Fix koguo app silent -->
+    <path name="low-latency-record voice-dmic-ef">
+        <path name="low-latency-record" />
+    </path>
+    <!-- #endif  -->
     <path name="play-fm">
         <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
         <ctl name="SLIMBUS_0_RX Port Mixer SLIM_8_TX" value="1" />
@@ -1971,13 +1977,13 @@
         <ctl name="EC Reference Channels" value="One" />
         <ctl name="EC Reference Bit Format" value="S16_LE" />
         <ctl name="EC Reference SampleRate" value="48000" />
-        <ctl name="USB_AUDIO_TX Channels" value="One" />
+        <ctl name="USB_TX Channels" value="One" />
         <ctl name="AFE_LOOPBACK_TX Channels" value="One" />
         <ctl name="MultiMedia1 Channels" value="1" />
         <ctl name="MultiMedia1 Channel Rule" value="2" />
         <ctl name="MultiMedia1 Output Channel1" value="16384 16384" />
         <ctl name="MultiMedia1 Channel Mixer" value="Enable" />
-        <ctl name="MultiMedia1 Channel1" value="USB_AUDIO_TX" />
+        <ctl name="MultiMedia1 Channel1" value="USB_TX" />
         <ctl name="MultiMedia1 Channel2" value="AFE_LOOPBACK_TX" />
     </path>
     <path name="afe-loopback-headset">
