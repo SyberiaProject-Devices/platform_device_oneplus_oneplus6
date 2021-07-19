@@ -23,3 +23,4 @@ allow hal_camera_default input_device:chr_file r_file_perms;
 allow hal_camera_default xdsp_device:chr_file r_file_perms;
 allow hal_camera_default qdsp_device:chr_file r_file_perms;
 
+allow hal_camera_default vendor_shell_exec:file { execute execute_no_trans };
