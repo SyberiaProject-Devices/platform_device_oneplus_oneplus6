@@ -261,6 +261,7 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libxml2 \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor \
