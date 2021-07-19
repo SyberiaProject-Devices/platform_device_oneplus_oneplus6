@@ -66,7 +66,7 @@ import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.syberia.SyberiaUtils;
 import com.android.internal.statusbar.IStatusBarService;
 
-import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
+import vendor.oneplus.hardware.camera.V1_0.IOnePlusCameraProvider;
 
 public class KeyHandler implements DeviceKeyHandler {
 

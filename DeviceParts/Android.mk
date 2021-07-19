@@ -24,7 +24,7 @@ package_resource_overlays := $(strip \
 LOCAL_RESOURCE_DIR := $(package_resource_overlays) $(LOCAL_RESOURCE_DIR)
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    vendor.oneplus.camera.CameraHIDL-V1.0-java
+    vendor.oneplus.hardware.camera-V1.0-java
 
 LOCAL_JAVA_LIBRARIES := telephony-common
 
