@@ -154,13 +154,16 @@ on property:vendor.post_boot.parsed=1
 
     #RT scheduler
     write /proc/sys/kernel/sched_rt_runtime_us 450000
-    write /proc/sys/kernel/sched_util_clamp_min_rt_default 96
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 128
 
     # Setup runtime uclamp
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/foreground/cpu.uclamp.min 0
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/top-app/cpu.uclamp.min 10
+
+    # Gain earpiece
+    write /sys/kernel/sound_control/earpiece_gain 18
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
