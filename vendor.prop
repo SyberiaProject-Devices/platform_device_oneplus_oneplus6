@@ -85,7 +85,7 @@ vendor.audio.feature.maxx_audio.enable=false
 vendor.audio.feature.ras.enable=true
 vendor.audio.feature.record_play_concurency.enable=false
 vendor.audio.feature.src_trkn.enable=true
-vendor.audio.feature.spkr_prot.enable=true
+vendor.audio.feature.spkr_prot.enable=false
 vendor.audio.feature.ssrec.enable=true
 vendor.audio.feature.usb_offload.enable=true
 vendor.audio.feature.usb_offload_burst_mode.enable=false
@@ -135,11 +135,6 @@ debug.sf.hw=1
 debug.egl.hw=1
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=0
-
-# Media
-debug.stagefright.omx_default_rank=0
-debug.stagefright.ccodec=1
-vendor.media.target.version=2
 
 # NetMgr
 ro.telephony.iwlan_operation_mode=legacy
