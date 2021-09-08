@@ -104,10 +104,10 @@ static void workaround_snet_properties() {
 
 void vendor_load_properties()
 {
-	property_override("vendor.audio.feature.spkr_prot.enable", "false");
+//	property_override("vendor.audio.feature.spkr_prot.enable", "false");
 	property_override("ro.control_privapp_permissions", "log");
-	property_override_dual("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "google/sunfish/sunfish:11/RQ3A.210705.001/7380771:user/release-keys");
-	property_override_dual("ro.build.fingerprint", "ro.product.build.fingerprint", "google/sunfish/sunfish:11/RQ3A.210705.001/7380771:user/release-keys");
+//	property_override_dual("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "google/redfin/redfin:11/RQ3A.210805.001.A1/7474174:user/release-keys");
+//	property_override_dual("ro.build.fingerprint", "ro.product.build.fingerprint", "google/redfin/redfin:11/RQ3A.210805.001.A1/7474174:user/release-keys");
 
 	// Workaround SafetyNet
 	workaround_snet_properties();
