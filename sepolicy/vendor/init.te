@@ -38,7 +38,14 @@ binder_call(init, hwservicemanager);
 binder_call(init, hal_nfc_default);
 binder_call(init, secure_element);
 
+allow init device:chr_file w_file_perms;
+allow init param_block_device:blk_file w_file_perms
+;
+
 allow init adsprpcd_file:file mounton;
 
+allow init hal_param_hwservice:hwservice_manager { add find };
+allow init hal_secure_element_hwservice:hwservice_manager { add find };
+allow init hidl_base_hwservice:hwservice_manager add;
 
 permissive init;
