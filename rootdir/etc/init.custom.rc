@@ -153,8 +153,10 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/vm/watermark_scale_factor 1
 
     #RT scheduler
-    write /proc/sys/kernel/sched_rt_runtime_us 450000
-    write /proc/sys/kernel/sched_util_clamp_min_rt_default 128
+    write /proc/sys/kernel/sched_rt_period_us 1000000
+    write /proc/sys/kernel/sched_rt_runtime_us 1000000
+    write /proc/sys/kernel/sched_rr_timeslice_ms 1
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
 
     # Setup runtime uclamp
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
