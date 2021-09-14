@@ -1393,13 +1393,8 @@ vendor/bin/ssr_diag
 vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
 
-# WiFi
-vendor/bin/cnss-daemon
-#vendor/bin/hw/vendor.oneplus.hardware.wifi@1.0-service
-#vendor/etc/init/vendor.oneplus.hardware.wifi@1.0-service.rc
-#vendor/lib64/vendor.oneplus.hardware.wifi@1.0.so
-#vendor/lib64/vendor.oneplus.hardware.wifi@1.1.so
-#vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
+# WiFi - from MANNAR (05700)
+vendor/bin/cnss-daemon|41e8edf798985d8832de16bebf3e7a46aed0482b
 
 #QTI AV Enhancements
 system_ext/lib/libavenhancements.so
