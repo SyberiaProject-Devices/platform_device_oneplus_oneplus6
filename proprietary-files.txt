@@ -1,4 +1,4 @@
-# All unpinned blobs from OnePlus/OnePlus6/OnePlus6:11/RKQ1.201217.002/2107130217:user/release-keys
+# All unpinned blobs from OnePlus/OnePlus6/OnePlus6:11/RKQ1.201217.002/2108052223:user/release-keys
 
 # ACDB
 vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
@@ -25,7 +25,6 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 vendor/bin/adsprpcd
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
-vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
@@ -480,6 +479,7 @@ vendor/lib/librpmb.so
 vendor/lib/libsecureui.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libsi.so
+vendor/lib/libtrustedapploader.so
 vendor/lib/libtzdrmgenprov.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libGPreqcancel.so
@@ -498,6 +498,7 @@ vendor/lib64/libspl.so
 vendor/lib64/libqisl.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libtrustedapploader.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libbase64.so
 vendor/lib64/libhdcpsrm.so
@@ -765,6 +766,7 @@ vendor/lib/liblocationservice_glue.so
 vendor/lib/liblowi_client.so
 vendor/lib/liblowi_wifihal.so
 vendor/lib/libminksocket.so
+vendor/lib/libsynergy_loc_api.so
 vendor/lib/libslimclient.so
 vendor/lib/libxtadapter.so
 vendor/lib/vendor.qti.gnss@1.0.so
@@ -801,6 +803,7 @@ vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
 vendor/lib64/libminksocket.so
 vendor/lib64/libslimclient.so
+vendor/lib64/libsynergy_loc_api.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss@1.0.so
 vendor/lib64/vendor.qti.gnss@1.1.so
@@ -811,6 +814,14 @@ vendor/lib64/vendor.qti.gnss@3.0.so
 vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+vendor/lib64/libasn1cper.so
+vendor/lib64/libasn1crt.so
+vendor/lib64/libasn1crtx.so
+vendor/lib64/libgarden_haltests_e2e.so
+vendor/lib64/libsynergy_loc_api.so
+vendor/lib64/libxtwifi_server_protocol.so
+vendor/lib64/libxtwifi_server_protocol_uri_v3.so
+vendor/lib64/libnative-api.so
 
 # IFAA
 vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
@@ -865,7 +876,6 @@ vendor/etc/init/ims_rtp_daemon.rc
 vendor/etc/init/imsdatadaemon.rc
 vendor/etc/init/imsqmidaemon.rc
 vendor/etc/init/imsrcsd.rc
-vendor/etc/seccomp_policy/imsrtp.policy
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
 vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
@@ -1078,7 +1088,8 @@ vendor/lib64/libqdma_file_agent.so
 etc/permissions/privapp-permissions-qti.xml
 etc/sysconfig/qti_whitelist.xml
 vendor/bin/irsc_util
-vendor/etc/seccomp_policy/qti-systemd.policy
+vendor/bin/mutualex
+vendor/etc/init/mutualex.rc
 vendor/etc/sec_config
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
@@ -1096,6 +1107,7 @@ vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
+vendor/lib/libsmemlog.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -1114,8 +1126,11 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libqmi_csvt_srvc.so
 vendor/lib64/libqmi_legacy.so
+vendor/lib64/libsmemlog.so
 vendor/lib/libqmi_csvt_srvc.so
 vendor/lib/libqmi_legacy.so
+vendor/lib64/libqmi_csvt_srvc.so
+vendor/lib64/libqmi_legacy.so
 
 # RIL
 -framework/qcnvitems.jar
@@ -1156,7 +1171,6 @@ vendor/etc/init/qcrild.rc
 vendor/etc/init/vendor.oneplus.hardware.param@1.0-service.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.tftp.rc
-vendor/etc/seccomp_policy/atfwd@2.0.policy
 vendor/lib/libopf.so
 vendor/lib/vendor.oneplus.hardware.param@1.0.so
 vendor/lib64/libconfigdb.so
@@ -1228,7 +1242,7 @@ vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql
 -vendor/lib64/libfastcvopt.so
 
 # Sensors
-vendor/bin/chre
+#vendor/bin/chre
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
@@ -1324,6 +1338,17 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
+# SECCOMP policy
+vendor/etc/seccomp_policy/configstore@1.1.policy
+vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/etc/seccomp_policy/imsrtp.policy
+vendor/etc/seccomp_policy/qti-systemd.policy
+vendor/etc/seccomp_policy/atfwd@2.0.policy
+vendor/etc/seccomp_policy/mediacodec.policy
+vendor/etc/seccomp_policy/wfdhdcphalservice.policy
+vendor/etc/seccomp_policy/wfdvndservice.policy
+vendor/etc/seccomp_policy/wifidisplayhalservice.policy
+
 # Time services
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
@@ -1386,11 +1411,13 @@ vendor/bin/vppservice
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/init/vppservice.rc
 vendor/lib/libvppclient.so
+vendor/lib/libvpphcp.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
 vendor/lib/vendor.qti.hardware.vpp@1.1.so
 vendor/lib/vendor.qti.hardware.vpp@1.2.so
 vendor/lib64/libvppclient.so
+vendor/lib64/libvpphcp.so
 vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so
@@ -1430,9 +1457,6 @@ vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 vendor/lib64/libwfdhdcpcp.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
-vendor/etc/seccomp_policy/wfdhdcphalservice.policy
-vendor/etc/seccomp_policy/wfdvndservice.policy
-vendor/etc/seccomp_policy/wifidisplayhalservice.policy
 vendor/lib/libmmosal.so
 vendor/lib/libwfddisplayconfig_proprietary.so
 vendor/lib/libwfdutils_proprietary.so
