@@ -165,7 +165,7 @@ on property:vendor.post_boot.parsed=1
     write /dev/cpuctl/top-app/cpu.uclamp.min 10
 
     # Gain earpiece
-    write /sys/kernel/sound_control/earpiece_gain 18
+    #write /sys/kernel/sound_control/earpiece_gain 18
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
