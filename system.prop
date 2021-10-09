@@ -114,6 +114,7 @@ persist.dbg.wfc_avail_ovr=1
 persist.radio.calls.on.ims=1
 ro.telephony.default_network=22,22
 config.disable_rtt=true
+persist.sys.fflag.override.settings_provider_model=false
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true
