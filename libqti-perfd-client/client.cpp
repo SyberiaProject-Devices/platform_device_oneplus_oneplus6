@@ -24,12 +24,14 @@ class PowerAidl {
         const std::string kInstance = std::string(IPower::descriptor) + "/default";
         ndk::SpAIBinder power_binder =
                 ndk::SpAIBinder(AServiceManager_getService(kInstance.c_str()));
+
         if (power_binder.get() == nullptr) {
             ALOGE("Cannot get Power Hal Binder");
             return;
         }
 
         power_hal_aidl_ = IPower::fromBinder(power_binder);
+
         if (power_hal_aidl_ == nullptr) {
             ALOGE("Cannot get Power Hal AIDL");
         }
@@ -46,7 +48,6 @@ class PowerAidl {
             ALOGE("Set mode %s to %d failed!", toString(hint).c_str(), enabled);
         }
     }
-
     void setBoost(Boost hint, int32_t duration) {
         if (power_hal_aidl_ == nullptr) {
             ALOGE("power_hal_aidl_ is null!");
@@ -69,7 +70,10 @@ extern "C" void perf_lock_cmd() {}
 extern "C" void perf_lock_use_profile() {}
 
 extern "C" int perf_lock_acq(int handle, int duration_ms, int params[], int size) {
-    int ret = 0; /* Default to error - not acquired */
+    int ret;
+
+    ALOGI("perf_lock_acq: handle: %d, duration_ms: %d, params[0]: %d, size: %d", handle,
+          duration_ms, params[0], size);
 
     switch (size) {
         case 14: /* CAMERA_LAUNCH */
@@ -98,6 +102,9 @@ extern "C" int perf_lock_acq(int handle, int duration_ms, int params[], int size
             break;
 
         case 10: /* CAMERA_CLOSE - release all handles */
+            // Returning 0 makes chi cry but prevents refCount from growing indefinitely
+            ret = 0;
+
             if (handleNum != 0) {
                 handleNum = 0;
 
@@ -107,13 +114,11 @@ extern "C" int perf_lock_acq(int handle, int duration_ms, int params[], int size
             }
 
             ALOGI("perf_lock_acq: CAMERA_CLOSE");
-            return ret;
+            goto out;
             break;
 
         default: /* Not implemented */
-            ALOGI("perf_lock_acq: handle: %d, duration_ms: %d, params[0]: %d, size: %d", handle,
-                  duration_ms, params[0], size);
-            return ret;
+            return 0;
             break;
     }
 
@@ -123,6 +128,7 @@ extern "C" int perf_lock_acq(int handle, int duration_ms, int params[], int size
         ret = handle;
     }
 
+out:
     ALOGI("perf_lock_acq: returning handle val: %d", ret);
     return ret;
 }
