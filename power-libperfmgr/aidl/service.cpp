@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.power-service.xiaomi_sm6250-libperfmgr"
+#define LOG_TAG "powerhal-libperfmgr"
 
 #include <thread>
 
@@ -25,9 +25,12 @@
 
 #include "Power.h"
 #include "PowerExt.h"
+#include "PowerSessionManager.h"
 
 using aidl::google::hardware::power::impl::pixel::Power;
 using aidl::google::hardware::power::impl::pixel::PowerExt;
+using aidl::google::hardware::power::impl::pixel::PowerHintMonitor;
+using aidl::google::hardware::power::impl::pixel::PowerSessionManager;
 using ::android::perfmgr::HintManager;
 
 constexpr std::string_view kPowerHalInitProp("vendor.powerhal.init");
@@ -38,7 +41,7 @@ int main() {
     const std::string config_path =
             "/vendor/etc/" +
             android::base::GetProperty(kConfigProperty.data(), kConfigDefaultFileName.data());
-    LOG(INFO) << "OnePlus sdm845 Power HAL AIDL Service with Extension is starting with config: "
+    LOG(INFO) << "Pixel Power HAL AIDL Service with Extension is starting with config: "
               << config_path;
 
     // Parse config but do not start the looper
@@ -63,7 +66,12 @@ int main() {
     const std::string instance = std::string() + Power::descriptor + "/default";
     binder_status_t status = AServiceManager_addService(pw->asBinder().get(), instance.c_str());
     CHECK(status == STATUS_OK);
-    LOG(INFO) << "OnePlus Power HAL AIDL Service with Extension is started.";
+    LOG(INFO) << "Pixel Power HAL AIDL Service with Extension is started.";
+
+    if (::android::base::GetIntProperty("vendor.powerhal.adpf.rate", -1) != -1) {
+        PowerHintMonitor::getInstance()->start();
+        PowerSessionManager::getInstance()->setHintManager(hm);
+    }
 
     std::thread initThread([&]() {
         ::android::base::WaitForProperty(kPowerHalInitProp.data(), "1");
@@ -74,6 +82,6 @@ int main() {
     ABinderProcess_joinThreadPool();
 
     // should not reach
-    LOG(ERROR) << "OnePlus Power HAL AIDL Service with Extension just died.";
+    LOG(ERROR) << "Pixel Power HAL AIDL Service with Extension just died.";
     return EXIT_FAILURE;
 }
