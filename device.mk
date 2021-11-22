@@ -352,6 +352,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+PRODUCT_PACKAGES += \
+    rebalance_interrupts-op6
+
 # Pixel Offline charger
 PRODUCT_PACKAGES += \
     charger_res_images \

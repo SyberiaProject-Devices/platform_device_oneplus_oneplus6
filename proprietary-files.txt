@@ -942,7 +942,7 @@ vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
 # IRQ balance - from redfin RQ3A.210605.005
-vendor/bin/msm_irqbalance|f5cd3f61a678d459884241cb0da23e49d355c5c4
+#vendor/bin/msm_irqbalance|f5cd3f61a678d459884241cb0da23e49d355c5c4
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.sdm845.so
