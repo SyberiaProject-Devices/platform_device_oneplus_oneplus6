@@ -1,6 +1,17 @@
-# All unpinned blobs from OnePlus/OnePlus6/OnePlus6:11/RKQ1.201217.002/2108052223:user/release-keys
+# All unpinned blobs from OnePlus/OnePlus6/OnePlus6:11/RKQ1.201217.002/2109171635:user/release-keys
 
 # ACDB from ODM partition
+vendor/odm/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_Codec_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_Global_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/odm/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
+
+# ACDB from vendor partition
 vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Codec_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
@@ -10,8 +21,6 @@ vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
-
-# ACDB from vendor partition
 vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Codec_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
@@ -291,7 +300,6 @@ vendor/lib/libVDBlurlessAPI_v2.so
 vendor/lib/libVDDualCameraBlurlessAPI.so
 vendor/lib/libVDHDRAPI.so
 vendor/lib/lib_EagleEye.so
-vendor/lib/lib_bokehshap.so
 vendor/lib/lib_oneplus_facebeauty.so
 vendor/lib/lib_oneplus_watermark.so
 vendor/lib/libarcsoft_dualcam_bokeh_api.so
@@ -333,6 +341,7 @@ vendor/lib64/libnanopb.so
 vendor/lib64/libsns_device_mode_stub.so
 vendor/lib64/libsns_fastRPC_util.so
 vendor/lib64/libsns_low_lat_stream_stub.so
+vendor/lib64/libsns_registry_skel.so
 vendor/lib64/libsnsapi.so
 vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libswregistrationalgo.so
@@ -1017,6 +1026,7 @@ vendor/lib64/unnhal-acc-common.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
+lib64/vendor.nxp.nxpnfc@1.0.so
 -system_ext/app/NxpNfcNci/NxpNfcNci.apk
 -system_ext/app/NxpSecureElement/NxpSecureElement.apk
 etc/nfcee_access.xml
@@ -1322,6 +1332,7 @@ vendor/lib/libsensorcal.so
 vendor/lib/libsensorslog.so
 vendor/lib/libsns_device_mode_stub.so
 vendor/lib/libsns_fastRPC_util.so
+vendor/lib/libsns_registry_skel.so
 vendor/lib/libsns_low_lat_stream_stub.so
 vendor/lib/libsnsapi.so
 vendor/lib/libsnsdiaglog.so
@@ -1365,6 +1376,7 @@ vendor/lib/libtime_genoff.so
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
+vendor/etc/init/init_thermal-engine.rc
 vendor/lib64/libthermalclient.so
 vendor/lib/libthermalclient.so
 
