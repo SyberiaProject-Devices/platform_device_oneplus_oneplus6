@@ -62,7 +62,7 @@ cc_binary {
     vintf_fragments: ["aidl/android.hardware.power-service.op6.xml"],
     vendor: true,
     shared_libs: [
-        "android.hardware.power-ndk_platform",
+        "android.hardware.power-V1-ndk_platform",
         "libbase",
         "libcutils",
         "liblog",
@@ -70,7 +70,7 @@ cc_binary {
         "libbinder_ndk",
         "libperfmgr",
         "libdisppower-op6",
-        "pixel-power-ext-ndk_platform",
+        "pixel-power-ext-V1-ndk_platform",
     ],
     srcs: [
         "aidl/service.cpp",
