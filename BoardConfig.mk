@@ -196,6 +196,7 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(VENDOR_PATH) \
+    hardware/google/interfaces \
     hardware/google/pixel
 
 # Verified Boot

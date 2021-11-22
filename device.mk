@@ -258,9 +258,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.op6-libperfmgr \
     android.hardware.power.stats@1.0-service.op6
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/lib64/pixel-power-ext-V1-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib64/pixel-power-ext-V1-ndk_platform.so
-
 # Media
 PRODUCT_PACKAGES += \
     libxml2 \
