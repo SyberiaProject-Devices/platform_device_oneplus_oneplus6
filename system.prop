@@ -21,6 +21,7 @@ persist.camera.assert.panic=true
 persist.camera.privapp.list=com.oneplus.camera
 persist.vendor.camera.privapp.list=com.oneplus.camera
 vendor.camera.aux.packagelist=com.android.camera,com.oneplus.camera
+persist.vendor.camera.sceneclassify.enable=0
 
 # Boot
 sys.vendor.shutdown.waittime=500
