@@ -1,0 +1,40 @@
+android_app_import {
+	name: "OnePlusCamera",
+	owner: "oneplus",
+	apk: "OnePlusCamera.apk",
+	certificate: "platform",
+	overrides: [
+	    "SnapdragonCamera",
+	    "Camera2",
+	],
+
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+}
+
+android_app_import {
+	name: "OnePlusGallery",
+	owner: "oneplus",
+	apk: "OnePlusGallery.apk",
+	certificate: "platform",
+
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	system_ext_specific: true,
+}
+
+android_app_import {
+	name: "OnePlusCameraService",
+	owner: "oneplus",
+	apk: "OnePlusCameraService.apk",
+	certificate: "platform",
+
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+}
