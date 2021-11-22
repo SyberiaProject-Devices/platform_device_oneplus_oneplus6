@@ -15,11 +15,6 @@
       "GID": "system"
     },
     {
-      "Controller": "cpuacct",
-      "Path": "/acct",
-      "Mode": "0555"
-    },
-    {
       "Controller": "cpuset",
       "Path": "/dev/cpuset",
       "Mode": "0755",
@@ -29,24 +24,10 @@
     {
       "Controller": "memory",
       "Path": "/dev/memcg",
-      "Mode": "0755",
-      "UID": "system",
-      "GID": "system"
+      "Mode": "0700",
+      "UID": "root",
+      "GID": "system",
+      "Optional": true
     }
-  ],
-  "Cgroups2": {
-    "Path": "/sys/fs/cgroup",
-    "Mode": "0755",
-    "UID": "system",
-    "GID": "system",
-    "Controllers": [
-      {
-        "Controller": "freezer",
-        "Path": "freezer",
-        "Mode": "0755",
-        "UID": "system",
-        "GID": "system"
-      }
-    ]
-  }
+  ]
 }

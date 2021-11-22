@@ -123,6 +123,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "SF_uClampBoost",
+      "Path": "/dev/cpuctl/sf/cpu.uclamp.min",
+      "Values": [
+     "20",
+     "8"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBWHystTriggerCount",
       "Path": "/sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count",
       "Values": [
@@ -298,7 +307,7 @@
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "748800"
+      "Value": "1056000"
     },
     {
       "PowerHint": "INTERACTION",
@@ -320,9 +329,9 @@
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "TA_uClampBoost",
-      "Duration": 0,
-      "Value": "30"
+      "Node": "SF_uClampBoost",
+      "Duration": 4000,
+      "Value": "20"
     },
     {
       "PowerHint": "INTERACTION",

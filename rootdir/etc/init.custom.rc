@@ -2,16 +2,21 @@ on init
 
     # create an uclamp group for camera-specific processes
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 0
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 1
 
     # BPF Just In Time compiler
     write /proc/sys/net/core/bpf_jit_enable 1
 
-    # Freezer setup
-    write /dev/freezer/frozen/freezer.killable 1
-
     # ZRAM parameters
     write /proc/sys/vm/page-cluster 0
+
+    mkdir /dev/cpuctl/sf
+    chown system system /dev/cpuctl/sf
+    chown system system /dev/cpuctl/sf/tasks
+    chmod 0664 /dev/cpuctl/sf/tasks
+
+
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
 on late-fs
     start vendor.power-hal-aidl
@@ -62,7 +67,7 @@ on post-fs
     chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
     chown system graphics /sys/devices/virtual/graphics/fb0/idle_time
     write /sys/devices/virtual/graphics/fb0/idle_time 64
- 
+
    # Vibrator
     chown system system /sys/class/leds/vibrator/vmax_override
     write /sys/class/leds/vibrator/vmax_override 1
@@ -73,6 +78,9 @@ on post-fs
 on charger
     write /sys/class/backlight/panel0-backlight/brightness 150
 
+# Migrate tasks again in case kernel threads are created during boot
+on property:sys.boot_completed=1
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
 on property:vendor.post_boot.parsed=1
 
@@ -132,16 +140,17 @@ on property:vendor.post_boot.parsed=1
     # Disable sched stats
     write /proc/sys/kernel/sched_schedstats 0
 
+    # Setup final cpuset
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-3,6-7
+    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-7
+
     # Enable idle state listener
     write /sys/class/drm/card0/device/idle_encoder_mask 1
     write /sys/class/drm/card0/device/idle_timeout_ms 100
-
-    # Setup final blkio
-    # value for group_idle is us
-    write /dev/blkio/blkio.weight 1000
-    write /dev/blkio/background/blkio.weight 200
-    write /dev/blkio/blkio.group_idle 2000
-    write /dev/blkio/background/blkio.group_idle 0
 
     # Block layer tuning: discard chunk size up to 128MB
     # Otherwise, contiguous discards can be merged
@@ -152,23 +161,36 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/vm/dirty_background_ratio 10
     write /proc/sys/vm/watermark_scale_factor 1
 
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
     #RT scheduler
-    write /proc/sys/kernel/sched_rt_period_us 1000000
-    write /proc/sys/kernel/sched_rt_runtime_us 1000000
-    write /proc/sys/kernel/sched_rr_timeslice_ms 1
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
 
     # Setup runtime uclamp
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/foreground/cpu.uclamp.min 0
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.min 10
+    #write /dev/cpuctl/top-app/cpu.uclamp.min 1
+    #write /dev/cpuctl/top-app/cpu.cfs_burst_us 50000
+    #write /dev/cpuctl/top-app/cpu.idle 1
 
-    # Gain earpiece
-    #write /sys/kernel/sound_control/earpiece_gain 18
+    write /dev/cpuctl/sf/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/sf/cpu.uclamp.min 8
 
-    # Enable PowerHAL hint processing
-    setprop vendor.powerhal.init 1
+    write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/rt/cpu.uclamp.min 12.5
+
+    # Setup cpu.shares to throttle background group at 5%
+    write /dev/cpuctl/background/cpu.shares 1024
+    write /dev/cpuctl/system/cpu.shares 20480
+    # We only have system and background groups holding tasks and the groups below are empty
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+    write /dev/cpuctl/foreground/cpu.shares 20480
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+    write /dev/cpuctl/rt/cpu.shares 20480
+    write /dev/cpuctl/system-background/cpu.shares 20480
+    write /dev/cpuctl/top-app/cpu.shares 20480
+    write /dev/cpuctl/background/cpu.uclamp.max 60
 
 service dashd /system/bin/dashd
     class core

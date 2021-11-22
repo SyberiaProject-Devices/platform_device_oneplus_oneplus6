@@ -1,144 +1,31 @@
 {
   "Profiles": [
     {
-      "Name": "HighEnergySaving",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "background"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "NormalPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "system"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "ServicePerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "system-background"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "HighPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "foreground"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "MaxPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "top-app"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "RealtimePerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "rt"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "CameraServiceHighCapacity",
+      "Name": "SFMainPolicy",
       "Actions": [
         {
           "Name": "JoinCgroup",
           "Params":
           {
             "Controller": "cpuset",
-            "Path": "camera-daemon-dedicated"
+            "Path": "top-app",
+            "Controller": "cpu",
+            "Path": "sf"
           }
         }
       ]
     },
     {
-      "Name": "CameraServicePerformance",
+      "Name": "SFRenderEnginePolicy",
       "Actions": [
         {
           "Name": "JoinCgroup",
           "Params":
           {
+            "Controller": "cpuset",
+            "Path": "top-app",
             "Controller": "cpu",
-            "Path": "camera-daemon"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "NNApiHALPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "nnapi-hal"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "CpuPolicySpread",
-      "Actions": [
-        {
-          "Name": "SetAttribute",
-          "Params":
-          {
-            "Name": "UClampLatencySensitive",
-            "Value": "1"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "CpuPolicyPack",
-      "Actions": [
-        {
-          "Name": "SetAttribute",
-          "Params":
-          {
-            "Name": "UClampLatencySensitive",
-            "Value": "0"
+            "Path": "rt"
           }
         }
       ]
