@@ -18,9 +18,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/oneplus6/oneplus6-vendor.mk)
 
@@ -28,6 +25,8 @@ $(call inherit-product, vendor/oneplus/oneplus6/oneplus6-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 TARGET_OTA_ASSERT_DEVICE := oneplus6,OnePlus6,enchilada
+
+OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # Component overrides
 PRODUCT_COPY_FILES += \
