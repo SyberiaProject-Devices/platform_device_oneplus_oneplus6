@@ -372,6 +372,7 @@ PRODUCT_PACKAGES += \
 # Radio
 PRODUCT_PACKAGES += \
     libjson \
+    libjson.vendor \
     librmnetctl
 
 # Permissions (device)
