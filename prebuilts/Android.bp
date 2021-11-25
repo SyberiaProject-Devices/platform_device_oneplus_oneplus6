@@ -19,6 +19,9 @@ android_app_import {
 	owner: "oneplus",
 	apk: "OnePlusGallery.apk",
 	certificate: "platform",
+	overrides: [
+	    "Gallery2",
+	],
 
 	dex_preopt: {
 		enabled: false,
