@@ -451,6 +451,8 @@ fi
 chmod g-w /data/vendor/modem_config
 setprop ro.vendor.ril.mbn_copy_completed 1
 
+chcon -t u:object_r:hal_light_default_exec:s0 /vendor/bin/hw/android\.hardware\.lights-service\.onelpus_sdm845
+
 #check build variant for printk logging
 #current default minimum boot-time-default
 buildvariant=`getprop ro.build.type`
