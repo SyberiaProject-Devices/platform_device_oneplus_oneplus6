@@ -446,7 +446,7 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 # Smart Charge
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vendor.syberia.smartcharge@1.0-service
 
 # Telephony
